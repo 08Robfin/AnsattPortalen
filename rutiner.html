@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Interne rutiner – prosedyrer, retningslinjer og maler for ansatte." />
+  <title>Rutiner – AnsattPortalen</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Hopp til innhold</a>
+
+  <nav class="site-nav" aria-label="Hovednavigasjon">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="AnsattPortalen – til forsiden">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="#2E7D6B"/>
+          <rect x="7" y="8" width="14" height="2.5" rx="1.25" fill="white"/>
+          <rect x="7" y="12.75" width="10" height="2.5" rx="1.25" fill="white"/>
+          <rect x="7" y="17.5" width="12" height="2.5" rx="1.25" fill="white"/>
+        </svg>
+        AnsattPortalen
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Hjem</a></li>
+        <li><a href="it-support.html">IT-støtte</a></li>
+        <li><a href="hms.html">HMS</a></li>
+        <li><a href="rutiner.html" aria-current="page">Rutiner</a></li>
+      </ul>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Åpne meny">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <rect x="2" y="5" width="18" height="2" rx="1" fill="currentColor"/>
+          <rect x="2" y="10" width="18" height="2" rx="1" fill="currentColor"/>
+          <rect x="2" y="15" width="18" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <header class="page-hero" role="banner">
+    <div class="container">
+      <nav aria-label="Brødsmule" class="breadcrumb">
+        <a href="index.html">Hjem</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Rutiner</span>
+      </nav>
+      <span class="label">Interne prosedyrer</span>
+      <h1>Rutiner</h1>
+      <p>Prosedyrer, retningslinjer og maler du trenger i arbeidshverdagen.</p>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container section">
+      <div class="page-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" aria-label="Innholdsfortegnelse">
+          <nav class="sidebar-nav">
+            <h4>På denne siden</h4>
+            <ul>
+              <li><a href="#ansettelse" class="active">Ansettelse og onboarding</a></li>
+              <li><a href="#ferie-permisjon">Ferie og permisjon</a></li>
+              <li><a href="#innkjop">Innkjøp og utgifter</a></li>
+              <li><a href="#kommunikasjon">Kommunikasjon</a></li>
+              <li><a href="#dokumenter">Dokumenter og maler</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <!-- INNHOLD -->
+        <div class="main-content">
+
+          <!-- ANSETTELSE OG ONBOARDING -->
+          <section id="ansettelse" aria-labelledby="ansettelse-heading">
+            <span class="label">Ny ansatt</span>
+            <h2 id="ansettelse-heading">Ansettelse og onboarding</h2>
+            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Prosedyrer for oppstart og introduksjon av nye medarbeidere.</p>
+
+            <div class="info-list" role="list">
+              <li role="listitem">
+                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">1</div>
+                <div>
+                  <strong>Før første arbeidsdag</strong>
+                  <p>HR sender velkomstbrev med praktisk informasjon, arbeidsavtale og informasjon om hva som skjer første dag.</p>
+                </div>
+              </li>
+              <li role="listitem">
+                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">2</div>
+                <div>
+                  <strong>Første arbeidsdag</strong>
+                  <p>Møt opp i resepsjonen kl. 08:30. Du vil bli tatt imot av din nærmeste leder og få omvisning i lokalene.</p>
+                </div>
+              </li>
+              <li role="listitem">
+                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">3</div>
+                <div>
+                  <strong>IT-oppsett</strong>
+                  <p>IT-avdelingen setter opp datamaskinen din, e-post og tilganger. Se <a href="it-support.html#kom-i-gang" style="color:var(--color-accent);text-decoration:underline;">IT-støtte</a> for detaljer.</p>
+                </div>
+              </li>
+              <li role="listitem">
+                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">4</div>
+                <div>
+                  <strong>HMS-opplæring</strong>
+                  <p>Alle nye ansatte gjennomfører HMS-grunnkurs i løpet av første uke. Se <a href="hms.html" style="color:var(--color-accent);text-decoration:underline;">HMS-siden</a>.</p>
+                </div>
+              </li>
+              <li role="listitem">
+                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">5</div>
+                <div>
+                  <strong>Prøvetid</strong>
+                  <p>De første 6 månedene er prøvetid. Du vil ha jevnlige oppfølgingssamtaler med din leder.</p>
+                </div>
+              </li>
+            </div>
+
+            <div class="alert alert--info" style="margin-top:var(--space-md);" role="note">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7.5" stroke="#2E7D6B" stroke-width="1.4"/><path d="M9 8v5M9 6v.5" stroke="#2E7D6B" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <div>Spørsmål om ansettelsesforholdet? Kontakt HR: <a href="mailto:hr@bedrift.no" style="color:var(--color-accent);">hr@bedrift.no</a></div>
+            </div>
+          </section>
+
+          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
+
+          <!-- FERIE OG PERMISJON -->
+          <section id="ferie-permisjon" aria-labelledby="ferie-heading">
+            <span class="label">Fri og fravær</span>
+            <h2 id="ferie-heading">Ferie og permisjon</h2>
+            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Oversikt over rettigheter og fremgangsmåte for søknad om fri.</p>
+
+            <div class="content-split" style="gap:var(--space-lg);margin-bottom:var(--space-lg);">
+              <div>
+                <h3 style="font-family:var(--font-body);font-size:1rem;margin-bottom:1rem;">Ferierettigheter</h3>
+                <div class="info-list" role="list">
+                  <li role="listitem">
+                    <div class="icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <span><strong>25 virkedager</strong> (5 uker) ferie per år</span>
+                  </li>
+                  <li role="listitem">
+                    <div class="icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <span>Ansatte over 60 år får <strong>6 uker</strong></span>
+                  </li>
+                  <li role="listitem">
+                    <div class="icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <span>Søknadsfrist: <strong>1. april</strong> for sommerferie</span>
+                  </li>
+                  <li role="listitem">
+                    <div class="icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <span>Ferie avtales med nærmeste leder</span>
+                  </li>
+                </div>
+              </div>
+
+              <div>
+                <h3 style="font-family:var(--font-body);font-size:1rem;margin-bottom:1rem;">Permisjonstyper</h3>
+                <div class="info-list" role="list">
+                  <li role="listitem">
+                    <div class="icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <span>Foreldrepermisjon (foreldreloven)</span>
+                  </li>
+                  <li role="listitem">
+                    <div class="icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <span>Omsorgspermisjon (sykt barn o.l.)</span>
+                  </li>
+                  <li role="listitem">
+                    <div class="icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <span>Utdanningspermisjon</span>
+                  </li>
+                  <li role="listitem">
+                    <div class="icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <span>Velferdspermisjoner (begravelse, etc.)</span>
+                  </li>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion" role="list">
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="ferie-1">
+                  Slik søker du om ferie
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="ferie-1" class="accordion-body" role="region">
+                  <p>Send e-post til din nærmeste leder med ønsket ferieperiode. Inkluder:</p>
+                  <ul>
+                    <li>Ønsket startdato og sluttdato</li>
+                    <li>Antall feriedager</li>
+                    <li>Hvem som dekker dine oppgaver ved behov</li>
+                  </ul>
+                  <p>Leder bekrefter eller avslår søknaden innen 5 virkedager.</p>
+                </div>
+              </div>
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="ferie-2">
+                  Sykt barn – omsorgsdager
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="ferie-2" class="accordion-body" role="region">
+                  <p>Ansatte med barn under 12 år har rett til <strong>10 omsorgsdager</strong> per år (20 for enslige forsørgere). Gi beskjed til leder første fraværsdag.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
+
+          <!-- INNKJØP OG UTGIFTER -->
+          <section id="innkjop" aria-labelledby="innkjop-heading">
+            <span class="label">Økonomi</span>
+            <h2 id="innkjop-heading">Innkjøp og utgiftsrefusjon</h2>
+            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Retningslinjer for kjøp av varer og tjenester på bedriftens vegne.</p>
+
+            <div class="table-wrap" style="margin-bottom:var(--space-md);">
+              <table>
+                <caption style="text-align:left;font-size:0.85rem;font-weight:600;color:var(--color-primary);margin-bottom:0.5rem;caption-side:top;">Godkjenningsnivåer for innkjøp</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Beløp</th>
+                    <th scope="col">Godkjennes av</th>
+                    <th scope="col">Fremgangsmåte</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Under kr 500</td>
+                    <td>Nærmeste leder</td>
+                    <td>E-post godkjenning</td>
+                  </tr>
+                  <tr>
+                    <td>kr 500 – 5 000</td>
+                    <td>Avdelingsleder</td>
+                    <td>Innkjøpsskjema</td>
+                  </tr>
+                  <tr>
+                    <td>kr 5 000 – 50 000</td>
+                    <td>Økonomisjef</td>
+                    <td>Innkjøpsskjema + tilbud</td>
+                  </tr>
+                  <tr>
+                    <td>Over kr 50 000</td>
+                    <td>Daglig leder</td>
+                    <td>Anbudsrunde kreves</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="accordion" role="list">
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="innk-1">
+                  Refusjon av utlegg
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="innk-1" class="accordion-body" role="region">
+                  <p>Har du lagt ut penger for bedriften? Fyll ut refusjonsskjema og send det med originalkvitteringer til økonomiavdelingen:</p>
+                  <ul>
+                    <li>Send til: <a href="mailto:okonomi@bedrift.no" style="color:var(--color-accent);">okonomi@bedrift.no</a></li>
+                    <li>Merk med: navn, dato og formål</li>
+                    <li>Refusjon utbetales med neste lønnskjøring</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="innk-2">
+                  Reise og diett
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="innk-2" class="accordion-body" role="region">
+                  <p>Tjenestereiser må forhåndsgodkjennes av nærmeste leder. Etter reisen leveres reiseregning med:</p>
+                  <ul>
+                    <li>Reisedato og formål</li>
+                    <li>Kvitteringer for alle utgifter</li>
+                    <li>Kjørelogg ved bruk av egen bil (sats: kr 4,80/km)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
+
+          <!-- KOMMUNIKASJON -->
+          <section id="kommunikasjon" aria-labelledby="kommunikasjon-heading">
+            <span class="label">Interne regler</span>
+            <h2 id="kommunikasjon-heading">Kommunikasjon og atferd</h2>
+            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Retningslinjer for profesjonell kommunikasjon og bruk av bedriftens kanaler.</p>
+
+            <div class="shortcuts-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+              <div class="card card--accent">
+                <h3>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="display:inline;vertical-align:-2px;margin-right:6px;color:var(--color-accent);" aria-hidden="true"><path d="M2 4h12a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.4"/><path d="M1 5l7 4.5L15 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                  E-post
+                </h3>
+                <p>Bruk bedriftens e-postadresse til all jobbkommunikasjon. Svar innen 1 virkedag.</p>
+              </div>
+
+              <div class="card card--accent">
+                <h3>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="display:inline;vertical-align:-2px;margin-right:6px;color:var(--color-accent);" aria-hidden="true"><path d="M2 3h12a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H9l-3 2v-2H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.4"/></svg>
+                  Teams
+                </h3>
+                <p>Bruk Teams for rask kommunikasjon og videomøter. Sett status til «Opptatt» under fokusarbeid.</p>
+              </div>
+
+              <div class="card card--accent">
+                <h3>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="display:inline;vertical-align:-2px;margin-right:6px;color:var(--color-accent);" aria-hidden="true"><path d="M8 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5z" stroke="currentColor" stroke-width="1.4"/><path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                  Sosiale medier
+                </h3>
+                <p>Ikke del intern informasjon eller konfidensiell data på sosiale medier. Se full policy i ansatthåndboken.</p>
+              </div>
+            </div>
+
+            <div class="accordion" style="margin-top:var(--space-md);" role="list">
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="kom-1">
+                  Taushetsplikt og konfidensialitet
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="kom-1" class="accordion-body" role="region">
+                  <p>Alle ansatte har taushetsplikt om konfidensiell informasjon, herunder:</p>
+                  <ul>
+                    <li>Personopplysninger om kolleger og kunder</li>
+                    <li>Forretningsmessig sensitiv informasjon</li>
+                    <li>Interne systemer og prosedyrer</li>
+                  </ul>
+                  <p>Taushetsplikten gjelder også etter at ansettelsesforholdet er avsluttet.</p>
+                </div>
+              </div>
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="kom-2">
+                  Møtekultur og møteeffektivitet
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="kom-2" class="accordion-body" role="region">
+                  <p>Vi ønsker en effektiv møtekultur. Retningslinjer:</p>
+                  <ul>
+                    <li>Send agenda minst 24 timer i forveien</li>
+                    <li>Start og avslutt møter til avtalt tid</li>
+                    <li>Send referat innen 24 timer etter møtet</li>
+                    <li>Vurder alltid om møtet kan erstattes av en e-post</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
+
+          <!-- DOKUMENTER OG MALER -->
+          <section id="dokumenter" aria-labelledby="dokumenter-heading">
+            <span class="label">Ressurser</span>
+            <h2 id="dokumenter-heading">Dokumenter og maler</h2>
+            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Ofte brukte skjemaer og dokumentmaler.</p>
+
+            <div class="accordion" role="list">
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="dok-1">
+                  <span style="display:flex;align-items:center;gap:0.5rem;">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 2h7l3 3v9H3V2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M10 2v3h3" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+                    Ferieskjema
+                  </span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="dok-1" class="accordion-body" role="region">
+                  <p>Bruk e-post til nærmeste leder for å søke om ferie. Inkluder: navn, avdeling, fraværsperiode, antall dager.</p>
+                  <a href="mailto:leder@bedrift.no?subject=Feriesøknad" class="btn btn--outline" style="margin-top:0.75rem;font-size:0.85rem;padding:0.5rem 1rem;min-height:36px;">Send feriesøknad</a>
+                </div>
+              </div>
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="dok-2">
+                  <span style="display:flex;align-items:center;gap:0.5rem;">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 2h7l3 3v9H3V2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M10 2v3h3" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+                    Refusjonsskjema
+                  </span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="dok-2" class="accordion-body" role="region">
+                  <p>Send e-post til økonomi med kvitteringer. Merk med: navn, dato for utlegg, formål og beløp.</p>
+                  <a href="mailto:okonomi@bedrift.no?subject=Refusjon%20av%20utlegg" class="btn btn--outline" style="margin-top:0.75rem;font-size:0.85rem;padding:0.5rem 1rem;min-height:36px;">Send til økonomi</a>
+                </div>
+              </div>
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="dok-3">
+                  <span style="display:flex;align-items:center;gap:0.5rem;">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 2h7l3 3v9H3V2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M10 2v3h3" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+                    Reiseregning
+                  </span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="dok-3" class="accordion-body" role="region">
+                  <p>Send reiseregning til økonomi med: reisedato, fra/til, formål, kvitteringer og eventuell kjørelogg.</p>
+                  <a href="mailto:okonomi@bedrift.no?subject=Reiseregning" class="btn btn--outline" style="margin-top:0.75rem;font-size:0.85rem;padding:0.5rem 1rem;min-height:36px;">Send reiseregning</a>
+                </div>
+              </div>
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="dok-4">
+                  <span style="display:flex;align-items:center;gap:0.5rem;">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 2h7l3 3v9H3V2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M10 2v3h3" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+                    Avviksskjema (HMS)
+                  </span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="dok-4" class="accordion-body" role="region">
+                  <p>Meld avvik og uønskede hendelser til HMS-ansvarlig. Se <a href="hms.html#varsling" style="color:var(--color-accent);">HMS-siden</a> for full prosedyre.</p>
+                  <a href="mailto:hms@bedrift.no?subject=Avviksmelding" class="btn btn--outline" style="margin-top:0.75rem;font-size:0.85rem;padding:0.5rem 1rem;min-height:36px;">Meld avvik</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-box" style="margin-top:var(--space-lg);">
+              <h3>Trenger du hjelp?</h3>
+              <div class="contact-row">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="5" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                <span>HR-avdelingen: <a href="mailto:hr@bedrift.no">hr@bedrift.no</a></span>
+              </div>
+              <div class="contact-row">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 3h2l1 3-1.5 1.5a9 9 0 0 0 3 3L9 9l3 1v2c0 1-1 2-2 2C5 14 2 9 2 5c0-1 1-2 1-2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+                <span><a href="tel:+4712345655">+47 12 34 56 55</a> – Man–fre 08:00–15:30</span>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="color:#fff;" aria-label="AnsattPortalen forsiden">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect width="28" height="28" rx="6" fill="#2E7D6B"/><rect x="7" y="8" width="14" height="2.5" rx="1.25" fill="white"/><rect x="7" y="12.75" width="10" height="2.5" rx="1.25" fill="white"/><rect x="7" y="17.5" width="12" height="2.5" rx="1.25" fill="white"/></svg>
+          AnsattPortalen
+        </a>
+        <p>Intern ressursnettside for ansatte.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Seksjoner</h4>
+        <ul>
+          <li><a href="index.html">Hjem</a></li>
+          <li><a href="it-support.html">IT-støtte</a></li>
+          <li><a href="hms.html">HMS</a></li>
+          <li><a href="rutiner.html">Rutiner</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="mailto:hr@bedrift.no">hr@bedrift.no</a></li>
+          <li><a href="mailto:it@bedrift.no">it@bedrift.no</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 AnsattPortalen. Kun for intern bruk.</span>
+      <span>Laget av Carmen Maria Kleijnen &amp; Robin Finnestad</span>
+    </div>
+  </footer>
+
+  <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    document.querySelectorAll('.accordion-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        document.querySelectorAll('.accordion-btn').forEach(b => {
+          b.setAttribute('aria-expanded', 'false');
+          document.getElementById(b.getAttribute('aria-controls')).classList.remove('open');
+        });
+        if (!expanded) {
+          btn.setAttribute('aria-expanded', 'true');
+          document.getElementById(btn.getAttribute('aria-controls')).classList.add('open');
+        }
+      });
+    });
+
+    const sections = document.querySelectorAll('section[id]');
+    const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          sidebarLinks.forEach(a => a.classList.remove('active'));
+          const link = document.querySelector(`.sidebar-nav a[href="#${entry.target.id}"]`);
+          if (link) link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    sections.forEach(s => observer.observe(s));
+  </script>
+
+</body>
+</html>
