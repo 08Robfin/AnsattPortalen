@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="IT-støtte – feilsøking, tilganger, utstyr og vanlige spørsmål for ansatte." />
-  <title>IT-støtte – AnsattPortalen</title>
+  <meta name="description" content="IT-brukerstøtte for CAROB AS – løs vanlige problemer selv med steg-for-steg veiledning." />
+  <title>IT-brukerstøtte – CAROB AS</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -13,20 +13,18 @@
 
   <nav class="site-nav" aria-label="Hovednavigasjon">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="AnsattPortalen – til forsiden">
+      <a href="index.html" class="nav-logo" aria-label="CAROB AS – til forsiden">
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
           <rect width="28" height="28" rx="6" fill="#2E7D6B"/>
-          <rect x="7" y="8" width="14" height="2.5" rx="1.25" fill="white"/>
-          <rect x="7" y="12.75" width="10" height="2.5" rx="1.25" fill="white"/>
-          <rect x="7" y="17.5" width="12" height="2.5" rx="1.25" fill="white"/>
+          <text x="6" y="20" font-family="serif" font-size="13" font-weight="700" fill="white">C</text>
         </svg>
-        AnsattPortalen
+        CAROB AS
       </a>
       <ul class="nav-links" role="list">
         <li><a href="index.html">Hjem</a></li>
         <li><a href="it-support.html" aria-current="page">IT-støtte</a></li>
         <li><a href="hms.html">HMS</a></li>
-        <li><a href="rutiner.html">Rutiner</a></li>
+        <li><a href="rutiner.html">Systemer</a></li>
       </ul>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Åpne meny">
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
@@ -43,11 +41,11 @@
       <nav aria-label="Brødsmule" class="breadcrumb">
         <a href="index.html">Hjem</a>
         <span aria-hidden="true">›</span>
-        <span aria-current="page">IT-støtte</span>
+        <span aria-current="page">IT-brukerstøtte</span>
       </nav>
-      <span class="label">IT-avdelingen</span>
-      <h1>IT-støtte</h1>
-      <p>Feilsøking, tilganger, utstyrbestilling og teknisk hjelp for alle ansatte.</p>
+      <span class="label">Selvbetjening</span>
+      <h1>IT-brukerstøtte</h1>
+      <p>Steg-for-steg løsninger på de vanligste problemene. Prøv dette før du kontakter IT-avdelingen.</p>
     </div>
   </header>
 
@@ -55,176 +53,78 @@
     <div class="container section">
       <div class="page-layout">
 
-        <!-- SIDEBAR -->
         <aside class="sidebar" aria-label="Innholdsfortegnelse">
           <nav class="sidebar-nav">
-            <h4>På denne siden</h4>
+            <h4>Problemkategorier</h4>
             <ul>
-              <li><a href="#kom-i-gang" class="active">Kom i gang</a></li>
-              <li><a href="#faq">Vanlige spørsmål</a></li>
-              <li><a href="#bestilling">Bestilling</a></li>
-              <li><a href="#passord">Passord og tilgang</a></li>
+              <li><a href="#passord" class="active">Passord og innlogging</a></li>
+              <li><a href="#nettverk">Nettverk og VPN</a></li>
+              <li><a href="#printer">Printer</a></li>
+              <li><a href="#epost">E-post og Teams</a></li>
+              <li><a href="#treg">Treg PC</a></li>
               <li><a href="#kontakt">Kontakt IT</a></li>
             </ul>
           </nav>
         </aside>
 
-        <!-- INNHOLD -->
         <div class="main-content">
 
-          <!-- KOM I GANG -->
-          <section id="kom-i-gang" aria-labelledby="kom-i-gang-heading">
-            <span class="label">Nyansatt?</span>
-            <h2 id="kom-i-gang-heading">Kom i gang med IT</h2>
-            <p style="margin-top:0.5rem;">Ny ansatt? Her er det du trenger å gjøre de første dagene for å få tilgang til alle systemer.</p>
-
-            <div class="info-list" role="list" style="margin-top:1.5rem;">
-              <li role="listitem">
-                <div class="icon" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.4"/><path d="M5.5 8l2 2 3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
-                <div>
-                  <strong>Steg 1 – Motta brukernavn og passord</strong>
-                  <p>Du får tilsendt brukernavn og midlertidig passord på din private e-post første arbeidsdag.</p>
-                </div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.4"/><path d="M5.5 8l2 2 3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
-                <div>
-                  <strong>Steg 2 – Bytt passord</strong>
-                  <p>Logg inn og bytt passordet umiddelbart. Se krav under <a href="#passord" style="color:var(--color-accent);text-decoration:underline;">Passord og tilgang</a>.</p>
-                </div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.4"/><path d="M5.5 8l2 2 3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
-                <div>
-                  <strong>Steg 3 – Sett opp e-post og Teams</strong>
-                  <p>Installer Outlook og Microsoft Teams med dine bedriftsopplysninger.</p>
-                </div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.4"/><path d="M5.5 8l2 2 3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
-                <div>
-                  <strong>Steg 4 – Koble til VPN</strong>
-                  <p>Last ned VPN-klienten og koble til for tilgang til interne systemer utenfor kontoret.</p>
-                </div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.4"/><path d="M5.5 8l2 2 3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
-                <div>
-                  <strong>Steg 5 – Kontakt IT ved problemer</strong>
-                  <p>Kom du ikke i gang? Send e-post til <a href="mailto:it@bedrift.no" style="color:var(--color-accent);text-decoration:underline;">it@bedrift.no</a> eller ring oss.</p>
-                </div>
-              </li>
-            </div>
-          </section>
-
-          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
-
-          <!-- FAQ -->
-          <section id="faq" aria-labelledby="faq-heading">
-            <span class="label">Hjelp</span>
-            <h2 id="faq-heading">Vanlige spørsmål</h2>
-            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Svar på de mest stilte spørsmålene til IT-avdelingen.</p>
+          <!-- PASSORD -->
+          <section id="passord" aria-labelledby="passord-heading">
+            <span class="label">Problem 1</span>
+            <h2 id="passord-heading">Passord og innlogging</h2>
+            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Klarer du ikke logge inn? Følg disse stegene.</p>
 
             <div class="accordion" role="list">
 
               <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="faq-1">
-                  Jeg har glemt passordet mitt. Hva gjør jeg?
+                <button class="accordion-btn" aria-expanded="true" aria-controls="pw-1">
+                  Jeg har glemt passordet mitt
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
-                <div id="faq-1" class="accordion-body" role="region">
-                  <p>Gå til påloggingssiden og klikk <strong>«Glemt passord»</strong>. Du vil motta en tilbakestillingslenke på din registrerte e-postadresse.</p>
-                  <p>Fungerer ikke dette? Kontakt IT-avdelingen direkte på <a href="mailto:it@bedrift.no" style="color:var(--color-accent);">it@bedrift.no</a> eller ring <a href="tel:+4712345678" style="color:var(--color-accent);">+47 12 34 56 78</a>.</p>
+                <div id="pw-1" class="accordion-body open" role="region">
+                  <p><strong>Windows-passord:</strong></p>
+                  <ul>
+                    <li>Gå til påloggingsskjermen og klikk <strong>«Glemt passord»</strong></li>
+                    <li>Skriv inn brukernavn: <code style="background:var(--color-bg);padding:1px 6px;border-radius:3px;">fornavn.etternavn@carob.no</code></li>
+                    <li>Du mottar en tilbakestillingslenke på din private e-post (registrert hos HR)</li>
+                    <li>Nytt passord må oppfylle kravene: min. 12 tegn, stor/liten bokstav, tall og spesialtegn</li>
+                  </ul>
+                  <p style="margin-top:0.75rem;"><strong>Fungerer ikke dette?</strong> Kontakt IT direkte – se <a href="#kontakt" style="color:var(--color-accent);">Kontakt IT</a> nederst.</p>
                 </div>
               </div>
 
               <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="faq-2">
-                  Hvordan kobler jeg til VPN hjemmefra?
+                <button class="accordion-btn" aria-expanded="false" aria-controls="pw-2">
+                  Kontoen min er låst
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
-                <div id="faq-2" class="accordion-body" role="region">
-                  <p>Last ned VPN-klienten fra den interne programvareportalen. Bruk ditt vanlige brukernavn og passord for å koble til.</p>
+                <div id="pw-2" class="accordion-body" role="region">
+                  <p>Kontoen låses automatisk etter <strong>5 mislykkede innloggingsforsøk</strong>. Den låses opp automatisk etter 30 minutter, eller:</p>
                   <ul>
-                    <li>Start VPN-klienten</li>
-                    <li>Skriv inn serveradresse: <code style="background:var(--color-bg);padding:1px 5px;border-radius:3px;">vpn.bedrift.no</code></li>
-                    <li>Logg inn med bedriftskredentials</li>
+                    <li>Ring IT på <a href="tel:+4712345678" style="color:var(--color-accent);">+47 12 34 56 78</a> for øyeblikkelig opplåsing</li>
+                    <li>Send e-post til <a href="mailto:it@carob.no" style="color:var(--color-accent);">it@carob.no</a> med navn og avdeling</li>
                   </ul>
+                  <div class="alert alert--info" style="margin-top:0.75rem;" role="note">
+                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7.5" stroke="#2E7D6B" stroke-width="1.4"/><path d="M9 8v5M9 6v.5" stroke="#2E7D6B" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <div>Får du gjentatte låsinger uten å ha tastet feil? Det kan bety at passordet er lagret feil i en app. Sjekk Outlook og Teams.</div>
+                  </div>
                 </div>
               </div>
 
               <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="faq-3">
-                  Datamaskinen min starter ikke. Hva gjør jeg?
+                <button class="accordion-btn" aria-expanded="false" aria-controls="pw-3">
+                  Sette opp tofaktorautentisering (2FA)
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
-                <div id="faq-3" class="accordion-body" role="region">
-                  <p>Prøv følgende steg i rekkefølge:</p>
+                <div id="pw-3" class="accordion-body" role="region">
+                  <p>2FA er påkrevd for alle ansatte i CAROB AS. Slik setter du det opp:</p>
                   <ul>
-                    <li>Hold inne av/på-knappen i 10 sekunder for å tvinge avslutning</li>
-                    <li>Vent 30 sekunder, start deretter på nytt</li>
-                    <li>Sjekk at strømkabelen er koblet til</li>
-                    <li>Kontakt IT om problemet vedvarer</li>
+                    <li>Last ned <strong>Microsoft Authenticator</strong> på mobilen</li>
+                    <li>Logg inn på <a href="https://aka.ms/mfasetup" style="color:var(--color-accent);" target="_blank" rel="noopener">aka.ms/mfasetup</a> med jobbkontoen din</li>
+                    <li>Velg «Legg til metode» → «Autentiseringsapp»</li>
+                    <li>Skann QR-koden med appen</li>
                   </ul>
-                </div>
-              </div>
-
-              <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="faq-4">
-                  Jeg trenger tilgang til en ny mappe/ressurs. Hvordan ber jeg om det?
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div id="faq-4" class="accordion-body" role="region">
-                  <p>Send en e-post til <a href="mailto:it@bedrift.no" style="color:var(--color-accent);">it@bedrift.no</a> med følgende informasjon:</p>
-                  <ul>
-                    <li>Ditt fulle navn og avdeling</li>
-                    <li>Hvilken ressurs/mappe du trenger tilgang til</li>
-                    <li>Begrunnelse for tilgangen</li>
-                    <li>Godkjenning fra din nærmeste leder (sett leder i kopi)</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="faq-5">
-                  Jeg mistenker at jeg har fått en phishing-e-post. Hva gjør jeg?
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div id="faq-5" class="accordion-body" role="region">
-                  <p><strong>Ikke klikk på noen lenker</strong> i e-posten. Gjør følgende:</p>
-                  <ul>
-                    <li>Ikke åpne vedlegg</li>
-                    <li>Videresend e-posten til <a href="mailto:sikkerhet@bedrift.no" style="color:var(--color-accent);">sikkerhet@bedrift.no</a></li>
-                    <li>Slett e-posten fra innboksen</li>
-                    <li>Kontakt IT umiddelbart dersom du allerede har klikket på en lenke</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="faq-6">
-                  Hvilken programvare er godkjent for bruk på jobben?
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div id="faq-6" class="accordion-body" role="region">
-                  <p>All programvare skal installeres gjennom bedriftens programvareportal. Eksempler på godkjent programvare:</p>
-                  <ul>
-                    <li>Microsoft 365 (Word, Excel, Outlook, Teams)</li>
-                    <li>Adobe Acrobat Reader</li>
-                    <li>Chrome / Edge (nettlesere)</li>
-                    <li>Visma (HR og lønn)</li>
-                  </ul>
-                  <p>Ønsker du å installere annen programvare? Send forespørsel til IT for godkjenning.</p>
                 </div>
               </div>
 
@@ -233,121 +133,253 @@
 
           <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
 
-          <!-- BESTILLING -->
-          <section id="bestilling" aria-labelledby="bestilling-heading">
-            <span class="label">Utstyr og tilgang</span>
-            <h2 id="bestilling-heading">Bestilling</h2>
-            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Trenger du nytt utstyr, programvare eller ekstra tilganger? Send en e-post til IT med nødvendig informasjon.</p>
+          <!-- NETTVERK -->
+          <section id="nettverk" aria-labelledby="nettverk-heading">
+            <span class="label">Problem 2</span>
+            <h2 id="nettverk-heading">Nettverk og VPN</h2>
+            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Ingen internett eller kan ikke koble til bedriftsnettverket?</p>
 
-            <div class="shortcuts-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-              <div class="card">
-                <h3>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="display:inline;vertical-align:-2px;margin-right:6px;color:var(--color-accent);" aria-hidden="true"><rect x="1" y="3" width="14" height="9" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M5 14h6M8 12v2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-                  Nytt utstyr
-                </h3>
-                <p>PC, skjerm, tastatur eller annet.</p>
-                <a href="mailto:it@bedrift.no?subject=Bestilling%20av%20utstyr" class="btn btn--outline" style="margin-top:var(--space-sm);font-size:0.85rem;padding:0.5rem 1rem;min-height:36px;">Send bestilling</a>
-              </div>
+            <div class="accordion" role="list">
 
-              <div class="card">
-                <h3>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="display:inline;vertical-align:-2px;margin-right:6px;color:var(--color-accent);" aria-hidden="true"><rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M5 8h6M8 5v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-                  Ny tilgang
-                </h3>
-                <p>Systemer, mapper eller applikasjoner.</p>
-                <a href="mailto:it@bedrift.no?subject=Tilgangsforespørsel" class="btn btn--outline" style="margin-top:var(--space-sm);font-size:0.85rem;padding:0.5rem 1rem;min-height:36px;">Be om tilgang</a>
-              </div>
-
-              <div class="card">
-                <h3>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="display:inline;vertical-align:-2px;margin-right:6px;color:var(--color-accent);" aria-hidden="true"><path d="M3 2h7l3 3v9H3V2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M10 2v3h3" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
-                  Programvare
-                </h3>
-                <p>Lisenser og installasjon av godkjent programvare.</p>
-                <a href="mailto:it@bedrift.no?subject=Programvareforespørsel" class="btn btn--outline" style="margin-top:var(--space-sm);font-size:0.85rem;padding:0.5rem 1rem;min-height:36px;">Be om programvare</a>
-              </div>
-            </div>
-
-            <div class="alert alert--info" style="margin-top:var(--space-md);" role="note">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7.5" stroke="#2E7D6B" stroke-width="1.4"/><path d="M9 8v5M9 6v.5" stroke="#2E7D6B" stroke-width="1.5" stroke-linecap="round"/></svg>
-              <div>Behandlingstid er normalt <strong>1–3 virkedager</strong>. Haster det? Ring IT direkte på <a href="tel:+4712345678" style="color:var(--color-accent);">+47 12 34 56 78</a>.</div>
-            </div>
-          </section>
-
-          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
-
-          <!-- PASSORD -->
-          <section id="passord" aria-labelledby="passord-heading">
-            <span class="label">Sikkerhet</span>
-            <h2 id="passord-heading">Passord og tilgang</h2>
-            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Krav og retningslinjer for passord i bedriften.</p>
-
-            <div class="content-split" style="gap:var(--space-lg);">
-              <div>
-                <h3 style="font-family:var(--font-body);font-size:1rem;margin-bottom:1rem;">Passordkrav</h3>
-                <div class="info-list" role="list">
-                  <li role="listitem">
-                    <div class="icon" aria-hidden="true">
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    Minimum <strong>12 tegn</strong>
-                  </li>
-                  <li role="listitem">
-                    <div class="icon" aria-hidden="true">
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    Minst én <strong>stor bokstav</strong>
-                  </li>
-                  <li role="listitem">
-                    <div class="icon" aria-hidden="true">
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    Minst ett <strong>tall</strong>
-                  </li>
-                  <li role="listitem">
-                    <div class="icon" aria-hidden="true">
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    Minst ett <strong>spesialtegn</strong> (!@#$%)
-                  </li>
-                  <li role="listitem">
-                    <div class="icon" aria-hidden="true">
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    Byttes hver <strong>90. dag</strong>
-                  </li>
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="net-1">
+                  Ingen internettforbindelse på kontoret
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="net-1" class="accordion-body" role="region">
+                  <p>Gjør dette i rekkefølge:</p>
+                  <ul>
+                    <li><strong>Steg 1:</strong> Sjekk at nettverkskabelen er koblet til (gul/grønn lampe lyser på porten)</li>
+                    <li><strong>Steg 2:</strong> Høyreklikk nettverksikonet nede til høyre → «Feilsøk problemer»</li>
+                    <li><strong>Steg 3:</strong> Start PC-en på nytt</li>
+                    <li><strong>Steg 4:</strong> Prøv med en annen nettverkskabel (hentes hos IT)</li>
+                    <li><strong>Steg 5:</strong> Fremdeles ingen forbindelse? Ring IT</li>
+                  </ul>
                 </div>
               </div>
 
-              <div>
-                <h3 style="font-family:var(--font-body);font-size:1rem;margin-bottom:1rem;">Husk</h3>
-                <div class="card card--accent">
-                  <p style="font-size:0.9rem;color:var(--color-muted);">Del aldri passordet ditt med andre – ikke engang IT-avdelingen. Vi vil aldri spørre om passordet ditt.</p>
-                </div>
-                <div class="card card--accent" style="margin-top:var(--space-sm);">
-                  <p style="font-size:0.9rem;color:var(--color-muted);">Bruk en passordbehandler (f.eks. Bitwarden) for å holde oversikt over passordene dine.</p>
-                </div>
-                <div class="card card--accent" style="margin-top:var(--space-sm);">
-                  <p style="font-size:0.9rem;color:var(--color-muted);">Aktiver tofaktorautentisering (2FA) på alle systemer som støtter det.</p>
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="net-2">
+                  VPN kobler ikke til hjemmefra
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="net-2" class="accordion-body" role="region">
+                  <p>CAROB AS bruker <strong>GlobalProtect VPN</strong>. Slik feilsøker du:</p>
+                  <ul>
+                    <li>Åpne GlobalProtect og klikk «Koble til»</li>
+                    <li>Gateway-adresse: <code style="background:var(--color-bg);padding:1px 6px;border-radius:3px;">vpn.carob.no</code></li>
+                    <li>Logg inn med ditt vanlige brukernavn og passord + 2FA</li>
+                    <li>Prøver du å koble til fra utlandet? Sjekk at landet ikke er blokkert – kontakt IT</li>
+                    <li>Prøv å deinstallere og reinstallere GlobalProtect (installer fra <a href="rutiner.html#programvare" style="color:var(--color-accent);">programvareportalen</a>)</li>
+                  </ul>
                 </div>
               </div>
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="net-3">
+                  Wi-Fi er tregt eller ustabilt
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="net-3" class="accordion-body" role="region">
+                  <ul>
+                    <li>Koble til nettverket <strong>CAROB-Intern</strong> (ikke gjeste-nettverket)</li>
+                    <li>Glem og koble til på nytt: Innstillinger → Nettverk → Administrer kjente nettverk → «Glem» → koble til igjen</li>
+                    <li>Bruk nettverkskabel om mulig – det er alltid mer stabilt</li>
+                    <li>Sitter du i et hjørne eller langt fra aksesspunkt? Meld fra til IT om dårlig dekning</li>
+                  </ul>
+                </div>
+              </div>
+
             </div>
           </section>
 
           <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
 
-          <!-- KONTAKT -->
+          <!-- PRINTER -->
+          <section id="printer" aria-labelledby="printer-heading">
+            <span class="label">Problem 3</span>
+            <h2 id="printer-heading">Printer</h2>
+            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Printeren skriver ikke ut, eller det er feil med utskriften?</p>
+
+            <div class="accordion" role="list">
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="pr-1">
+                  Printeren skriver ikke ut i det hele tatt
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="pr-1" class="accordion-body" role="region">
+                  <ul>
+                    <li><strong>Sjekk printerkøen:</strong> Start → Innstillinger → Bluetooth og enheter → Printere → Åpne utskriftskø. Kanseller alle ventende jobber.</li>
+                    <li><strong>Restart printerspooleren:</strong> Søk «Tjenester» → Finn «Print Spooler» → Høyreklikk → «Start på nytt»</li>
+                    <li><strong>Sjekk papir og blekk/toner:</strong> Er det papir i skuffen? Lyser det rødt på printeren?</li>
+                    <li><strong>Restart printeren:</strong> Skru av, vent 30 sekunder, skru på igjen</li>
+                    <li><strong>Reinstaller driveren:</strong> Fjern printeren og legg til på nytt via Innstillinger → Printere</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="pr-2">
+                  Papirstopp i printeren
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="pr-2" class="accordion-body" role="region">
+                  <ul>
+                    <li>Slå av printeren før du åpner dekselet</li>
+                    <li>Åpne alle deksler og finn papiret – trekk det ut i retningen papiret beveger seg (fremover)</li>
+                    <li>Sjekk at det ikke er igjen noen papirbiter – de minste bitene kan gi nye stopp</li>
+                    <li>Lukk alle deksler, skru på printeren og prøv igjen</li>
+                    <li>Unngå å legge for mye papir i skuffen – maks nivå er markert</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="pr-3">
+                  Utskriften er stripete eller fargene er gale
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="pr-3" class="accordion-body" role="region">
+                  <ul>
+                    <li>Kjør <strong>skriverens rengjøringsprogram</strong> – finns i printermenyen på skjermen på selve printeren</li>
+                    <li>Sjekk blekk-/tonernivå – lavt nivå gir stripete utskrift</li>
+                    <li>Skift toner/blekkpatron hvis den er tom – ny patron hentes hos IT-rommet (rom 302)</li>
+                    <li>Fremdeles feil? Meld fra til IT med printerens navn (står på en lapp på printeren)</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
+
+          <!-- E-POST OG TEAMS -->
+          <section id="epost" aria-labelledby="epost-heading">
+            <span class="label">Problem 4</span>
+            <h2 id="epost-heading">E-post og Teams</h2>
+            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Outlook eller Teams fungerer ikke som forventet?</p>
+
+            <div class="accordion" role="list">
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="ep-1">
+                  Outlook synkroniserer ikke / ny e-post dukker ikke opp
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="ep-1" class="accordion-body" role="region">
+                  <ul>
+                    <li>Sjekk nede til venstre i Outlook – står det «Frakoblet»? Klikk «Send/Motta» → «Arbeid tilkoblet»</li>
+                    <li>Manuell synkronisering: trykk <kbd style="background:var(--color-bg);padding:1px 6px;border-radius:3px;border:1px solid var(--color-border);">F9</kbd> eller klikk «Send/Motta alle mapper»</li>
+                    <li>Start Outlook på nytt</li>
+                    <li>Start PC-en på nytt</li>
+                    <li>Sjekk at du er koblet til VPN hvis du jobber hjemmefra</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="ep-2">
+                  Teams krasjer eller starter ikke
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="ep-2" class="accordion-body" role="region">
+                  <ul>
+                    <li>Lukk Teams helt: høyreklikk Teams-ikonet i systemstatusfeltet → «Avslutt»</li>
+                    <li>Tøm hurtigbuffer: åpne Filutforsker, gå til <code style="background:var(--color-bg);padding:1px 6px;border-radius:3px;">%appdata%\Microsoft\Teams</code> og slett innholdet i mappen <strong>Cache</strong></li>
+                    <li>Start Teams igjen</li>
+                    <li>Fungerer ikke det? Bruk Teams i nettleseren: <a href="https://teams.microsoft.com" style="color:var(--color-accent);" target="_blank" rel="noopener">teams.microsoft.com</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="ep-3">
+                  Mikrofon eller kamera fungerer ikke i Teams
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="ep-3" class="accordion-body" role="region">
+                  <ul>
+                    <li>Sjekk at Windows har gitt Teams tillatelse: Innstillinger → Personvern → Mikrofon/Kamera → slå på for Teams</li>
+                    <li>I Teams: klikk «...» → Innstillinger → Enheter – velg riktig mikrofon og kamera</li>
+                    <li>Koble ut og inn igjen USB-headset eller kamera</li>
+                    <li>Prøv å starte Teams på nytt</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
+
+          <!-- TREG PC -->
+          <section id="treg" aria-labelledby="treg-heading">
+            <span class="label">Problem 5</span>
+            <h2 id="treg-heading">Treg datamaskin</h2>
+            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">PC-en er blitt mye tregere enn den pleide? Prøv disse tiltakene.</p>
+
+            <div class="info-list" role="list">
+              <li role="listitem">
+                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">1</div>
+                <div>
+                  <strong>Start PC-en på nytt</strong>
+                  <p>Gjøres dette sjeldnere enn ukentlig? En omstart rydder minnet og installerer ventende oppdateringer.</p>
+                </div>
+              </li>
+              <li role="listitem">
+                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">2</div>
+                <div>
+                  <strong>Sjekk hva som bruker ressurser</strong>
+                  <p>Trykk <kbd style="background:var(--color-bg);padding:1px 6px;border-radius:3px;border:1px solid var(--color-border);">Ctrl+Shift+Esc</kbd> → Oppgavebehandling → Sorter på CPU/minne. Ser du noe uvanlig? Ta skjermbilde og send til IT.</p>
+                </div>
+              </li>
+              <li role="listitem">
+                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">3</div>
+                <div>
+                  <strong>Frigjør lagringsplass</strong>
+                  <p>Åpne Utforsker → Denne PC-en. Er C-disken under 10 % ledig? Tøm papirkurven og flytt store filer til SharePoint/filserveren.</p>
+                </div>
+              </li>
+              <li role="listitem">
+                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">4</div>
+                <div>
+                  <strong>Reduser antall oppstartsprogrammer</strong>
+                  <p>Oppgavebehandling → fanen «Oppstart» → Deaktiver programmer du ikke trenger med en gang PC-en starter.</p>
+                </div>
+              </li>
+              <li role="listitem">
+                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">5</div>
+                <div>
+                  <strong>Installer Windows-oppdateringer</strong>
+                  <p>Innstillinger → Windows Update → «Se etter oppdateringer». Oppdateringer inneholder ofte ytelsesforbedringer.</p>
+                </div>
+              </li>
+              <li role="listitem">
+                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">6</div>
+                <div>
+                  <strong>Fremdeles treg? Kontakt IT</strong>
+                  <p>PC-en kan ha for lite RAM eller en skadet harddisk. IT-avdelingen kan kjøre diagnostikk.</p>
+                </div>
+              </li>
+            </div>
+          </section>
+
+          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
+
+          <!-- KONTAKT IT -->
           <section id="kontakt" aria-labelledby="kontakt-heading">
-            <span class="label">Hjelp</span>
+            <span class="label">Trenger du mer hjelp?</span>
             <h2 id="kontakt-heading">Kontakt IT-avdelingen</h2>
-            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Fant du ikke svaret? Ta kontakt med oss direkte.</p>
+            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Løste ikke veiledningen problemet? Vi hjelper deg.</p>
 
             <div class="content-split" style="gap:var(--space-lg);">
               <div class="contact-box">
-                <h3>Kontaktinformasjon</h3>
+                <h3>IT-avdelingen – CAROB AS</h3>
                 <div class="contact-row">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4h12a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.4"/><path d="M1 5l7 4.5L15 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-                  <span>E-post: <a href="mailto:it@bedrift.no">it@bedrift.no</a></span>
+                  <span>E-post: <a href="mailto:it@carob.no">it@carob.no</a></span>
                 </div>
                 <div class="contact-row">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 3h2l1 3-1.5 1.5a9 9 0 0 0 3 3L9 9l3 1v2c0 1-1 2-2 2C5 14 2 9 2 5c0-1 1-2 1-2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
@@ -364,17 +396,19 @@
               </div>
 
               <div>
-                <div class="alert alert--info" role="note">
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7.5" stroke="#2E7D6B" stroke-width="1.4"/><path d="M9 8v5M9 6v.5" stroke="#2E7D6B" stroke-width="1.5" stroke-linecap="round"/></svg>
-                  <div>For <strong>akutte problemer</strong> utenfor åpningstid, ring vakttelefonen: <a href="tel:+4798765432" style="color:var(--color-accent);font-weight:600;">+47 98 76 54 32</a></div>
+                <div class="alert alert--warning" role="note">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 2L1.5 15.5h15L9 2z" stroke="#92400E" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 7v4M9 13v.5" stroke="#92400E" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  <div>Akutt problem utenfor åpningstid? Ring vakttelefonen: <a href="tel:+4798765432" style="color:#92400E;font-weight:700;">+47 98 76 54 32</a></div>
                 </div>
+
                 <div class="card" style="margin-top:var(--space-sm);">
-                  <h3>Når du kontakter oss, ha klart:</h3>
+                  <h3>Ha klart når du ringer/skriver:</h3>
                   <ul style="padding-left:1.2rem;list-style:disc;margin-top:0.5rem;font-size:0.9rem;color:var(--color-muted);">
-                    <li>Ditt fulle navn og avdeling</li>
-                    <li>Beskrivelse av problemet</li>
-                    <li>Feilmeldinger du har sett</li>
-                    <li>Hva du forsøkte da problemet oppsto</li>
+                    <li>Fullt navn og avdeling</li>
+                    <li>Hvilken PC/enhet det gjelder (serienummer på bunnen)</li>
+                    <li>Nøyaktig feilmelding (ta skjermbilde)</li>
+                    <li>Hva du gjorde da feilen oppsto</li>
+                    <li>Hva du allerede har prøvd</li>
                   </ul>
                 </div>
               </div>
@@ -389,11 +423,11 @@
   <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo" style="color:#fff;" aria-label="AnsattPortalen forsiden">
-          <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect width="28" height="28" rx="6" fill="#2E7D6B"/><rect x="7" y="8" width="14" height="2.5" rx="1.25" fill="white"/><rect x="7" y="12.75" width="10" height="2.5" rx="1.25" fill="white"/><rect x="7" y="17.5" width="12" height="2.5" rx="1.25" fill="white"/></svg>
-          AnsattPortalen
+        <a href="index.html" class="nav-logo" style="color:#fff;" aria-label="CAROB AS forsiden">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect width="28" height="28" rx="6" fill="#2E7D6B"/><text x="6" y="20" font-family="serif" font-size="13" font-weight="700" fill="white">C</text></svg>
+          CAROB AS
         </a>
-        <p>Intern ressursnettside for ansatte.</p>
+        <p>Intern ansattportal for CAROB AS.</p>
       </div>
       <div class="footer-col">
         <h4>Seksjoner</h4>
@@ -401,52 +435,44 @@
           <li><a href="index.html">Hjem</a></li>
           <li><a href="it-support.html">IT-støtte</a></li>
           <li><a href="hms.html">HMS</a></li>
-          <li><a href="rutiner.html">Rutiner</a></li>
+          <li><a href="rutiner.html">Systemer</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Kontakt</h4>
+        <h4>Kontakt IT</h4>
         <ul>
-          <li><a href="mailto:it@bedrift.no">it@bedrift.no</a></li>
+          <li><a href="mailto:it@carob.no">it@carob.no</a></li>
           <li><a href="tel:+4712345678">+47 12 34 56 78</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 AnsattPortalen. Kun for intern bruk.</span>
+      <span>© 2025 CAROB AS. Kun for intern bruk.</span>
       <span>Laget av Carmen Maria Kleijnen &amp; Robin Finnestad</span>
     </div>
   </footer>
 
   <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
-
   <script>
-    // Mobil meny
     const toggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
     toggle.addEventListener('click', () => {
       const open = navLinks.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open);
     });
-
-    // Accordion
     document.querySelectorAll('.accordion-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const expanded = btn.getAttribute('aria-expanded') === 'true';
-        // Lukk alle
         document.querySelectorAll('.accordion-btn').forEach(b => {
           b.setAttribute('aria-expanded', 'false');
           document.getElementById(b.getAttribute('aria-controls')).classList.remove('open');
         });
-        // Åpne klikket hvis den var lukket
         if (!expanded) {
           btn.setAttribute('aria-expanded', 'true');
           document.getElementById(btn.getAttribute('aria-controls')).classList.add('open');
         }
       });
     });
-
-    // Sidebar aktiv lenke ved scroll
     const sections = document.querySelectorAll('section[id]');
     const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
     const observer = new IntersectionObserver(entries => {
@@ -460,6 +486,5 @@
     }, { rootMargin: '-30% 0px -60% 0px' });
     sections.forEach(s => observer.observe(s));
   </script>
-
 </body>
 </html>

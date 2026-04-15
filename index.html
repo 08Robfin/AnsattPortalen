@@ -3,34 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AnsattPortalen – intern ressursnettside for ansatte. Finn IT-støtte, HMS-informasjon, rutiner og interne ressurser." />
-  <title>AnsattPortalen – Hjem</title>
+  <meta name="description" content="CAROB AS – Ansattportal. Finn IT-brukerstøtte, HMS-lovverk og systemhjelp." />
+  <title>CAROB AS – Ansattportal</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <a href="#main" class="skip-link">Hopp til innhold</a>
 
-  <!-- NAVIGASJON -->
   <nav class="site-nav" aria-label="Hovednavigasjon">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="AnsattPortalen – til forsiden">
+      <a href="index.html" class="nav-logo" aria-label="CAROB AS – til forsiden">
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
           <rect width="28" height="28" rx="6" fill="#2E7D6B"/>
-          <rect x="7" y="8" width="14" height="2.5" rx="1.25" fill="white"/>
-          <rect x="7" y="12.75" width="10" height="2.5" rx="1.25" fill="white"/>
-          <rect x="7" y="17.5" width="12" height="2.5" rx="1.25" fill="white"/>
+          <text x="6" y="20" font-family="serif" font-size="13" font-weight="700" fill="white">C</text>
         </svg>
-        AnsattPortalen
+        CAROB AS
       </a>
-
       <ul class="nav-links" role="list">
         <li><a href="index.html" aria-current="page">Hjem</a></li>
         <li><a href="it-support.html">IT-støtte</a></li>
         <li><a href="hms.html">HMS</a></li>
-        <li><a href="rutiner.html">Rutiner</a></li>
+        <li><a href="rutiner.html">Systemer</a></li>
       </ul>
-
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Åpne meny">
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
           <rect x="2" y="5" width="18" height="2" rx="1" fill="currentColor"/>
@@ -41,40 +36,39 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <header class="hero" role="banner">
     <div class="hero-inner">
       <div class="hero-text">
-        <span class="label">Intern ressursportal</span>
-        <h1>Alt du trenger,<br>på ett sted.</h1>
-        <p>AnsattPortalen er din digitale inngang til IT-støtte, HMS-informasjon, interne rutiner og bedriftens ressurser.</p>
+        <span class="label">CAROB AS – Intern ansattportal</span>
+        <h1>Hjelp når du trenger det.</h1>
+        <p>Her finner du IT-brukerstøtte, veiledning i HMS-lovverk og hjelp til å løse vanlige problemer i arbeidshverdagen.</p>
         <div class="hero-actions">
-          <a href="it-support.html" class="btn btn--accent">Gå til IT-støtte</a>
-          <a href="hms.html" class="btn btn--outline" style="border-color:rgba(255,255,255,0.3);color:#fff;">HMS-informasjon</a>
+          <a href="it-support.html" class="btn btn--accent">IT-brukerstøtte</a>
+          <a href="hms.html" class="btn btn--outline" style="border-color:rgba(255,255,255,0.3);color:#fff;">HMS-lovverk</a>
         </div>
       </div>
 
       <aside class="hero-card" aria-label="Hurtiglenker">
-        <h3>Hurtiglenker</h3>
-        <nav class="hero-card-links" aria-label="Hurtiglenker navigasjon">
-          <a href="it-support.html#faq">
-            Vanlige IT-spørsmål
+        <h3>Rask hjelp</h3>
+        <nav class="hero-card-links" aria-label="Hurtiglenker">
+          <a href="it-support.html#passord">
+            Glemt passord / låst konto
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-          <a href="it-support.html#bestilling">
-            Bestill utstyr / tilgang
+          <a href="it-support.html#nettverk">
+            Problemer med nettverk / VPN
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="it-support.html#printer">
+            Printer fungerer ikke
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="hms.html#aml">
+            Arbeidsmiljøloven – dine rettigheter
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a href="hms.html#varsling">
-            Meld avvik / ulykke
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="rutiner.html">
-            Interne rutiner
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="it-support.html#kontakt">
-            Kontakt IT-avdelingen
+            Meld avvik / nestenulykke
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </nav>
@@ -82,15 +76,14 @@
     </div>
   </header>
 
-  <!-- HOVEDINNHOLD -->
   <main id="main">
 
-    <!-- SNARVEISKORT -->
+    <!-- SEKSJONER -->
     <section class="shortcuts section" aria-labelledby="shortcuts-heading">
       <div class="container">
         <div class="section-header">
-          <span class="label">Seksjoner</span>
-          <h2 id="shortcuts-heading">Hva leter du etter?</h2>
+          <span class="label">Hva trenger du hjelp med?</span>
+          <h2 id="shortcuts-heading">Velg en kategori</h2>
         </div>
         <div class="shortcuts-grid" role="list">
 
@@ -98,224 +91,221 @@
             <div class="shortcut-icon" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 17h6M10 15v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
             </div>
-            <h3>IT-støtte</h3>
-            <p>Feilsøking, tilganger, utstyr og vanlige spørsmål.</p>
+            <h3>IT-brukerstøtte</h3>
+            <p>Fiks vanlige feil selv – passord, nettverk, printer, e-post og mer.</p>
           </a>
 
           <a href="hms.html" class="shortcut-card" role="listitem">
             <div class="shortcut-icon" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 5.5v5c0 4 3 7 7 8 4-1 7-4 7-8v-5L10 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-            <h3>HMS</h3>
-            <p>Helse, miljø og sikkerhet. Varsling av avvik og rutiner.</p>
+            <h3>HMS-lovverk</h3>
+            <p>Arbeidsmiljøloven, internkontroll og dine rettigheter som ansatt.</p>
           </a>
 
           <a href="rutiner.html" class="shortcut-card" role="listitem">
             <div class="shortcut-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 3h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.6"/><path d="M7 7h6M7 10h6M7 13h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="2" width="14" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 7h6M7 10h6M7 13h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
             </div>
-            <h3>Rutiner</h3>
-            <p>Interne prosedyrer, retningslinjer og maler.</p>
+            <h3>IT-systemer</h3>
+            <p>Oversikt over programmene og plattformene vi bruker i CAROB AS.</p>
           </a>
 
           <a href="it-support.html#kontakt" class="shortcut-card" role="listitem">
             <div class="shortcut-icon" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.6"/><path d="M2 6l8 5 8-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
             </div>
-            <h3>Kontakt oss</h3>
-            <p>Ta kontakt med IT-avdelingen eller HR direkte.</p>
+            <h3>Kontakt IT</h3>
+            <p>Løste du det ikke selv? Send melding til IT-avdelingen.</p>
           </a>
 
         </div>
       </div>
     </section>
 
-    <!-- DRIFTSSTATUS -->
-    <section class="section" aria-labelledby="status-heading" style="padding-top:0;">
+    <!-- VANLIGSTE PROBLEMER -->
+    <section class="section" style="padding-top:0;" aria-labelledby="topproblemer-heading">
       <div class="container">
         <div class="content-split">
           <div>
-            <span class="label">Driftsstatus</span>
-            <h2 id="status-heading">Systemstatus</h2>
-            <p class="text-muted" style="margin-top:0.5rem;margin-bottom:1.5rem;">Oversikt over tilgjengelighet på interne systemer og tjenester.</p>
+            <span class="label">Brukerstøtte</span>
+            <h2 id="topproblemer-heading">Vanligste IT-problemer</h2>
+            <p class="text-muted" style="margin-top:0.5rem;margin-bottom:1.5rem;">De fem problemene IT-avdelingen får flest henvendelser om – med direkte lenke til løsning.</p>
 
-            <div class="table-wrap">
-              <table>
-                <caption class="sr-only">Systemstatus oversikt</caption>
-                <thead>
-                  <tr>
-                    <th scope="col">System</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Sist oppdatert</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>E-post (Outlook)</td>
-                    <td><span class="status-badge status-badge--ok" role="status">Operativ</span></td>
-                    <td>I dag 08:00</td>
-                  </tr>
-                  <tr>
-                    <td>VPN-tilgang</td>
-                    <td><span class="status-badge status-badge--ok" role="status">Operativ</span></td>
-                    <td>I dag 08:00</td>
-                  </tr>
-                  <tr>
-                    <td>Intern filserver</td>
-                    <td><span class="status-badge status-badge--warning" role="status">Begrenset</span></td>
-                    <td>I dag 07:30</td>
-                  </tr>
-                  <tr>
-                    <td>Teams / videokonferanse</td>
-                    <td><span class="status-badge status-badge--ok" role="status">Operativ</span></td>
-                    <td>I dag 08:00</td>
-                  </tr>
-                  <tr>
-                    <td>HR-system (Visma)</td>
-                    <td><span class="status-badge status-badge--ok" role="status">Operativ</span></td>
-                    <td>I går 16:00</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="info-list" role="list">
+              <li role="listitem">
+                <div class="icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="4" y="7" width="8" height="7" rx="1" stroke="currentColor" stroke-width="1.4"/><path d="M6 7V5a2 2 0 0 1 4 0v2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                </div>
+                <div>
+                  <strong><a href="it-support.html#passord" style="color:var(--color-primary);text-decoration:underline;text-underline-offset:2px;">Glemt passord eller låst konto</a></strong>
+                  <p>Slik tilbakestiller du passordet ditt på under 2 minutter.</p>
+                </div>
+              </li>
+              <li role="listitem">
+                <div class="icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.4"/><path d="M5 8a3 3 0 0 1 6 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="8" cy="11" r="1" fill="currentColor"/></svg>
+                </div>
+                <div>
+                  <strong><a href="it-support.html#nettverk" style="color:var(--color-primary);text-decoration:underline;text-underline-offset:2px;">Ingen internettforbindelse / VPN</a></strong>
+                  <p>Steg-for-steg feilsøking av nettverksproblemer.</p>
+                </div>
+              </li>
+              <li role="listitem">
+                <div class="icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="5" width="12" height="8" rx="1" stroke="currentColor" stroke-width="1.4"/><path d="M5 5V4a3 3 0 0 1 6 0v1" stroke="currentColor" stroke-width="1.4"/><path d="M5 9h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                </div>
+                <div>
+                  <strong><a href="it-support.html#printer" style="color:var(--color-primary);text-decoration:underline;text-underline-offset:2px;">Printer skriver ikke ut</a></strong>
+                  <p>Sjekkliste for de vanligste printerprob­lemene.</p>
+                </div>
+              </li>
+              <li role="listitem">
+                <div class="icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4h12a1 1 0 0 1 1 1v7H1V5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.4"/><path d="M1 11l4-3 3 2 3-3 4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <strong><a href="it-support.html#epost" style="color:var(--color-primary);text-decoration:underline;text-underline-offset:2px;">E-post fungerer ikke</a></strong>
+                  <p>Outlook krasjer, synkroniserer ikke eller sender ikke.</p>
+                </div>
+              </li>
+              <li role="listitem">
+                <div class="icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="4" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M5 4V3a3 3 0 0 1 6 0v1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                </div>
+                <div>
+                  <strong><a href="it-support.html#treg" style="color:var(--color-primary);text-decoration:underline;text-underline-offset:2px;">Treg datamaskin</a></strong>
+                  <p>Enkle tiltak som gjør PC-en raskere igjen.</p>
+                </div>
+              </li>
             </div>
           </div>
 
           <div>
-            <span class="label">Beskjeder</span>
-            <h2 id="notices-heading">Driftsmeldinger</h2>
-            <p class="text-muted" style="margin-top:0.5rem;margin-bottom:1.5rem;">Planlagt vedlikehold og aktive henvendelser.</p>
+            <span class="label">HMS</span>
+            <h2 id="hms-oversikt-heading">Viktige lover og regler</h2>
+            <p class="text-muted" style="margin-top:0.5rem;margin-bottom:1.5rem;">De lovene du som ansatt i CAROB AS må kjenne til.</p>
 
-            <div class="alert alert--warning" role="alert">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 2L1.5 15.5h15L9 2z" stroke="#92400E" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 7v4M9 13v.5" stroke="#92400E" stroke-width="1.5" stroke-linecap="round"/></svg>
-              <div>
-                <strong>Planlagt vedlikehold</strong> – Filserveren vil være nede lørdag 19. april kl. 22:00–02:00.
-              </div>
+            <div class="card card--accent" style="margin-bottom:var(--space-sm);">
+              <h3><a href="hms.html#aml" style="color:var(--color-primary);text-decoration:underline;text-underline-offset:2px;">Arbeidsmiljøloven (AML)</a></h3>
+              <p>Regulerer arbeidsforholdet, arbeidstid, vern mot diskriminering og retten til et fullt forsvarlig arbeidsmiljø.</p>
             </div>
-
-            <div class="info-list" role="list" style="margin-top:1rem;">
-              <li role="listitem">
-                <div class="icon" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.4"/><path d="M8 5v3.5l2 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-                </div>
-                <div>
-                  <strong>14. april</strong> – Nye passordkrav trer i kraft. Minimum 12 tegn påkrevd.
-                </div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.4"/><path d="M8 5v3.5l2 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-                </div>
-                <div>
-                  <strong>7. april</strong> – Oppdatert HMS-håndbok er nå tilgjengelig.
-                </div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.4"/><path d="M8 5v3.5l2 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-                </div>
-                <div>
-                  <strong>1. april</strong> – Ny ansatt: Velkommen til Maria Johansen i økonomiavdelingen!
-                </div>
-              </li>
+            <div class="card card--accent" style="margin-bottom:var(--space-sm);">
+              <h3><a href="hms.html#internkontroll" style="color:var(--color-primary);text-decoration:underline;text-underline-offset:2px;">Internkontrollforskriften</a></h3>
+              <p>Krav om systematisk HMS-arbeid i alle virksomheter. Bedriften skal dokumentere og følge opp risikoer.</p>
+            </div>
+            <div class="card card--accent" style="margin-bottom:var(--space-sm);">
+              <h3><a href="hms.html#gdpr" style="color:var(--color-primary);text-decoration:underline;text-underline-offset:2px;">GDPR / Personopplysningsloven</a></h3>
+              <p>Regler for behandling av personopplysninger – gjelder deg som ansatt og data vi håndterer.</p>
+            </div>
+            <div class="card card--accent">
+              <h3><a href="hms.html#varsling" style="color:var(--color-primary);text-decoration:underline;text-underline-offset:2px;">Varslingsplikten</a></h3>
+              <p>Du har rett og plikt til å varsle om kritikkverdige forhold. Bedriften skal ikke gjengjelde varsling.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- NYTTIGE RESSURSER -->
-    <section class="section" style="background:var(--color-surface);border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);" aria-labelledby="resources-heading">
+    <!-- DRIFTSSTATUS -->
+    <section class="section" style="background:var(--color-surface);border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);" aria-labelledby="status-heading">
       <div class="container">
         <div class="section-header text-center">
-          <span class="label">Ressurser</span>
-          <h2 id="resources-heading">Nyttige dokumenter og lenker</h2>
-          <p class="text-muted">Ofte brukte skjemaer, håndbøker og retningslinjer.</p>
+          <span class="label">Systemer</span>
+          <h2 id="status-heading">Driftsstatus – CAROB AS</h2>
+          <p class="text-muted">Sanntidsoversikt over bedriftens IT-systemer.</p>
         </div>
 
-        <div class="shortcuts-grid" style="margin-top:var(--space-lg);">
-          <div class="card card--accent">
-            <h3>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="display:inline;vertical-align:-2px;margin-right:6px;" aria-hidden="true"><path d="M3 2h7l3 3v9H3V2z" stroke="var(--color-accent)" stroke-width="1.4" stroke-linejoin="round"/><path d="M10 2v3h3" stroke="var(--color-accent)" stroke-width="1.4" stroke-linejoin="round"/></svg>
-              HMS-håndbok 2025
-            </h3>
-            <p>Gjeldende regler og prosedyrer for helse, miljø og sikkerhet.</p>
-            <a href="hms.html" class="btn btn--outline" style="margin-top:var(--space-sm);font-size:0.85rem;padding:0.5rem 1rem;min-height:36px;">Les mer</a>
-          </div>
+        <div class="table-wrap" style="margin-top:var(--space-lg);">
+          <table>
+            <caption class="sr-only">Driftsstatus for CAROB AS sine IT-systemer</caption>
+            <thead>
+              <tr>
+                <th scope="col">System</th>
+                <th scope="col">Status</th>
+                <th scope="col">Sist sjekket</th>
+                <th scope="col">Ansvarlig</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Microsoft 365 (Outlook, Teams)</td>
+                <td><span class="status-badge status-badge--ok" role="status">Operativ</span></td>
+                <td>I dag 08:00</td>
+                <td>IT-avdelingen</td>
+              </tr>
+              <tr>
+                <td>VPN (GlobalProtect)</td>
+                <td><span class="status-badge status-badge--ok" role="status">Operativ</span></td>
+                <td>I dag 08:00</td>
+                <td>IT-avdelingen</td>
+              </tr>
+              <tr>
+                <td>Filserver / SharePoint</td>
+                <td><span class="status-badge status-badge--warning" role="status">Begrenset</span></td>
+                <td>I dag 07:30</td>
+                <td>IT-avdelingen</td>
+              </tr>
+              <tr>
+                <td>ERP-system (Visma)</td>
+                <td><span class="status-badge status-badge--ok" role="status">Operativ</span></td>
+                <td>I dag 08:00</td>
+                <td>Økonomi / IT</td>
+              </tr>
+              <tr>
+                <td>HR-portal</td>
+                <td><span class="status-badge status-badge--ok" role="status">Operativ</span></td>
+                <td>I går 16:00</td>
+                <td>HR / IT</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-          <div class="card card--accent">
-            <h3>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="display:inline;vertical-align:-2px;margin-right:6px;" aria-hidden="true"><path d="M3 2h7l3 3v9H3V2z" stroke="var(--color-accent)" stroke-width="1.4" stroke-linejoin="round"/><path d="M10 2v3h3" stroke="var(--color-accent)" stroke-width="1.4" stroke-linejoin="round"/></svg>
-              IT-retningslinjer
-            </h3>
-            <p>Regler for bruk av bedriftens IT-utstyr og systemer.</p>
-            <a href="it-support.html" class="btn btn--outline" style="margin-top:var(--space-sm);font-size:0.85rem;padding:0.5rem 1rem;min-height:36px;">Les mer</a>
-          </div>
-
-          <div class="card card--accent">
-            <h3>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="display:inline;vertical-align:-2px;margin-right:6px;" aria-hidden="true"><path d="M3 2h7l3 3v9H3V2z" stroke="var(--color-accent)" stroke-width="1.4" stroke-linejoin="round"/><path d="M10 2v3h3" stroke="var(--color-accent)" stroke-width="1.4" stroke-linejoin="round"/></svg>
-              Ansattehåndbok
-            </h3>
-            <p>Alt om ansettelsesforhold, permisjoner og rettigheter.</p>
-            <a href="rutiner.html" class="btn btn--outline" style="margin-top:var(--space-sm);font-size:0.85rem;padding:0.5rem 1rem;min-height:36px;">Les mer</a>
-          </div>
-
-          <div class="card card--accent">
-            <h3>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="display:inline;vertical-align:-2px;margin-right:6px;" aria-hidden="true"><path d="M3 2h7l3 3v9H3V2z" stroke="var(--color-accent)" stroke-width="1.4" stroke-linejoin="round"/><path d="M10 2v3h3" stroke="var(--color-accent)" stroke-width="1.4" stroke-linejoin="round"/></svg>
-              Avviksskjema
-            </h3>
-            <p>Meld fra om uønskede hendelser, ulykker eller nestenulykker.</p>
-            <a href="hms.html#varsling" class="btn btn--outline" style="margin-top:var(--space-sm);font-size:0.85rem;padding:0.5rem 1rem;min-height:36px;">Meld avvik</a>
-          </div>
+        <div class="alert alert--warning" style="margin-top:var(--space-md);" role="alert">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 2L1.5 15.5h15L9 2z" stroke="#92400E" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 7v4M9 13v.5" stroke="#92400E" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <div><strong>Planlagt vedlikehold:</strong> Filserveren vil være utilgjengelig lørdag 19. april kl. 22:00–02:00. Lagre lokalt i mellomtiden.</div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- FOTER -->
   <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo" style="color:#fff;" aria-label="AnsattPortalen forsiden">
-          <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect width="28" height="28" rx="6" fill="#2E7D6B"/><rect x="7" y="8" width="14" height="2.5" rx="1.25" fill="white"/><rect x="7" y="12.75" width="10" height="2.5" rx="1.25" fill="white"/><rect x="7" y="17.5" width="12" height="2.5" rx="1.25" fill="white"/></svg>
-          AnsattPortalen
+        <a href="index.html" class="nav-logo" style="color:#fff;" aria-label="CAROB AS forsiden">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect width="28" height="28" rx="6" fill="#2E7D6B"/><text x="6" y="20" font-family="serif" font-size="13" font-weight="700" fill="white">C</text></svg>
+          CAROB AS
         </a>
-        <p>Intern ressursnettside for ansatte. Her finner du IT-støtte, HMS-informasjon og interne rutiner.</p>
+        <p>Intern ansattportal – IT-brukerstøtte og HMS-lovverk for ansatte i CAROB AS.</p>
       </div>
-
       <div class="footer-col">
         <h4>Seksjoner</h4>
         <ul>
           <li><a href="index.html">Hjem</a></li>
           <li><a href="it-support.html">IT-støtte</a></li>
           <li><a href="hms.html">HMS</a></li>
-          <li><a href="rutiner.html">Rutiner</a></li>
+          <li><a href="rutiner.html">Systemer</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
-        <h4>Kontakt</h4>
+        <h4>Kontakt IT</h4>
         <ul>
-          <li><a href="mailto:it@bedrift.no">it@bedrift.no</a></li>
+          <li><a href="mailto:it@carob.no">it@carob.no</a></li>
           <li><a href="tel:+4712345678">+47 12 34 56 78</a></li>
           <li><a href="hms.html#varsling">Meld avvik</a></li>
         </ul>
       </div>
     </div>
-
     <div class="footer-bottom">
-      <span>© 2025 AnsattPortalen. Kun for intern bruk.</span>
+      <span>© 2025 CAROB AS. Kun for intern bruk.</span>
       <span>Laget av Carmen Maria Kleijnen &amp; Robin Finnestad</span>
     </div>
   </footer>
 
-  <!-- SR-only hjelpeklasse -->
   <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
-
   <script>
-    // Mobil meny toggle
     const toggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
     toggle.addEventListener('click', () => {
@@ -323,6 +313,5 @@
       toggle.setAttribute('aria-expanded', open);
     });
   </script>
-
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="HMS – helse, miljø og sikkerhet. Retningslinjer, varsling av avvik og nødprosedyrer for ansatte." />
-  <title>HMS – AnsattPortalen</title>
+  <meta name="description" content="HMS-lovverk for ansatte i CAROB AS – Arbeidsmiljøloven, internkontroll, GDPR og varsling." />
+  <title>HMS-lovverk – CAROB AS</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -13,20 +13,18 @@
 
   <nav class="site-nav" aria-label="Hovednavigasjon">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="AnsattPortalen – til forsiden">
+      <a href="index.html" class="nav-logo" aria-label="CAROB AS – til forsiden">
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
           <rect width="28" height="28" rx="6" fill="#2E7D6B"/>
-          <rect x="7" y="8" width="14" height="2.5" rx="1.25" fill="white"/>
-          <rect x="7" y="12.75" width="10" height="2.5" rx="1.25" fill="white"/>
-          <rect x="7" y="17.5" width="12" height="2.5" rx="1.25" fill="white"/>
+          <text x="6" y="20" font-family="serif" font-size="13" font-weight="700" fill="white">C</text>
         </svg>
-        AnsattPortalen
+        CAROB AS
       </a>
       <ul class="nav-links" role="list">
         <li><a href="index.html">Hjem</a></li>
         <li><a href="it-support.html">IT-støtte</a></li>
         <li><a href="hms.html" aria-current="page">HMS</a></li>
-        <li><a href="rutiner.html">Rutiner</a></li>
+        <li><a href="rutiner.html">Systemer</a></li>
       </ul>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Åpne meny">
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
@@ -43,11 +41,11 @@
       <nav aria-label="Brødsmule" class="breadcrumb">
         <a href="index.html">Hjem</a>
         <span aria-hidden="true">›</span>
-        <span aria-current="page">HMS</span>
+        <span aria-current="page">HMS-lovverk</span>
       </nav>
       <span class="label">Helse, miljø og sikkerhet</span>
-      <h1>HMS</h1>
-      <p>Retningslinjer, prosedyrer og ressurser for et trygt og godt arbeidsmiljø.</p>
+      <h1>HMS-lovverk</h1>
+      <p>Lover og regler som gjelder deg som ansatt i CAROB AS – forklart på et forståelig språk.</p>
     </div>
   </header>
 
@@ -55,321 +53,359 @@
     <div class="container section">
       <div class="page-layout">
 
-        <!-- SIDEBAR -->
         <aside class="sidebar" aria-label="Innholdsfortegnelse">
           <nav class="sidebar-nav">
-            <h4>På denne siden</h4>
+            <h4>Lovverk og regler</h4>
             <ul>
-              <li><a href="#om-hms" class="active">Om HMS</a></li>
-              <li><a href="#varsling">Meld avvik</a></li>
-              <li><a href="#nodprosedyrer">Nødprosedyrer</a></li>
-              <li><a href="#arbeidsmiljo">Arbeidsmiljø</a></li>
+              <li><a href="#aml" class="active">Arbeidsmiljøloven</a></li>
+              <li><a href="#internkontroll">Internkontrollforskriften</a></li>
+              <li><a href="#gdpr">GDPR og personvern</a></li>
+              <li><a href="#varsling">Varslingsplikten</a></li>
+              <li><a href="#avvik">Meld avvik</a></li>
               <li><a href="#verneombud">Verneombud</a></li>
             </ul>
           </nav>
         </aside>
 
-        <!-- INNHOLD -->
         <div class="main-content">
 
-          <!-- OM HMS -->
-          <section id="om-hms" aria-labelledby="om-hms-heading">
-            <span class="label">Oversikt</span>
-            <h2 id="om-hms-heading">Om HMS-arbeidet</h2>
-            <p style="margin-top:0.5rem;">Bedriften er forpliktet til å sikre et trygt, sunt og inkluderende arbeidsmiljø for alle ansatte. HMS-arbeidet er forankret i internkontrollforskriften og arbeidsmiljøloven.</p>
+          <!-- ARBEIDSMILJØLOVEN -->
+          <section id="aml" aria-labelledby="aml-heading">
+            <span class="label">Lov av 17. juni 2005 nr. 62</span>
+            <h2 id="aml-heading">Arbeidsmiljøloven (AML)</h2>
+            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Arbeidsmiljøloven er den viktigste loven for deg som ansatt. Den regulerer alt fra arbeidstid og oppsigelsesvern til krav om et forsvarlig arbeidsmiljø.</p>
 
-            <div class="shortcuts-grid" style="margin-top:var(--space-lg);grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
-              <div class="card card--accent">
-                <div class="shortcut-icon" style="margin-bottom:0.75rem;" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 5.5v5c0 4 3 7 7 8 4-1 7-4 7-8v-5L10 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-                </div>
-                <h3>Trygt arbeidsmiljø</h3>
-                <p>Nulltoleranse for trakassering og diskriminering.</p>
-              </div>
-              <div class="card card--accent">
-                <div class="shortcut-icon" style="margin-bottom:0.75rem;" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M10 6v4.5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-                </div>
-                <h3>Forebygging</h3>
-                <p>Regelmessige risikovurderinger og vernerunder.</p>
-              </div>
-              <div class="card card--accent">
-                <div class="shortcut-icon" style="margin-bottom:0.75rem;" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2v4M10 14v4M2 10h4M14 10h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
-                </div>
-                <h3>Opplæring</h3>
-                <p>Alle ansatte gjennomfører HMS-opplæring ved ansettelse.</p>
-              </div>
-            </div>
-
-            <div class="alert alert--info" style="margin-top:var(--space-lg);" role="note">
+            <div class="alert alert--info" role="note" style="margin-bottom:var(--space-lg);">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7.5" stroke="#2E7D6B" stroke-width="1.4"/><path d="M9 8v5M9 6v.5" stroke="#2E7D6B" stroke-width="1.5" stroke-linecap="round"/></svg>
-              <div>HMS-håndboken er oppdatert <strong>7. april 2025</strong>. Alle ansatte oppfordres til å lese gjennom endringene.</div>
-            </div>
-          </section>
-
-          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
-
-          <!-- VARSLING / AVVIK -->
-          <section id="varsling" aria-labelledby="varsling-heading">
-            <span class="label">Rapportering</span>
-            <h2 id="varsling-heading">Meld avvik og ulykker</h2>
-            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Alle hendelser, nestenulykker og uønskede situasjoner skal meldes. Dette er avgjørende for å forbedre sikkerheten på arbeidsplassen.</p>
-
-            <div class="alert alert--warning" role="alert" style="margin-bottom:var(--space-md);">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 2L1.5 15.5h15L9 2z" stroke="#92400E" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 7v4M9 13v.5" stroke="#92400E" stroke-width="1.5" stroke-linecap="round"/></svg>
-              <div><strong>Ved alvorlig ulykke eller fare:</strong> Ring nødnummer <a href="tel:110" style="color:#92400E;font-weight:700;">110 (brann)</a>, <a href="tel:112" style="color:#92400E;font-weight:700;">112 (politi)</a> eller <a href="tel:113" style="color:#92400E;font-weight:700;">113 (ambulanse)</a> umiddelbart.</div>
+              <div>Loven gjelder <strong>alle ansatte i CAROB AS</strong>, uavhengig av stillingstype, ansettelsesform eller arbeidstid.</div>
             </div>
 
-            <h3 style="font-family:var(--font-body);font-size:1rem;margin-bottom:1rem;">Hva skal meldes?</h3>
-            <div class="info-list" role="list" style="margin-bottom:var(--space-lg);">
-              <li role="listitem">
-                <div class="icon" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L1 12h12L7 1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 5.5v3M7 10v.3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-                </div>
-                <div><strong>Arbeidsulykker</strong> – Skader som skjer på jobb eller arbeidsreise</div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L1 12h12L7 1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 5.5v3M7 10v.3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-                </div>
-                <div><strong>Nestenulykker</strong> – Situasjoner som kunne ført til skade</div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L1 12h12L7 1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 5.5v3M7 10v.3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-                </div>
-                <div><strong>Farlige forhold</strong> – Defekt utstyr, glatte gulv, dårlig belysning osv.</div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L1 12h12L7 1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 5.5v3M7 10v.3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-                </div>
-                <div><strong>Psykososiale problemer</strong> – Trakassering, mobbing eller konflikter</div>
-              </li>
-            </div>
-
-            <h3 style="font-family:var(--font-body);font-size:1rem;margin-bottom:1rem;">Slik melder du avvik</h3>
-            <div class="info-list" role="list">
-              <li role="listitem">
-                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">1</div>
-                <div>
-                  <strong>Sikre situasjonen</strong>
-                  <p>Sørg for at ingen er i fare. Gi førstehjelp om nødvendig.</p>
-                </div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">2</div>
-                <div>
-                  <strong>Varsle nærmeste leder</strong>
-                  <p>Informer din leder om hendelsen så raskt som mulig.</p>
-                </div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">3</div>
-                <div>
-                  <strong>Fyll ut avviksskjema</strong>
-                  <p>Send skjema til <a href="mailto:hms@bedrift.no" style="color:var(--color-accent);text-decoration:underline;">hms@bedrift.no</a> med dato, sted, beskrivelse og eventuelle vitner.</p>
-                </div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">4</div>
-                <div>
-                  <strong>Oppfølging</strong>
-                  <p>HMS-ansvarlig behandler meldingen og følger opp med tiltak.</p>
-                </div>
-              </li>
-            </div>
-
-            <div style="margin-top:var(--space-md);">
-              <a href="mailto:hms@bedrift.no?subject=Avviksmelding" class="btn btn--primary">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4h12a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="white" stroke-width="1.4"/><path d="M1 5l7 4.5L15 5" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
-                Send avviksmelding
-              </a>
-            </div>
-          </section>
-
-          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
-
-          <!-- NØDPROSEDYRER -->
-          <section id="nodprosedyrer" aria-labelledby="nod-heading">
-            <span class="label">Beredskap</span>
-            <h2 id="nod-heading">Nødprosedyrer</h2>
-            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Gjør deg kjent med disse prosedyrene. Det kan redde liv.</p>
-
-            <div class="shortcuts-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-bottom:var(--space-lg);">
-
-              <div class="card" style="border-left:3px solid #B91C1C;">
-                <h3 style="color:#B91C1C;">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="display:inline;vertical-align:-2px;margin-right:6px;" aria-hidden="true"><path d="M8 1L1 14h14L8 1z" stroke="#B91C1C" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 6v4M8 12v.3" stroke="#B91C1C" stroke-width="1.5" stroke-linecap="round"/></svg>
-                  Brann
-                </h3>
-                <ul style="padding-left:1.2rem;list-style:disc;font-size:0.88rem;color:var(--color-muted);margin-top:0.5rem;">
-                  <li>Trykk på brannalarm</li>
-                  <li>Forlat bygget via nærmeste nødutgang</li>
-                  <li>Gå til møteplass ved flaggstangen</li>
-                  <li>Ring 110 – ikke gå tilbake</li>
-                </ul>
-              </div>
-
-              <div class="card" style="border-left:3px solid #D97706;">
-                <h3 style="color:#D97706;">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="display:inline;vertical-align:-2px;margin-right:6px;" aria-hidden="true"><path d="M8 2a3 3 0 0 0-3 3c0 2.5 3 6 3 6s3-3.5 3-6a3 3 0 0 0-3-3z" stroke="#D97706" stroke-width="1.4"/><circle cx="8" cy="5" r="1" fill="#D97706"/></svg>
-                  Førstehjelp
-                </h3>
-                <ul style="padding-left:1.2rem;list-style:disc;font-size:0.88rem;color:var(--color-muted);margin-top:0.5rem;">
-                  <li>Hjertestarter: resepsjon og 2. etg.</li>
-                  <li>Førstehjelpsskap: hvert etasjeplan</li>
-                  <li>Ring 113 ved alvorlig skade</li>
-                  <li>Kontakt verneombud</li>
-                </ul>
-              </div>
-
-              <div class="card" style="border-left:3px solid #1D4ED8;">
-                <h3 style="color:#1D4ED8;">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="display:inline;vertical-align:-2px;margin-right:6px;" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="#1D4ED8" stroke-width="1.4"/><path d="M8 5v3.5l2 2" stroke="#1D4ED8" stroke-width="1.4" stroke-linecap="round"/></svg>
-                  Evakuering
-                </h3>
-                <ul style="padding-left:1.2rem;list-style:disc;font-size:0.88rem;color:var(--color-muted);margin-top:0.5rem;">
-                  <li>Følg evakueringsleder for etasjen</li>
-                  <li>Ikke bruk heis</li>
-                  <li>Hjelp kollegaer med nedsatt mobilitet</li>
-                  <li>Møt opp på samlingspunkt</li>
-                </ul>
-              </div>
-
-            </div>
-
-            <div class="table-wrap">
-              <table>
-                <caption style="text-align:left;font-size:0.85rem;font-weight:600;color:var(--color-primary);margin-bottom:0.5rem;caption-side:top;">Viktige nødnumre</caption>
-                <thead>
-                  <tr>
-                    <th scope="col">Tjeneste</th>
-                    <th scope="col">Nummer</th>
-                    <th scope="col">Når?</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Brann</td>
-                    <td><a href="tel:110" style="color:var(--color-accent);font-weight:600;">110</a></td>
-                    <td>Brann, eksplosjoner</td>
-                  </tr>
-                  <tr>
-                    <td>Politi</td>
-                    <td><a href="tel:112" style="color:var(--color-accent);font-weight:600;">112</a></td>
-                    <td>Trusler, kriminelle hendelser</td>
-                  </tr>
-                  <tr>
-                    <td>Ambulanse</td>
-                    <td><a href="tel:113" style="color:var(--color-accent);font-weight:600;">113</a></td>
-                    <td>Personskader, akutt sykdom</td>
-                  </tr>
-                  <tr>
-                    <td>Bedriftslege</td>
-                    <td><a href="tel:+4712345699" style="color:var(--color-accent);font-weight:600;">+47 12 34 56 99</a></td>
-                    <td>Helserelaterte spørsmål</td>
-                  </tr>
-                  <tr>
-                    <td>Vakt/sikkerhet</td>
-                    <td><a href="tel:+4712345688" style="color:var(--color-accent);font-weight:600;">+47 12 34 56 88</a></td>
-                    <td>Uønskede hendelser i bygget</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
-
-          <!-- ARBEIDSMILJØ -->
-          <section id="arbeidsmiljo" aria-labelledby="arbeidsmiljo-heading">
-            <span class="label">Trivsel</span>
-            <h2 id="arbeidsmiljo-heading">Arbeidsmiljø og trivsel</h2>
-            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Et godt psykososialt arbeidsmiljø er like viktig som fysisk sikkerhet.</p>
+            <h3 style="font-family:var(--font-body);font-size:1rem;margin-bottom:1rem;">Dine viktigste rettigheter etter AML</h3>
 
             <div class="accordion" role="list">
 
               <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="am-1">
-                  Retningslinjer mot trakassering og mobbing
+                <button class="accordion-btn" aria-expanded="true" aria-controls="aml-1">
+                  § 4 – Krav til arbeidsmiljøet
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
-                <div id="am-1" class="accordion-body" role="region">
-                  <p>Bedriften har nulltoleranse for trakassering, mobbing og diskriminering. Alle ansatte har rett til et arbeidsmiljø fritt for slike hendelser.</p>
+                <div id="aml-1" class="accordion-body open" role="region">
+                  <p>Arbeidsmiljøet skal være <strong>fullt forsvarlig</strong> ut fra en enkeltvis og samlet vurdering av faktorer i arbeidsmiljøet som kan innvirke på ansattes fysiske og psykiske helse. Dette betyr at CAROB AS er forpliktet til å:</p>
                   <ul>
-                    <li>Meld fra til nærmeste leder eller verneombudet</li>
-                    <li>Anonyme meldinger kan sendes til <a href="mailto:hms@bedrift.no" style="color:var(--color-accent);">hms@bedrift.no</a></li>
-                    <li>Alle meldinger behandles konfidensielt</li>
+                    <li>Sørge for at arbeid organiseres og tilrettelegges slik at du kan utføre arbeidet på en forsvarlig måte</li>
+                    <li>Tilby nødvendig opplæring og informasjon</li>
+                    <li>Forebygge skader og sykdom</li>
+                    <li>Sikre et godt psykososialt arbeidsmiljø – fritt for trakassering og diskriminering</li>
                   </ul>
                 </div>
               </div>
 
               <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="am-2">
-                  Ergonomi og tilrettelegging av arbeidsplassen
+                <button class="accordion-btn" aria-expanded="false" aria-controls="aml-2">
+                  § 10 – Arbeidstid
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
-                <div id="am-2" class="accordion-body" role="region">
-                  <p>Alle ansatte har krav på en ergonomisk tilrettelagt arbeidsplass. Dette inkluderer:</p>
+                <div id="aml-2" class="accordion-body" role="region">
+                  <p>Loven setter grenser for hvor mye du kan jobbe:</p>
                   <ul>
-                    <li>Justerbar stol og skrivebord (hev/senk)</li>
-                    <li>Ekstern skjerm og tastatur ved behov</li>
-                    <li>Riktig plassering av skjerm (øyenhøyde)</li>
-                    <li>Ta regelmessige pauser fra skjermarbeid</li>
-                  </ul>
-                  <p>Kontakt HR for å be om tilrettelegging: <a href="mailto:hr@bedrift.no" style="color:var(--color-accent);">hr@bedrift.no</a></p>
-                </div>
-              </div>
-
-              <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="am-3">
-                  Sykefravær og oppfølging
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div id="am-3" class="accordion-body" role="region">
-                  <p>Ved sykdom skal du melde fra til nærmeste leder <strong>første fraværsdag</strong> innen kl. 09:00.</p>
-                  <ul>
-                    <li>Egenmelding kan brukes i inntil 3 sammenhengende dager</li>
-                    <li>Etter 3 dager kreves sykemelding fra lege</li>
-                    <li>Ved langvarig sykdom følger HR opp med tilrettelegging</li>
+                    <li>Alminnelig arbeidstid: maks <strong>9 timer per dag</strong> og <strong>40 timer per uke</strong></li>
+                    <li>Med tariffavtale (som i CAROB AS): 7,5 timer per dag / 37,5 timer per uke</li>
+                    <li>Overtid: maks 10 timer per 7 dager, 25 timer per 4 sammenhengende uker, 200 timer per år</li>
+                    <li>Du har rett til minst <strong>11 timers sammenhengende hvile</strong> mellom hver arbeidsøkt</li>
+                    <li>Minst <strong>35 timers sammenhengende ukehvile</strong> per uke</li>
                   </ul>
                 </div>
               </div>
 
               <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="am-4">
-                  Medarbeidersamtale og HMS-runder
+                <button class="accordion-btn" aria-expanded="false" aria-controls="aml-3">
+                  § 13 – Forbud mot diskriminering
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
-                <div id="am-4" class="accordion-body" role="region">
-                  <p>Alle ansatte gjennomfører <strong>årlig medarbeidersamtale</strong> med sin nærmeste leder. HMS-runder gjennomføres hvert halvår i alle avdelinger.</p>
-                  <p>Har du innspill til arbeidsmiljøet? Ta det opp med verneombudet eller send en e-post til HMS-ansvarlig.</p>
+                <div id="aml-3" class="accordion-body" role="region">
+                  <p>Det er forbudt å diskriminere på grunn av:</p>
+                  <ul>
+                    <li>Politisk syn, medlemskap i arbeidstakerorganisasjon eller alder</li>
+                    <li>Kjønn, graviditet, etnisitet, religion, seksuell orientering, funksjonsnedsettelse</li>
+                  </ul>
+                  <p>Forbudet gjelder ved ansettelse, forfremmelse, lønn, opplæring og oppsigelse. Mener du at du er blitt diskriminert? Ta det opp med verneombudet eller HR.</p>
+                </div>
+              </div>
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="aml-4">
+                  § 15 – Oppsigelsesvern
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="aml-4" class="accordion-body" role="region">
+                  <p>En oppsigelse må være <strong>saklig begrunnet</strong> i virksomhetens, arbeidsgivers eller arbeidstakers forhold. Du har krav på:</p>
+                  <ul>
+                    <li>Drøftelsesmøte før oppsigelse gis</li>
+                    <li>Skriftlig oppsigelse med begrunnelse</li>
+                    <li>Oppsigelsestid etter avtale (minimum 1 måned i prøvetid, 1–6 måneder ellers)</li>
+                    <li>Å fortsette i stillingen under forhandlinger om oppsigelsens gyldighet</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="aml-5">
+                  § 2-3 – Arbeidstakers medvirkningsplikt
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="aml-5" class="accordion-body" role="region">
+                  <p>Som ansatt har du <strong>plikt til å medvirke</strong> i HMS-arbeidet. Det betyr at du skal:</p>
+                  <ul>
+                    <li>Bruke påbudt verneutstyr og følge sikkerhetsrutiner</li>
+                    <li>Straks varsle leder, verneombud eller Arbeidstilsynet om farlige forhold</li>
+                    <li>Avbryte arbeid du mener medfører umiddelbar fare for liv eller helse</li>
+                    <li>Delta i vernerunder og HMS-tiltak</li>
+                  </ul>
                 </div>
               </div>
 
             </div>
+          </section>
+
+          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
+
+          <!-- INTERNKONTROLLFORSKRIFTEN -->
+          <section id="internkontroll" aria-labelledby="ik-heading">
+            <span class="label">Forskrift av 6. desember 1996</span>
+            <h2 id="ik-heading">Internkontrollforskriften</h2>
+            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Internkontrollforskriften pålegger CAROB AS å drive <strong>systematisk HMS-arbeid</strong>. Dette kalles internkontroll.</p>
+
+            <div class="content-split" style="gap:var(--space-lg);margin-bottom:var(--space-lg);">
+              <div>
+                <h3 style="font-family:var(--font-body);font-size:1rem;margin-bottom:1rem;">Hva kreves av bedriften?</h3>
+                <div class="info-list" role="list">
+                  <li role="listitem">
+                    <div class="icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <span>Fastsette mål for HMS-arbeidet</span>
+                  </li>
+                  <li role="listitem">
+                    <div class="icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <span>Kartlegge farer og problemer</span>
+                  </li>
+                  <li role="listitem">
+                    <div class="icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <span>Iverksette tiltak og sjekke at de virker</span>
+                  </li>
+                  <li role="listitem">
+                    <div class="icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <span>Dokumentere alt skriftlig</span>
+                  </li>
+                  <li role="listitem">
+                    <div class="icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <span>Sørge for at ansatte har nok kunnskap og medvirker</span>
+                  </li>
+                </div>
+              </div>
+
+              <div>
+                <h3 style="font-family:var(--font-body);font-size:1rem;margin-bottom:1rem;">Hva betyr dette for deg?</h3>
+                <div class="card card--accent">
+                  <p style="font-size:0.9rem;color:var(--color-muted);">Du har rett til å se CAROB AS sine HMS-mål, risikovurderinger og avvikslogg. Be din leder eller verneombudet om innsyn.</p>
+                </div>
+                <div class="card card--accent" style="margin-top:var(--space-sm);">
+                  <p style="font-size:0.9rem;color:var(--color-muted);">Du har rett og plikt til å delta i vernerunder og melde fra om farlige forhold – dette er en del av internkontrollen.</p>
+                </div>
+                <div class="card card--accent" style="margin-top:var(--space-sm);">
+                  <p style="font-size:0.9rem;color:var(--color-muted);">Arbeidstilsynet kan når som helst inspisere bedriften og kreve å se internkontrolldokumentasjonen.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
+
+          <!-- GDPR -->
+          <section id="gdpr" aria-labelledby="gdpr-heading">
+            <span class="label">Forordning (EU) 2016/679</span>
+            <h2 id="gdpr-heading">GDPR og personopplysningsloven</h2>
+            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">GDPR gjelder for all behandling av personopplysninger i CAROB AS – både opplysninger om ansatte og kunder.</p>
+
+            <div class="accordion" role="list">
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="gdpr-1">
+                  Hva er en personopplysning?
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="gdpr-1" class="accordion-body" role="region">
+                  <p>En personopplysning er enhver opplysning som kan knyttes til en fysisk person. Eksempler:</p>
+                  <ul>
+                    <li>Navn, adresse, e-post, telefonnummer</li>
+                    <li>Fødselsnummer, IP-adresse, kodelokasjon</li>
+                    <li>Helseopplysninger, lønn, fagforeningsmedlemskap</li>
+                    <li>Bilder og videoopptak av identifiserbare personer</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="gdpr-2">
+                  Dine rettigheter som ansatt under GDPR
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="gdpr-2" class="accordion-body" role="region">
+                  <p>Som ansatt har du følgende rettigheter:</p>
+                  <ul>
+                    <li><strong>Rett til innsyn:</strong> Du kan be om å få se alle opplysninger CAROB AS har om deg</li>
+                    <li><strong>Rett til retting:</strong> Feil opplysninger skal rettes</li>
+                    <li><strong>Rett til sletting:</strong> Under visse omstendigheter kan du kreve sletting</li>
+                    <li><strong>Rett til å klage:</strong> Du kan klage til Datatilsynet (datatilsynet.no)</li>
+                  </ul>
+                  <p>Send forespørsler til: <a href="mailto:personvern@carob.no" style="color:var(--color-accent);">personvern@carob.no</a></p>
+                </div>
+              </div>
+
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="gdpr-3">
+                  Dine plikter – hva du IKKE må gjøre
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="gdpr-3" class="accordion-body" role="region">
+                  <div class="alert alert--warning" role="alert">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 2L1.5 15.5h15L9 2z" stroke="#92400E" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 7v4M9 13v.5" stroke="#92400E" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <div>Brudd på GDPR kan medføre store bøter til bedriften og personlig ansvar.</div>
+                  </div>
+                  <ul style="margin-top:0.75rem;">
+                    <li>Del <strong>aldri</strong> personopplysninger om kunder eller kollegaer med uvedkommende</li>
+                    <li>Send <strong>ikke</strong> sensitive opplysninger på usikret e-post – bruk kryptert fil eller intern kanal</li>
+                    <li>Lagre <strong>ikke</strong> personopplysninger på privat PC eller USB-pinne</li>
+                    <li>Bruk <strong>ikke</strong> kundeopplysninger til andre formål enn det de er samlet inn for</li>
+                    <li>Oppdag du et <strong>sikkerhetsbrudd</strong>? Varsle IT og nærmeste leder umiddelbart</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
+
+          <!-- VARSLING -->
+          <section id="varsling" aria-labelledby="varsling-heading">
+            <span class="label">AML § 2A</span>
+            <h2 id="varsling-heading">Varslingsplikten</h2>
+            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Du har rett – og i mange tilfeller plikt – til å varsle om kritikkverdige forhold på arbeidsplassen.</p>
+
+            <div class="content-split" style="gap:var(--space-lg);margin-bottom:var(--space-lg);">
+              <div>
+                <h3 style="font-family:var(--font-body);font-size:1rem;margin-bottom:1rem;">Hva kan du varsle om?</h3>
+                <div class="info-list" role="list">
+                  <li role="listitem">
+                    <div class="icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L1 12h12L7 1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 5.5v3M7 10v.3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                    </div>
+                    <span>Brudd på lover og regler</span>
+                  </li>
+                  <li role="listitem">
+                    <div class="icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L1 12h12L7 1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 5.5v3M7 10v.3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                    </div>
+                    <span>Fare for liv eller helse</span>
+                  </li>
+                  <li role="listitem">
+                    <div class="icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L1 12h12L7 1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 5.5v3M7 10v.3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                    </div>
+                    <span>Korrupsjon eller annen kriminalitet</span>
+                  </li>
+                  <li role="listitem">
+                    <div class="icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L1 12h12L7 1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 5.5v3M7 10v.3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                    </div>
+                    <span>Mobbing, trakassering eller diskriminering</span>
+                  </li>
+                  <li role="listitem">
+                    <div class="icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L1 12h12L7 1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 5.5v3M7 10v.3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                    </div>
+                    <span>Svikt i HMS-arbeidet</span>
+                  </li>
+                </div>
+              </div>
+
+              <div>
+                <h3 style="font-family:var(--font-body);font-size:1rem;margin-bottom:1rem;">Ditt vern som varsler</h3>
+                <div class="card card--accent">
+                  <p style="font-size:0.9rem;color:var(--color-muted);"><strong>Gjengjeldelse er forbudt.</strong> Arbeidsgiver kan ikke si deg opp, endre dine arbeidsoppgaver eller behandle deg dårligere fordi du varslet.</p>
+                </div>
+                <div class="card card--accent" style="margin-top:var(--space-sm);">
+                  <p style="font-size:0.9rem;color:var(--color-muted);">Du kan varsle anonymt til verneombudet eller sende anonym e-post til <a href="mailto:varsling@carob.no" style="color:var(--color-accent);">varsling@carob.no</a>.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
+
+          <!-- MELD AVVIK -->
+          <section id="avvik" aria-labelledby="avvik-heading">
+            <span class="label">Rapportering</span>
+            <h2 id="avvik-heading">Meld avvik og nestenulykker</h2>
+            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Alle hendelser, nestenulykker og farlige forhold skal meldes. Det er avgjørende for å forebygge ulykker.</p>
+
+            <div class="alert alert--warning" role="alert" style="margin-bottom:var(--space-md);">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 2L1.5 15.5h15L9 2z" stroke="#92400E" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 7v4M9 13v.5" stroke="#92400E" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <div><strong>Alvorlig ulykke?</strong> Ring <a href="tel:113" style="color:#92400E;font-weight:700;">113 (ambulanse)</a>, <a href="tel:110" style="color:#92400E;font-weight:700;">110 (brann)</a> eller <a href="tel:112" style="color:#92400E;font-weight:700;">112 (politi)</a> umiddelbart.</div>
+            </div>
+
+            <div class="info-list" role="list" style="margin-bottom:var(--space-lg);">
+              <li role="listitem">
+                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">1</div>
+                <div><strong>Sikre situasjonen</strong> – Sørg for at ingen er i fare. Gi førstehjelp om nødvendig.</div>
+              </li>
+              <li role="listitem">
+                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">2</div>
+                <div><strong>Varsle nærmeste leder</strong> – Informer din leder så raskt som mulig.</div>
+              </li>
+              <li role="listitem">
+                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">3</div>
+                <div><strong>Send avviksmelding</strong> – E-post til <a href="mailto:hms@carob.no" style="color:var(--color-accent);">hms@carob.no</a> med dato, sted, beskrivelse og eventuelle vitner.</div>
+              </li>
+              <li role="listitem">
+                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">4</div>
+                <div><strong>Oppfølging</strong> – HMS-ansvarlig behandler meldingen og setter inn tiltak.</div>
+              </li>
+            </div>
+
+            <a href="mailto:hms@carob.no?subject=Avviksmelding" class="btn btn--primary">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4h12a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="white" stroke-width="1.4"/><path d="M1 5l7 4.5L15 5" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+              Send avviksmelding
+            </a>
           </section>
 
           <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
 
           <!-- VERNEOMBUD -->
           <section id="verneombud" aria-labelledby="verneombud-heading">
-            <span class="label">Kontakt</span>
-            <h2 id="verneombud-heading">Verneombud og HMS-ansvarlig</h2>
-            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Verneombudet representerer de ansatte i HMS-saker og er din kontaktperson for arbeidsmiljøspørsmål.</p>
+            <span class="label">AML § 6</span>
+            <h2 id="verneombud-heading">Verneombud</h2>
+            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Verneombudet er valgt av de ansatte og skal ivareta dine interesser i HMS-saker. Du kan alltid ta kontakt.</p>
 
             <div class="content-split" style="gap:var(--space-lg);">
               <div class="contact-box">
-                <h3>Verneombud</h3>
+                <h3>Verneombud – CAROB AS</h3>
                 <div class="contact-row">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="5" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
                   <span>Kari Nordmann</span>
                 </div>
                 <div class="contact-row">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4h12a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.4"/><path d="M1 5l7 4.5L15 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-                  <span><a href="mailto:verneombud@bedrift.no">verneombud@bedrift.no</a></span>
+                  <span><a href="mailto:verneombud@carob.no">verneombud@carob.no</a></span>
                 </div>
                 <div class="contact-row">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 3h2l1 3-1.5 1.5a9 9 0 0 0 3 3L9 9l3 1v2c0 1-1 2-2 2C5 14 2 9 2 5c0-1 1-2 1-2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
@@ -385,7 +421,7 @@
                 </div>
                 <div class="contact-row">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4h12a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.4"/><path d="M1 5l7 4.5L15 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-                  <span><a href="mailto:hms@bedrift.no">hms@bedrift.no</a></span>
+                  <span><a href="mailto:hms@carob.no">hms@carob.no</a></span>
                 </div>
                 <div class="contact-row">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 3h2l1 3-1.5 1.5a9 9 0 0 0 3 3L9 9l3 1v2c0 1-1 2-2 2C5 14 2 9 2 5c0-1 1-2 1-2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
@@ -403,11 +439,11 @@
   <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo" style="color:#fff;" aria-label="AnsattPortalen forsiden">
-          <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect width="28" height="28" rx="6" fill="#2E7D6B"/><rect x="7" y="8" width="14" height="2.5" rx="1.25" fill="white"/><rect x="7" y="12.75" width="10" height="2.5" rx="1.25" fill="white"/><rect x="7" y="17.5" width="12" height="2.5" rx="1.25" fill="white"/></svg>
-          AnsattPortalen
+        <a href="index.html" class="nav-logo" style="color:#fff;" aria-label="CAROB AS forsiden">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect width="28" height="28" rx="6" fill="#2E7D6B"/><text x="6" y="20" font-family="serif" font-size="13" font-weight="700" fill="white">C</text></svg>
+          CAROB AS
         </a>
-        <p>Intern ressursnettside for ansatte.</p>
+        <p>Intern ansattportal for CAROB AS.</p>
       </div>
       <div class="footer-col">
         <h4>Seksjoner</h4>
@@ -415,25 +451,24 @@
           <li><a href="index.html">Hjem</a></li>
           <li><a href="it-support.html">IT-støtte</a></li>
           <li><a href="hms.html">HMS</a></li>
-          <li><a href="rutiner.html">Rutiner</a></li>
+          <li><a href="rutiner.html">Systemer</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Kontakt</h4>
         <ul>
-          <li><a href="mailto:hms@bedrift.no">hms@bedrift.no</a></li>
-          <li><a href="mailto:it@bedrift.no">it@bedrift.no</a></li>
+          <li><a href="mailto:hms@carob.no">hms@carob.no</a></li>
+          <li><a href="mailto:it@carob.no">it@carob.no</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 AnsattPortalen. Kun for intern bruk.</span>
+      <span>© 2025 CAROB AS. Kun for intern bruk.</span>
       <span>Laget av Carmen Maria Kleijnen &amp; Robin Finnestad</span>
     </div>
   </footer>
 
   <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
-
   <script>
     const toggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -441,7 +476,6 @@
       const open = navLinks.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open);
     });
-
     document.querySelectorAll('.accordion-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const expanded = btn.getAttribute('aria-expanded') === 'true';
@@ -455,7 +489,6 @@
         }
       });
     });
-
     const sections = document.querySelectorAll('section[id]');
     const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
     const observer = new IntersectionObserver(entries => {
@@ -469,6 +502,5 @@
     }, { rootMargin: '-30% 0px -60% 0px' });
     sections.forEach(s => observer.observe(s));
   </script>
-
 </body>
 </html>
