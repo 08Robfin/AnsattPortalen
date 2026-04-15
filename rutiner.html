@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="IT-systemer i CAROB AS – oversikt over programmer og plattformer ansatte bruker." />
-  <title>IT-systemer – CAROB AS</title>
+  <meta name="description" content="IT-utstyr og systemer i CAROB AS – PC, mobil, programmer og plattformer ansatte bruker." />
+  <title>IT-utstyr og systemer – CAROB AS</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -16,7 +16,7 @@
       <a href="index.html" class="nav-logo" aria-label="CAROB AS – til forsiden">
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
           <rect width="28" height="28" rx="6" fill="#2E7D6B"/>
-          <text x="6" y="20" font-family="serif" font-size="13" font-weight="700" fill="white">C</text>
+          <rect x="7" y="8" width="14" height="2.5" rx="1.25" fill="white"/><rect x="7" y="12.75" width="10" height="2.5" rx="1.25" fill="white"/><rect x="7" y="17.5" width="12" height="2.5" rx="1.25" fill="white"/>
         </svg>
         CAROB AS
       </a>
@@ -44,8 +44,8 @@
         <span aria-current="page">IT-systemer</span>
       </nav>
       <span class="label">Oversikt</span>
-      <h1>IT-systemer</h1>
-      <p>Programmer og plattformer vi bruker i CAROB AS – hva de brukes til og hvordan du kommer i gang.</p>
+      <h1>IT-utstyr og systemer</h1>
+      <p>PC, mobil, programmer og plattformer vi bruker i CAROB AS – hva de brukes til og hvordan du kommer i gang.</p>
     </div>
   </header>
 
@@ -55,9 +55,11 @@
 
         <aside class="sidebar" aria-label="Innholdsfortegnelse">
           <nav class="sidebar-nav">
-            <h4>Systemer</h4>
+            <h4>Utstyr og systemer</h4>
             <ul>
-              <li><a href="#microsoft365" class="active">Microsoft 365</a></li>
+              <li><a href="#pc" class="active">PC og laptop</a></li>
+              <li><a href="#mobil">Mobil og nettbrett</a></li>
+              <li><a href="#microsoft365">Microsoft 365</a></li>
               <li><a href="#vpn">VPN – GlobalProtect</a></li>
               <li><a href="#visma">Visma (ERP/HR)</a></li>
               <li><a href="#sharepoint">SharePoint / filserver</a></li>
@@ -68,6 +70,188 @@
         </aside>
 
         <div class="main-content">
+
+          <!-- PC OG LAPTOP -->
+          <section id="pc" aria-labelledby="pc-heading">
+            <span class="label">Utstyr</span>
+            <h2 id="pc-heading">PC og laptop</h2>
+            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Alle ansatte i CAROB AS får utlevert en jobbmaskin. Her finner du hva du trenger å vite om PCen din.</p>
+
+            <div class="shortcuts-grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-bottom:var(--space-lg);">
+              <div class="card card--accent">
+                <h3>Hva får jeg utlevert?</h3>
+                <p>Kontoransatte: bærbar PC + ekstern skjerm, tastatur og mus. Felt/teknisk: rugged laptop eller Surface.</p>
+              </div>
+              <div class="card card--accent">
+                <h3>Operativsystem</h3>
+                <p>Alle maskiner kjører <strong>Windows 11 Pro</strong>, administrert via Microsoft Intune (MDM).</p>
+              </div>
+              <div class="card card--accent">
+                <h3>Oppdateringer</h3>
+                <p>Windows og programvare oppdateres automatisk. Ikke skru av PC-en uten å la oppdateringer fullføre.</p>
+              </div>
+            </div>
+
+            <div class="accordion" role="list">
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="true" aria-controls="pc-1">
+                  Første gangs oppsett av ny PC
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="pc-1" class="accordion-body open" role="region">
+                  <ul>
+                    <li>Skru på PC-en og koble til bedriftsnettverket (kabel eller CAROB-Intern WiFi)</li>
+                    <li>Logg inn med <code style="background:var(--color-bg);padding:1px 6px;border-radius:3px;">fornavn.etternavn@carob.no</code> og midlertidig passord fra IT</li>
+                    <li>Windows registrerer seg automatisk i Intune – dette tar ca. 5–10 minutter</li>
+                    <li>Godkjenn 2FA-oppsett i Microsoft Authenticator</li>
+                    <li>Bytt passord umiddelbart</li>
+                    <li>Programvare (Outlook, Teams, VPN osv.) installeres automatisk – vent til det er ferdig</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="pc-2">
+                  Regler for bruk av jobbPC
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="pc-2" class="accordion-body" role="region">
+                  <ul>
+                    <li>JobbPC-en er bedriftens eiendom – ikke installer privat programvare</li>
+                    <li>Ikke la familiemedlemmer bruke jobbmaskinen</li>
+                    <li>Lås alltid skjermen når du forlater arbeidsplassen (<kbd style="background:var(--color-bg);padding:1px 5px;border-radius:3px;border:1px solid var(--color-border);">Win+L</kbd>)</li>
+                    <li>Ta alltid med laptopen ved slutten av arbeidsdagen – ikke la den ligge ulåst på kontoret</li>
+                    <li>Mistet eller stjålet maskin? Ring IT umiddelbart på <a href="tel:+4712345678" style="color:var(--color-accent);">+47 12 34 56 78</a> – vi kan fjernslette enheten</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="pc-3">
+                  Bestille nytt utstyr eller tilbehør
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="pc-3" class="accordion-body" role="region">
+                  <p>Send e-post til <a href="mailto:it@carob.no" style="color:var(--color-accent);">it@carob.no</a> med hva du trenger og begrunnelse. Eksempler på tilbehør vi leverer ut:</p>
+                  <ul>
+                    <li>Ekstern skjerm (24" eller 27")</li>
+                    <li>Tastatur og mus (kablet eller trådløst)</li>
+                    <li>Headset for Teams-møter</li>
+                    <li>Docking-stasjon for laptop</li>
+                    <li>USB-hub / portreplikator</li>
+                    <li>Bærbar mus og PC-bag for reise</li>
+                  </ul>
+                  <p style="margin-top:0.5rem;">Behandlingstid: 1–3 virkedager. Haster det? Ring oss.</p>
+                </div>
+              </div>
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="pc-4">
+                  PC-en er skadet eller virker ikke
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="pc-4" class="accordion-body" role="region">
+                  <ul>
+                    <li>Ta kontakt med IT før du prøver å fikse noe selv</li>
+                    <li>Lever inn maskinen på IT-rommet (rom 302) for vurdering</li>
+                    <li>IT ordner lånemaskin mens din er til reparasjon</li>
+                    <li>Skader som skyldes uforsiktighet kan belastes den ansatte – sjekk <a href="hms.html" style="color:var(--color-accent);">HMS-retningslinjene</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
+
+          <!-- MOBIL OG NETTBRETT -->
+          <section id="mobil" aria-labelledby="mobil-heading">
+            <span class="label">Utstyr</span>
+            <h2 id="mobil-heading">Mobil og nettbrett</h2>
+            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Noen stillinger i CAROB AS gir rett til jobbtelefon. Du kan også sette opp jobb-e-post og Teams på din private mobil.</p>
+
+            <div class="shortcuts-grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-bottom:var(--space-lg);">
+              <div class="card card--accent">
+                <h3>Jobbtelefon</h3>
+                <p>Stillinger med jobbtelefon: ledere, feltansatte og ansatte med vakttjeneste. Avklar med din leder.</p>
+              </div>
+              <div class="card card--accent">
+                <h3>Privat mobil – BYOD</h3>
+                <p>Du kan bruke privat mobil til jobb-e-post og Teams. IT setter opp en sikker jobbprofil via MDM.</p>
+              </div>
+              <div class="card card--accent">
+                <h3>Plattformer</h3>
+                <p>Vi støtter <strong>iPhone (iOS 16+)</strong> og <strong>Android (12+)</strong>. Eldre OS støttes ikke av sikkerhetsgrunner.</p>
+              </div>
+            </div>
+
+            <div class="accordion" role="list">
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="true" aria-controls="mob-1">
+                  Sette opp jobb-e-post på mobilen
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="mob-1" class="accordion-body open" role="region">
+                  <p><strong>iPhone:</strong></p>
+                  <ul>
+                    <li>Innstillinger → Mail → Kontoer → Legg til konto → Microsoft Exchange</li>
+                    <li>Skriv inn <code style="background:var(--color-bg);padding:1px 6px;border-radius:3px;">fornavn.etternavn@carob.no</code></li>
+                    <li>Godkjenn i Microsoft Authenticator når du blir bedt om det</li>
+                    <li>Velg hva du vil synkronisere: Mail, Kalender, Kontakter</li>
+                  </ul>
+                  <p style="margin-top:0.75rem;"><strong>Android:</strong></p>
+                  <ul>
+                    <li>Last ned <strong>Microsoft Outlook</strong> fra Play Store</li>
+                    <li>Åpne Outlook → Legg til konto → skriv inn jobbmailen</li>
+                    <li>Godkjenn 2FA og følg instruksjonene</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="mob-2">
+                  Sette opp Teams på mobilen
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="mob-2" class="accordion-body" role="region">
+                  <ul>
+                    <li>Last ned <strong>Microsoft Teams</strong> fra App Store eller Play Store</li>
+                    <li>Logg inn med <code style="background:var(--color-bg);padding:1px 6px;border-radius:3px;">fornavn.etternavn@carob.no</code></li>
+                    <li>Godkjenn 2FA</li>
+                    <li>Tips: skru på varslinger for direktemeldinger, men slå av varslinger for kanaler du ikke følger tett</li>
+                    <li>Sett «Stille»-modus utenfor arbeidstid under Innstillinger → Varsler → Stille timer</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="mob-3">
+                  Regler for jobbtelefon
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="mob-3" class="accordion-body" role="region">
+                  <ul>
+                    <li>Jobbtelefonen er bedriftens eiendom og leveres tilbake ved avslutning av arbeidsforhold</li>
+                    <li>Privat bruk er tillatt i begrenset omfang – ikke last ned spill eller betalte apper på bedriftens regning</li>
+                    <li>Aktiver skjermlås med PIN eller biometri</li>
+                    <li>Ikke deaktiver MDM-profilen (Intune) – dette gir IT mulighet til å beskytte bedriftsdata</li>
+                    <li>Mistet eller stjålet telefon? Ring IT umiddelbart – vi kan fjernslette jobbdata</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item" role="listitem">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="mob-4">
+                  Utskifting og reparasjon av jobbtelefon
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="mob-4" class="accordion-body" role="region">
+                  <ul>
+                    <li>Telefoner byttes normalt etter <strong>3 år</strong></li>
+                    <li>Skadet skjerm eller hardware: lever inn til IT for vurdering og reparasjon</li>
+                    <li>IT ordner lånetelefon om reparasjonen tar mer enn 1 dag</li>
+                    <li>Behov for nettbrett til spesifikke arbeidsoppgaver? Send forespørsel til <a href="mailto:it@carob.no" style="color:var(--color-accent);">it@carob.no</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
 
           <!-- MICROSOFT 365 -->
           <section id="microsoft365" aria-labelledby="m365-heading">
@@ -381,7 +565,7 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <a href="index.html" class="nav-logo" style="color:#fff;" aria-label="CAROB AS forsiden">
-          <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect width="28" height="28" rx="6" fill="#2E7D6B"/><text x="6" y="20" font-family="serif" font-size="13" font-weight="700" fill="white">C</text></svg>
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect width="28" height="28" rx="6" fill="#2E7D6B"/><rect x="7" y="8" width="14" height="2.5" rx="1.25" fill="white"/><rect x="7" y="12.75" width="10" height="2.5" rx="1.25" fill="white"/><rect x="7" y="17.5" width="12" height="2.5" rx="1.25" fill="white"/></svg>
           CAROB AS
         </a>
         <p>Intern ansattportal for CAROB AS.</p>
