@@ -6,6 +6,84 @@
   <meta name="description" content="IT-brukerstøtte for CAROB AS – løs vanlige problemer selv med steg-for-steg veiledning." />
   <title>IT-brukerstøtte – CAROB AS</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* --- Slim page header --- */
+    .page-header {
+      background: var(--color-primary);
+      border-bottom: 3px solid var(--color-accent);
+      padding: var(--space-md) 0;
+    }
+    .page-header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+    .page-header .breadcrumb { margin-bottom: 0.5rem; }
+    .page-header-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+    .page-header-icon {
+      width: 42px; height: 42px;
+      background: rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; flex-shrink: 0;
+    }
+    .page-header h1 {
+      color: #fff;
+      font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+      margin-bottom: 0.15rem;
+    }
+    .page-header p {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.85rem;
+      max-width: none;
+    }
+
+    /* --- Feedback widget --- */
+    .feedback-bar {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: 0.75rem var(--space-md);
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      margin-top: var(--space-lg);
+      flex-wrap: wrap;
+    }
+    .feedback-bar p {
+      font-size: 0.85rem;
+      color: var(--color-muted);
+      max-width: none;
+      flex: 1;
+    }
+    .feedback-btns { display: flex; gap: 0.5rem; flex-shrink: 0; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.82rem; font-weight: 600;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-primary);
+      cursor: pointer;
+      transition: background 0.12s, border-color 0.12s;
+      min-height: 36px;
+    }
+    .feedback-btn:hover { background: var(--color-bg); border-color: var(--color-primary); }
+    .feedback-btn--yes:hover { background: #DCFCE7; border-color: #16A34A; color: #166534; }
+    .feedback-btn--no:hover  { background: #FEE2E2; border-color: #DC2626; color: #991B1B; }
+    .feedback-result {
+      font-size: 0.85rem; color: var(--color-accent); font-weight: 600;
+      display: none;
+    }
+    .feedback-result.show { display: block; }
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
 </head>
 <body>
 
@@ -36,16 +114,22 @@
     </div>
   </nav>
 
-  <header class="page-hero" role="banner">
-    <div class="container">
+  <header class="page-header" role="banner">
+    <div class="page-header-inner">
       <nav aria-label="Brødsmule" class="breadcrumb">
         <a href="index.html">Hjem</a>
         <span aria-hidden="true">›</span>
         <span aria-current="page">IT-brukerstøtte</span>
       </nav>
-      <span class="label">Selvbetjening</span>
-      <h1>IT-brukerstøtte</h1>
-      <p>Steg-for-steg løsninger på de vanligste problemene. Prøv dette før du kontakter IT-avdelingen.</p>
+      <div class="page-header-row">
+        <div class="page-header-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="4" width="18" height="12" rx="2" stroke="white" stroke-width="1.6"/><path d="M8 19h6M11 16v3" stroke="white" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <h1>IT-brukerstøtte</h1>
+          <p>Steg-for-steg løsninger på de vanligste problemene. Prøv dette før du kontakter IT.</p>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -76,7 +160,6 @@
             <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Klarer du ikke logge inn? Følg disse stegene.</p>
 
             <div class="accordion" role="list">
-
               <div class="accordion-item" role="listitem">
                 <button class="accordion-btn" aria-expanded="true" aria-controls="pw-1">
                   Jeg har glemt passordet mitt
@@ -93,7 +176,6 @@
                   <p style="margin-top:0.75rem;"><strong>Fungerer ikke dette?</strong> Kontakt IT direkte – se <a href="#kontakt" style="color:var(--color-accent);">Kontakt IT</a> nederst.</p>
                 </div>
               </div>
-
               <div class="accordion-item" role="listitem">
                 <button class="accordion-btn" aria-expanded="false" aria-controls="pw-2">
                   Kontoen min er låst
@@ -111,7 +193,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="accordion-item" role="listitem">
                 <button class="accordion-btn" aria-expanded="false" aria-controls="pw-3">
                   Sette opp tofaktorautentisering (2FA)
@@ -127,7 +208,21 @@
                   </ul>
                 </div>
               </div>
+            </div>
 
+            <div class="feedback-bar" role="region" aria-label="Tilbakemelding på løsning">
+              <p>Løste denne veiledningen problemet ditt?</p>
+              <div class="feedback-btns">
+                <button class="feedback-btn feedback-btn--yes" onclick="sendFeedback(this,'passord','yes')">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3.5 3.5L12 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Ja, løst
+                </button>
+                <button class="feedback-btn feedback-btn--no" onclick="sendFeedback(this,'passord','no')">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                  Nei, kontakt IT
+                </button>
+              </div>
+              <span class="feedback-result" aria-live="polite"></span>
             </div>
           </section>
 
@@ -140,7 +235,6 @@
             <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Ingen internett eller kan ikke koble til bedriftsnettverket?</p>
 
             <div class="accordion" role="list">
-
               <div class="accordion-item" role="listitem">
                 <button class="accordion-btn" aria-expanded="false" aria-controls="net-1">
                   Ingen internettforbindelse på kontoret
@@ -157,7 +251,6 @@
                   </ul>
                 </div>
               </div>
-
               <div class="accordion-item" role="listitem">
                 <button class="accordion-btn" aria-expanded="false" aria-controls="net-2">
                   VPN kobler ikke til hjemmefra
@@ -174,7 +267,6 @@
                   </ul>
                 </div>
               </div>
-
               <div class="accordion-item" role="listitem">
                 <button class="accordion-btn" aria-expanded="false" aria-controls="net-3">
                   Wi-Fi er tregt eller ustabilt
@@ -189,7 +281,21 @@
                   </ul>
                 </div>
               </div>
+            </div>
 
+            <div class="feedback-bar" role="region" aria-label="Tilbakemelding på løsning">
+              <p>Løste denne veiledningen problemet ditt?</p>
+              <div class="feedback-btns">
+                <button class="feedback-btn feedback-btn--yes" onclick="sendFeedback(this,'nettverk','yes')">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3.5 3.5L12 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Ja, løst
+                </button>
+                <button class="feedback-btn feedback-btn--no" onclick="sendFeedback(this,'nettverk','no')">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                  Nei, kontakt IT
+                </button>
+              </div>
+              <span class="feedback-result" aria-live="polite"></span>
             </div>
           </section>
 
@@ -202,7 +308,6 @@
             <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Printeren skriver ikke ut, eller det er feil med utskriften?</p>
 
             <div class="accordion" role="list">
-
               <div class="accordion-item" role="listitem">
                 <button class="accordion-btn" aria-expanded="false" aria-controls="pr-1">
                   Printeren skriver ikke ut i det hele tatt
@@ -218,7 +323,6 @@
                   </ul>
                 </div>
               </div>
-
               <div class="accordion-item" role="listitem">
                 <button class="accordion-btn" aria-expanded="false" aria-controls="pr-2">
                   Papirstopp i printeren
@@ -234,7 +338,6 @@
                   </ul>
                 </div>
               </div>
-
               <div class="accordion-item" role="listitem">
                 <button class="accordion-btn" aria-expanded="false" aria-controls="pr-3">
                   Utskriften er stripete eller fargene er gale
@@ -249,7 +352,21 @@
                   </ul>
                 </div>
               </div>
+            </div>
 
+            <div class="feedback-bar" role="region" aria-label="Tilbakemelding på løsning">
+              <p>Løste denne veiledningen problemet ditt?</p>
+              <div class="feedback-btns">
+                <button class="feedback-btn feedback-btn--yes" onclick="sendFeedback(this,'printer','yes')">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3.5 3.5L12 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Ja, løst
+                </button>
+                <button class="feedback-btn feedback-btn--no" onclick="sendFeedback(this,'printer','no')">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                  Nei, kontakt IT
+                </button>
+              </div>
+              <span class="feedback-result" aria-live="polite"></span>
             </div>
           </section>
 
@@ -262,7 +379,6 @@
             <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Outlook eller Teams fungerer ikke som forventet?</p>
 
             <div class="accordion" role="list">
-
               <div class="accordion-item" role="listitem">
                 <button class="accordion-btn" aria-expanded="false" aria-controls="ep-1">
                   Outlook synkroniserer ikke / ny e-post dukker ikke opp
@@ -278,7 +394,6 @@
                   </ul>
                 </div>
               </div>
-
               <div class="accordion-item" role="listitem">
                 <button class="accordion-btn" aria-expanded="false" aria-controls="ep-2">
                   Teams krasjer eller starter ikke
@@ -293,7 +408,6 @@
                   </ul>
                 </div>
               </div>
-
               <div class="accordion-item" role="listitem">
                 <button class="accordion-btn" aria-expanded="false" aria-controls="ep-3">
                   Mikrofon eller kamera fungerer ikke i Teams
@@ -308,7 +422,21 @@
                   </ul>
                 </div>
               </div>
+            </div>
 
+            <div class="feedback-bar" role="region" aria-label="Tilbakemelding på løsning">
+              <p>Løste denne veiledningen problemet ditt?</p>
+              <div class="feedback-btns">
+                <button class="feedback-btn feedback-btn--yes" onclick="sendFeedback(this,'epost','yes')">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3.5 3.5L12 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Ja, løst
+                </button>
+                <button class="feedback-btn feedback-btn--no" onclick="sendFeedback(this,'epost','no')">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                  Nei, kontakt IT
+                </button>
+              </div>
+              <span class="feedback-result" aria-live="polite"></span>
             </div>
           </section>
 
@@ -363,6 +491,21 @@
                   <p>PC-en kan ha for lite RAM eller en skadet harddisk. IT-avdelingen kan kjøre diagnostikk.</p>
                 </div>
               </li>
+            </div>
+
+            <div class="feedback-bar" role="region" aria-label="Tilbakemelding på løsning">
+              <p>Løste denne veiledningen problemet ditt?</p>
+              <div class="feedback-btns">
+                <button class="feedback-btn feedback-btn--yes" onclick="sendFeedback(this,'treg','yes')">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3.5 3.5L12 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Ja, løst
+                </button>
+                <button class="feedback-btn feedback-btn--no" onclick="sendFeedback(this,'treg','no')">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                  Nei, kontakt IT
+                </button>
+              </div>
+              <span class="feedback-result" aria-live="polite"></span>
             </div>
           </section>
 
@@ -454,12 +597,15 @@
 
   <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
   <script>
+    // Nav toggle
     const toggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
     toggle.addEventListener('click', () => {
       const open = navLinks.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open);
     });
+
+    // Accordion
     document.querySelectorAll('.accordion-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const expanded = btn.getAttribute('aria-expanded') === 'true';
@@ -473,6 +619,8 @@
         }
       });
     });
+
+    // Scroll spy
     const sections = document.querySelectorAll('section[id]');
     const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
     const observer = new IntersectionObserver(entries => {
@@ -485,6 +633,22 @@
       });
     }, { rootMargin: '-30% 0px -60% 0px' });
     sections.forEach(s => observer.observe(s));
+
+    // Feedback
+    function sendFeedback(btn, section, type) {
+      const bar = btn.closest('.feedback-bar');
+      const btns = bar.querySelector('.feedback-btns');
+      const result = bar.querySelector('.feedback-result');
+      btns.style.display = 'none';
+      result.classList.add('show');
+      if (type === 'yes') {
+        result.style.color = '#166534';
+        result.textContent = '✓ Bra! Glad vi kunne hjelpe.';
+      } else {
+        result.style.color = 'var(--color-primary)';
+        result.innerHTML = 'Send en melding til <a href="mailto:it@carob.no" style="color:var(--color-accent);">it@carob.no</a> eller ring <a href="tel:+4712345678" style="color:var(--color-accent);">+47 12 34 56 78</a>.';
+      }
+    }
   </script>
 </body>
 </html>

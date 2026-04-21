@@ -6,6 +6,44 @@
   <meta name="description" content="IT-utstyr og systemer i CAROB AS – PC, mobil, programmer og plattformer ansatte bruker." />
   <title>IT-utstyr og systemer – CAROB AS</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* --- Slim page header --- */
+    .page-header {
+      background: var(--color-primary);
+      border-bottom: 3px solid var(--color-accent);
+      padding: var(--space-md) 0;
+    }
+    .page-header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+    .page-header .breadcrumb { margin-bottom: 0.5rem; }
+    .page-header-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+    .page-header-icon {
+      width: 42px; height: 42px;
+      background: rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; flex-shrink: 0;
+    }
+    .page-header h1 {
+      color: #fff;
+      font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+      margin-bottom: 0.15rem;
+    }
+    .page-header p {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.85rem;
+      max-width: none;
+    }
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
 </head>
 <body>
 
@@ -36,16 +74,22 @@
     </div>
   </nav>
 
-  <header class="page-hero" role="banner">
-    <div class="container">
+  <header class="page-header" role="banner">
+    <div class="page-header-inner">
       <nav aria-label="Brødsmule" class="breadcrumb">
         <a href="index.html">Hjem</a>
         <span aria-hidden="true">›</span>
         <span aria-current="page">IT-systemer</span>
       </nav>
-      <span class="label">Oversikt</span>
-      <h1>IT-utstyr og systemer</h1>
-      <p>PC, mobil, programmer og plattformer vi bruker i CAROB AS – hva de brukes til og hvordan du kommer i gang.</p>
+      <div class="page-header-row">
+        <div class="page-header-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="3" width="18" height="14" rx="2" stroke="white" stroke-width="1.6"/><path d="M7 20h8M11 17v3" stroke="white" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <h1>IT-utstyr og systemer</h1>
+          <p>PC, mobil, programmer og plattformer vi bruker i CAROB AS – hva de brukes til og hvordan du kommer i gang.</p>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -320,34 +364,10 @@
             <p style="margin-top:0.5rem;margin-bottom:1.5rem;">VPN brukes når du jobber utenfor kontoret og trenger tilgang til interne systemer.</p>
 
             <div class="info-list" role="list" style="margin-bottom:var(--space-lg);">
-              <li role="listitem">
-                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">1</div>
-                <div>
-                  <strong>Last ned GlobalProtect</strong>
-                  <p>Installeres fra <a href="#programvare" style="color:var(--color-accent);">programvareportalen</a> eller via IT-avdelingen (rom 302).</p>
-                </div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">2</div>
-                <div>
-                  <strong>Åpne GlobalProtect og skriv inn gateway</strong>
-                  <p><code style="background:var(--color-bg);padding:1px 6px;border-radius:3px;">vpn.carob.no</code></p>
-                </div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">3</div>
-                <div>
-                  <strong>Logg inn</strong>
-                  <p>Bruk jobbbrukernavn og passord + godkjenn 2FA i Microsoft Authenticator.</p>
-                </div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">4</div>
-                <div>
-                  <strong>Koble fra når du er ferdig</strong>
-                  <p>Høyreklikk GlobalProtect-ikonet → «Koble fra». Ikke la VPN stå på unødvendig.</p>
-                </div>
-              </li>
+              <li role="listitem"><div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">1</div><div><strong>Last ned GlobalProtect</strong><p>Installeres fra <a href="#programvare" style="color:var(--color-accent);">programvareportalen</a> eller via IT-avdelingen (rom 302).</p></div></li>
+              <li role="listitem"><div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">2</div><div><strong>Åpne GlobalProtect og skriv inn gateway</strong><p><code style="background:var(--color-bg);padding:1px 6px;border-radius:3px;">vpn.carob.no</code></p></div></li>
+              <li role="listitem"><div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">3</div><div><strong>Logg inn</strong><p>Bruk jobbbrukernavn og passord + godkjenn 2FA i Microsoft Authenticator.</p></div></li>
+              <li role="listitem"><div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">4</div><div><strong>Koble fra når du er ferdig</strong><p>Høyreklikk GlobalProtect-ikonet → «Koble fra». Ikke la VPN stå på unødvendig.</p></div></li>
             </div>
 
             <div class="alert alert--info" role="note">
@@ -375,26 +395,10 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Visma Lønn</td>
-                    <td>Lønnsslipper, trekkoppgave og feriepengegrunnlag</td>
-                    <td>Alle ansatte</td>
-                  </tr>
-                  <tr>
-                    <td>Visma HR</td>
-                    <td>Personopplysninger, ansettelsesavtaler, fraværsregistrering</td>
-                    <td>Alle ansatte + HR</td>
-                  </tr>
-                  <tr>
-                    <td>Visma Expense</td>
-                    <td>Reiseregninger og utleggsrefusjon</td>
-                    <td>Alle ansatte</td>
-                  </tr>
-                  <tr>
-                    <td>Visma Regnskap</td>
-                    <td>Fakturabehandling og budsjettering</td>
-                    <td>Økonomiavdelingen</td>
-                  </tr>
+                  <tr><td>Visma Lønn</td><td>Lønnsslipper, trekkoppgave og feriepengegrunnlag</td><td>Alle ansatte</td></tr>
+                  <tr><td>Visma HR</td><td>Personopplysninger, ansettelsesavtaler, fraværsregistrering</td><td>Alle ansatte + HR</td></tr>
+                  <tr><td>Visma Expense</td><td>Reiseregninger og utleggsrefusjon</td><td>Alle ansatte</td></tr>
+                  <tr><td>Visma Regnskap</td><td>Fakturabehandling og budsjettering</td><td>Økonomiavdelingen</td></tr>
                 </tbody>
               </table>
             </div>
@@ -417,33 +421,12 @@
               <div>
                 <h3 style="font-family:var(--font-body);font-size:1rem;margin-bottom:1rem;">Mappestruktur</h3>
                 <div class="info-list" role="list">
-                  <li role="listitem">
-                    <div class="icon" aria-hidden="true">
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 3h5l1 1.5H13v7H1V3z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div><strong>Felles / Alle ansatte</strong> – dokumenter alle kan lese</div>
-                  </li>
-                  <li role="listitem">
-                    <div class="icon" aria-hidden="true">
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 3h5l1 1.5H13v7H1V3z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div><strong>Avdeling / [din avdeling]</strong> – avdelingsvis mappestruktur</div>
-                  </li>
-                  <li role="listitem">
-                    <div class="icon" aria-hidden="true">
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 3h5l1 1.5H13v7H1V3z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div><strong>HMS</strong> – håndbøker, skjemaer og avvikslogg</div>
-                  </li>
-                  <li role="listitem">
-                    <div class="icon" aria-hidden="true">
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 3h5l1 1.5H13v7H1V3z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div><strong>Prosjekter</strong> – prosjektmapper med tilgangsstyring</div>
-                  </li>
+                  <li role="listitem"><div class="icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 3h5l1 1.5H13v7H1V3z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></div><div><strong>Felles / Alle ansatte</strong> – dokumenter alle kan lese</div></li>
+                  <li role="listitem"><div class="icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 3h5l1 1.5H13v7H1V3z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></div><div><strong>Avdeling / [din avdeling]</strong> – avdelingsvis mappestruktur</div></li>
+                  <li role="listitem"><div class="icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 3h5l1 1.5H13v7H1V3z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></div><div><strong>HMS</strong> – håndbøker, skjemaer og avvikslogg</div></li>
+                  <li role="listitem"><div class="icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 3h5l1 1.5H13v7H1V3z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></div><div><strong>Prosjekter</strong> – prosjektmapper med tilgangsstyring</div></li>
                 </div>
               </div>
-
               <div>
                 <h3 style="font-family:var(--font-body);font-size:1rem;margin-bottom:1rem;">Regler for fillagring</h3>
                 <div class="card card--accent">
@@ -483,36 +466,12 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Microsoft 365</td>
-                    <td>E-post, dokumenter, møter</td>
-                    <td>Alle ansatte</td>
-                  </tr>
-                  <tr>
-                    <td>GlobalProtect VPN</td>
-                    <td>Sikker fjerntilgang</td>
-                    <td>Alle ansatte</td>
-                  </tr>
-                  <tr>
-                    <td>Google Chrome / Edge</td>
-                    <td>Nettleser</td>
-                    <td>Alle ansatte</td>
-                  </tr>
-                  <tr>
-                    <td>Adobe Acrobat Reader</td>
-                    <td>Lese og signere PDF</td>
-                    <td>Alle ansatte</td>
-                  </tr>
-                  <tr>
-                    <td>Visma</td>
-                    <td>Lønn, HR og økonomi</td>
-                    <td>Etter rolle</td>
-                  </tr>
-                  <tr>
-                    <td>Adobe Creative Cloud</td>
-                    <td>Design og medieproduksjon</td>
-                    <td>Etter forespørsel</td>
-                  </tr>
+                  <tr><td>Microsoft 365</td><td>E-post, dokumenter, møter</td><td>Alle ansatte</td></tr>
+                  <tr><td>GlobalProtect VPN</td><td>Sikker fjerntilgang</td><td>Alle ansatte</td></tr>
+                  <tr><td>Google Chrome / Edge</td><td>Nettleser</td><td>Alle ansatte</td></tr>
+                  <tr><td>Adobe Acrobat Reader</td><td>Lese og signere PDF</td><td>Alle ansatte</td></tr>
+                  <tr><td>Visma</td><td>Lønn, HR og økonomi</td><td>Etter rolle</td></tr>
+                  <tr><td>Adobe Creative Cloud</td><td>Design og medieproduksjon</td><td>Etter forespørsel</td></tr>
                 </tbody>
               </table>
             </div>
@@ -532,27 +491,22 @@
             <p style="margin-top:0.5rem;margin-bottom:1.5rem;">IT-sikkerhet er alles ansvar. Her er det viktigste du må huske på.</p>
 
             <div class="shortcuts-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
-
               <div class="card" style="border-left:3px solid var(--color-accent);">
                 <h3>Phishing</h3>
                 <p style="font-size:0.88rem;color:var(--color-muted);">Mistenker du en phishing-e-post? Ikke klikk på lenker. Videresend til <a href="mailto:sikkerhet@carob.no" style="color:var(--color-accent);">sikkerhet@carob.no</a> og slett den.</p>
               </div>
-
               <div class="card" style="border-left:3px solid var(--color-accent);">
                 <h3>Passord</h3>
                 <p style="font-size:0.88rem;color:var(--color-muted);">Del aldri passordet ditt. Bruk en passordbehandler. IT vil aldri spørre om passordet ditt.</p>
               </div>
-
               <div class="card" style="border-left:3px solid var(--color-accent);">
                 <h3>Lås PC-en</h3>
                 <p style="font-size:0.88rem;color:var(--color-muted);">Lås alltid skjermen når du forlater arbeidsplassen. Hurtigtast: <kbd style="background:var(--color-bg);padding:1px 5px;border-radius:3px;border:1px solid var(--color-border);">Win+L</kbd></p>
               </div>
-
               <div class="card" style="border-left:3px solid var(--color-accent);">
                 <h3>Sikkerhetsbrudd</h3>
                 <p style="font-size:0.88rem;color:var(--color-muted);">Oppdager du noe mistenkelig? Ring IT umiddelbart på <a href="tel:+4712345678" style="color:var(--color-accent);">+47 12 34 56 78</a>. Ikke vent.</p>
               </div>
-
             </div>
           </section>
 
@@ -593,7 +547,6 @@
     </div>
   </footer>
 
-  <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
   <script>
     const toggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');

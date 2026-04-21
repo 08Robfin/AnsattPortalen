@@ -6,17 +6,458 @@
   <meta name="description" content="CAROB AS – Ansattportal. Finn IT-brukerstøtte, HMS-lovverk og systemhjelp." />
   <title>CAROB AS – Ansattportal</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* =============================================
+       ANSATTPORTAL – DASHBOARD OVERRIDES
+       ============================================= */
+
+    /* Top announcement bar */
+    .announcement-bar {
+      background: var(--color-accent);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 0.45rem var(--space-md);
+      text-align: center;
+      letter-spacing: 0.01em;
+    }
+    .announcement-bar a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ---- PORTAL HEADER (replaces big hero) ---- */
+    .portal-header {
+      background: var(--color-primary);
+      padding: var(--space-lg) 0 var(--space-md);
+      border-bottom: 3px solid var(--color-accent);
+    }
+
+    .portal-header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+
+    .portal-welcome h1 {
+      color: #fff;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .portal-welcome .date-line {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.85rem;
+      font-family: var(--font-body);
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .portal-meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .portal-avatar {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.12);
+      border: 2px solid rgba(255,255,255,0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .portal-user-info {
+      text-align: right;
+    }
+
+    .portal-user-info .name {
+      color: #fff;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .portal-user-info .dept {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.78rem;
+    }
+
+    /* ---- STATUS STRIP ---- */
+    .status-strip {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      padding: 0.6rem 0;
+    }
+
+    .status-strip-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+      flex-wrap: wrap;
+    }
+
+    .status-item {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.82rem;
+      color: var(--color-muted);
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .status-dot--ok      { background: #16A34A; }
+    .status-dot--warn    { background: #D97706; }
+    .status-dot--error   { background: #DC2626; }
+
+    .status-item strong {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+
+    .status-strip-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--color-muted);
+      margin-right: 0.25rem;
+    }
+
+    /* ---- MAIN DASHBOARD GRID ---- */
+    .dashboard {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: var(--space-lg) var(--space-md) var(--space-xl);
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: var(--space-lg);
+      align-items: start;
+    }
+
+    /* ---- QUICK ACTIONS ---- */
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .quick-actions {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: var(--space-lg);
+    }
+
+    .qa-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: var(--space-sm) var(--space-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.6rem;
+      text-decoration: none;
+      transition: border-color 0.15s, box-shadow 0.15s, transform 0.12s;
+    }
+
+    .qa-card:hover {
+      border-color: var(--color-accent);
+      box-shadow: 0 2px 12px rgba(46,125,107,0.1);
+      transform: translateY(-2px);
+    }
+
+    .qa-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--color-accent-bg);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-accent);
+      flex-shrink: 0;
+    }
+
+    .qa-card span {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      line-height: 1.3;
+    }
+
+    .qa-card p {
+      font-size: 0.75rem;
+      color: var(--color-muted);
+      max-width: none;
+      line-height: 1.35;
+    }
+
+    /* ---- TOP PROBLEMS PANEL ---- */
+    .panel {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: var(--space-md);
+    }
+
+    .panel-header {
+      padding: 0.85rem var(--space-md);
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .panel-header h2 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      font-family: var(--font-body);
+      letter-spacing: 0;
+    }
+
+    .panel-header a {
+      font-size: 0.78rem;
+      color: var(--color-accent);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .problem-list {
+      list-style: none;
+    }
+
+    .problem-item {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.8rem var(--space-md);
+      border-bottom: 1px solid var(--color-border);
+      transition: background 0.12s;
+    }
+
+    .problem-item:last-child { border-bottom: none; }
+    .problem-item:hover { background: var(--color-bg); }
+
+    .problem-num {
+      width: 24px;
+      height: 24px;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--color-muted);
+      flex-shrink: 0;
+    }
+
+    .problem-item a {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      text-decoration: none;
+      flex: 1;
+    }
+
+    .problem-item a:hover { color: var(--color-accent); }
+
+    .problem-item .tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.15rem 0.55rem;
+      border-radius: 99px;
+      background: var(--color-accent-bg);
+      color: var(--color-accent);
+      white-space: nowrap;
+    }
+
+    /* ---- HMS QUICK BOX ---- */
+    .hms-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      padding: var(--space-sm);
+    }
+
+    .hms-tile {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem;
+      text-decoration: none;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .hms-tile:hover {
+      border-color: var(--color-accent);
+      background: var(--color-accent-bg);
+    }
+
+    .hms-tile .hms-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 0.2rem;
+    }
+
+    .hms-tile p {
+      font-size: 0.73rem;
+      color: var(--color-muted);
+      max-width: none;
+      line-height: 1.35;
+    }
+
+    /* ---- RIGHT SIDEBAR ---- */
+    .sidebar-panel {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: var(--space-md);
+    }
+
+    .sidebar-panel-header {
+      padding: 0.75rem var(--space-sm) 0.75rem var(--space-md);
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Contact IT */
+    .contact-list { list-style: none; padding: 0.5rem 0; }
+
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.6rem var(--space-md);
+      font-size: 0.85rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .contact-list li:last-child { border-bottom: none; }
+
+    .contact-list svg { color: var(--color-accent); flex-shrink: 0; }
+
+    .contact-list a {
+      color: var(--color-accent);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .contact-list .cl-label {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--color-muted);
+      margin-bottom: 0.1rem;
+    }
+
+    /* Useful links */
+    .link-list { list-style: none; }
+
+    .link-list li a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.65rem var(--space-md);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-primary);
+      border-bottom: 1px solid var(--color-border);
+      transition: background 0.12s, color 0.12s;
+    }
+
+    .link-list li:last-child a { border-bottom: none; }
+    .link-list li a:hover { background: var(--color-bg); color: var(--color-accent); }
+
+    .link-list li a svg { color: var(--color-muted); flex-shrink: 0; }
+
+    /* Alert inside panel */
+    .panel-alert {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+      padding: 0.75rem var(--space-md);
+      background: #FEF9EC;
+      border-top: 1px solid #F2D97A;
+      font-size: 0.8rem;
+      color: #5C4000;
+    }
+
+    .panel-alert svg { flex-shrink: 0; margin-top: 1px; }
+
+    /* ---- MOBILE ---- */
+    @media (max-width: 900px) {
+      .dashboard {
+        grid-template-columns: 1fr;
+      }
+      .quick-actions {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .quick-actions {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hms-grid {
+        grid-template-columns: 1fr;
+      }
+      .portal-meta { display: none; }
+    }
+  </style>
 </head>
 <body>
 
   <a href="#main" class="skip-link">Hopp til innhold</a>
 
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar" role="alert">
+    ⚠ Planlagt vedlikehold: Filserveren utilgjengelig lørdag 19. april kl. 22:00–02:00. 
+    <a href="#driftsstatus">Se driftsstatus</a>
+  </div>
+
+  <!-- NAV -->
   <nav class="site-nav" aria-label="Hovednavigasjon">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo" aria-label="CAROB AS – til forsiden">
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
           <rect width="28" height="28" rx="6" fill="#2E7D6B"/>
-          <rect x="7" y="8" width="14" height="2.5" rx="1.25" fill="white"/><rect x="7" y="12.75" width="10" height="2.5" rx="1.25" fill="white"/><rect x="7" y="17.5" width="12" height="2.5" rx="1.25" fill="white"/>
+          <rect x="7" y="8" width="14" height="2.5" rx="1.25" fill="white"/>
+          <rect x="7" y="12.75" width="10" height="2.5" rx="1.25" fill="white"/>
+          <rect x="7" y="17.5" width="12" height="2.5" rx="1.25" fill="white"/>
         </svg>
         CAROB AS
       </a>
@@ -36,239 +477,269 @@
     </div>
   </nav>
 
-  <header class="hero" role="banner">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <span class="label">CAROB AS – Intern ansattportal</span>
-        <h1>Ansattportal</h1>
-        <p>Her finner du IT-brukerstøtte, veiledning i HMS-lovverk og hjelp til å løse vanlige problemer i arbeidshverdagen.</p>
-        <div class="hero-actions">
-          <a href="it-support.html" class="btn btn--accent">IT-brukerstøtte</a>
-          <a href="hms.html" class="btn btn--outline" style="border-color:rgba(255,255,255,0.3);color:#fff;">HMS-lovverk</a>
-        </div>
+  <!-- PORTAL HEADER -->
+  <header class="portal-header" role="banner">
+    <div class="portal-header-inner">
+      <div class="portal-welcome">
+        <h1 id="greeting">God morgen 👋</h1>
+        <span class="date-line" id="date-line">Laster dato…</span>
       </div>
-
-      <aside class="hero-card" aria-label="Hurtiglenker">
-        <h3>Rask hjelp</h3>
-        <nav class="hero-card-links" aria-label="Hurtiglenker">
-          <a href="it-support.html#passord">
-            Glemt passord / låst konto
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="it-support.html#nettverk">
-            Problemer med nettverk / VPN
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="it-support.html#printer">
-            Printer fungerer ikke
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="hms.html#aml">
-            Arbeidsmiljøloven – dine rettigheter
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="hms.html#varsling">
-            Meld avvik / nestenulykke
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </nav>
-      </aside>
+      <div class="portal-meta">
+        <div class="portal-user-info">
+          <div class="name">Ansatt — CAROB AS</div>
+          <div class="dept">IT / Administrasjon</div>
+        </div>
+        <div class="portal-avatar" aria-hidden="true">CA</div>
+      </div>
     </div>
   </header>
 
+  <!-- STATUS STRIP -->
+  <div class="status-strip" aria-label="Systemstatus">
+    <div class="status-strip-inner">
+      <span class="status-strip-label">Status:</span>
+      <div class="status-item">
+        <span class="status-dot status-dot--ok"></span>
+        <strong>Microsoft 365</strong> Operativ
+      </div>
+      <div class="status-item">
+        <span class="status-dot status-dot--ok"></span>
+        <strong>VPN</strong> Operativ
+      </div>
+      <div class="status-item">
+        <span class="status-dot status-dot--warn"></span>
+        <strong>Filserver</strong> Begrenset
+      </div>
+      <div class="status-item">
+        <span class="status-dot status-dot--ok"></span>
+        <strong>Visma ERP</strong> Operativ
+      </div>
+      <div class="status-item">
+        <span class="status-dot status-dot--ok"></span>
+        <strong>HR-portal</strong> Operativ
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN DASHBOARD -->
   <main id="main">
+    <div class="dashboard">
 
-    <!-- SEKSJONER -->
-    <section class="shortcuts section" aria-labelledby="shortcuts-heading">
-      <div class="container">
-        <div class="section-header">
-          <span class="label">Hva trenger du hjelp med?</span>
-          <h2 id="shortcuts-heading">Velg en kategori</h2>
+      <!-- LEFT / MAIN COLUMN -->
+      <div>
+
+        <!-- QUICK ACTIONS -->
+        <p class="section-label">Hurtigtilgang</p>
+        <div class="quick-actions" role="list">
+
+          <a href="it-support.html#passord" class="qa-card" role="listitem">
+            <div class="qa-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="4" y="8" width="10" height="8" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M6 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <span>Glemt passord</span>
+            <p>Tilbakestill konto selv</p>
+          </a>
+
+          <a href="it-support.html#nettverk" class="qa-card" role="listitem">
+            <div class="qa-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 9a3.5 3.5 0 0 1 7 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="12.5" r="1" fill="currentColor"/></svg>
+            </div>
+            <span>VPN / Nettverk</span>
+            <p>Feilsøking og kobling</p>
+          </a>
+
+          <a href="it-support.html#printer" class="qa-card" role="listitem">
+            <div class="qa-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="6" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M5 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2" stroke="currentColor" stroke-width="1.5"/><rect x="5" y="10" width="8" height="1.5" rx="0.75" fill="currentColor"/></svg>
+            </div>
+            <span>Printer</span>
+            <p>Installasjon og feil</p>
+          </a>
+
+          <a href="hms.html#varsling" class="qa-card" role="listitem">
+            <div class="qa-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L2 14.5h14L9 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 8v3M9 13v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <span>Meld avvik</span>
+            <p>HMS-varsling og avvik</p>
+          </a>
+
         </div>
-        <div class="shortcuts-grid" role="list">
 
-          <a href="it-support.html" class="shortcut-card" role="listitem">
-            <div class="shortcut-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 17h6M10 15v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-            </div>
-            <h3>IT-brukerstøtte</h3>
-            <p>Fiks vanlige feil selv – passord, nettverk, printer, e-post og mer.</p>
-          </a>
-
-          <a href="hms.html" class="shortcut-card" role="listitem">
-            <div class="shortcut-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 5.5v5c0 4 3 7 7 8 4-1 7-4 7-8v-5L10 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <h3>HMS-lovverk</h3>
-            <p>Arbeidsmiljøloven, internkontroll og dine rettigheter som ansatt.</p>
-          </a>
-
-          <a href="rutiner.html" class="shortcut-card" role="listitem">
-            <div class="shortcut-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="2" width="14" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 7h6M7 10h6M7 13h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-            </div>
-            <h3>IT-systemer</h3>
-            <p>Oversikt over programmene og plattformene vi bruker i CAROB AS.</p>
-          </a>
-
-          <a href="it-support.html#kontakt" class="shortcut-card" role="listitem">
-            <div class="shortcut-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.6"/><path d="M2 6l8 5 8-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-            </div>
-            <h3>Kontakt IT</h3>
-            <p>Løste du det ikke selv? Send melding til IT-avdelingen.</p>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- VANLIGSTE PROBLEMER -->
-    <section class="section" style="padding-top:0;" aria-labelledby="topproblemer-heading">
-      <div class="container">
-        <div class="content-split">
-          <div>
-            <span class="label">Brukerstøtte</span>
-            <h2 id="topproblemer-heading">Vanligste IT-problemer</h2>
-            <p class="text-muted" style="margin-top:0.5rem;margin-bottom:1.5rem;">De fem problemene IT-avdelingen får flest henvendelser om – med direkte lenke til løsning.</p>
-
-            <div class="info-list" role="list">
-              <li role="listitem">
-                <div class="icon" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="4" y="7" width="8" height="7" rx="1" stroke="currentColor" stroke-width="1.4"/><path d="M6 7V5a2 2 0 0 1 4 0v2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-                </div>
-                <div>
-                  <strong><a href="it-support.html#passord" style="color:var(--color-primary);text-decoration:underline;text-underline-offset:2px;">Glemt passord eller låst konto</a></strong>
-                  <p>Slik tilbakestiller du passordet ditt på under 2 minutter.</p>
-                </div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.4"/><path d="M5 8a3 3 0 0 1 6 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="8" cy="11" r="1" fill="currentColor"/></svg>
-                </div>
-                <div>
-                  <strong><a href="it-support.html#nettverk" style="color:var(--color-primary);text-decoration:underline;text-underline-offset:2px;">Ingen internettforbindelse / VPN</a></strong>
-                  <p>Steg-for-steg feilsøking av nettverksproblemer.</p>
-                </div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="5" width="12" height="8" rx="1" stroke="currentColor" stroke-width="1.4"/><path d="M5 5V4a3 3 0 0 1 6 0v1" stroke="currentColor" stroke-width="1.4"/><path d="M5 9h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-                </div>
-                <div>
-                  <strong><a href="it-support.html#printer" style="color:var(--color-primary);text-decoration:underline;text-underline-offset:2px;">Printer skriver ikke ut</a></strong>
-                  <p>Sjekkliste for de vanligste printerprob­lemene.</p>
-                </div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4h12a1 1 0 0 1 1 1v7H1V5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.4"/><path d="M1 11l4-3 3 2 3-3 4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
-                <div>
-                  <strong><a href="it-support.html#epost" style="color:var(--color-primary);text-decoration:underline;text-underline-offset:2px;">E-post fungerer ikke</a></strong>
-                  <p>Outlook krasjer, synkroniserer ikke eller sender ikke.</p>
-                </div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="4" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M5 4V3a3 3 0 0 1 6 0v1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-                </div>
-                <div>
-                  <strong><a href="it-support.html#treg" style="color:var(--color-primary);text-decoration:underline;text-underline-offset:2px;">Treg datamaskin</a></strong>
-                  <p>Enkle tiltak som gjør PC-en raskere igjen.</p>
-                </div>
-              </li>
-            </div>
+        <!-- TOP IT PROBLEMS -->
+        <div class="panel" aria-labelledby="problems-heading">
+          <div class="panel-header">
+            <h2 id="problems-heading">Vanligste IT-problemer</h2>
+            <a href="it-support.html">Se alle →</a>
           </div>
+          <ul class="problem-list">
+            <li class="problem-item">
+              <span class="problem-num">1</span>
+              <a href="it-support.html#passord">Glemt passord eller låst brukerkonto</a>
+              <span class="tag">Konto</span>
+            </li>
+            <li class="problem-item">
+              <span class="problem-num">2</span>
+              <a href="it-support.html#nettverk">VPN kobler ikke til hjemmefra</a>
+              <span class="tag">Nettverk</span>
+            </li>
+            <li class="problem-item">
+              <span class="problem-num">3</span>
+              <a href="it-support.html#printer">Printer skriver ikke ut</a>
+              <span class="tag">Printer</span>
+            </li>
+            <li class="problem-item">
+              <span class="problem-num">4</span>
+              <a href="it-support.html#teams">Teams-møte starter ikke</a>
+              <span class="tag">Teams</span>
+            </li>
+            <li class="problem-item">
+              <span class="problem-num">5</span>
+              <a href="it-support.html#treg">Treg datamaskin / PC henger</a>
+              <span class="tag">Maskinvare</span>
+            </li>
+          </ul>
+        </div>
 
-          <div>
-            <span class="label">HMS</span>
-            <h2 id="hms-oversikt-heading">Viktige lover og regler</h2>
-            <p class="text-muted" style="margin-top:0.5rem;margin-bottom:1.5rem;">De lovene du som ansatt i CAROB AS må kjenne til.</p>
-
-            <div class="card card--accent" style="margin-bottom:var(--space-sm);">
-              <h3><a href="hms.html#aml" style="color:var(--color-primary);text-decoration:underline;text-underline-offset:2px;">Arbeidsmiljøloven (AML)</a></h3>
-              <p>Regulerer arbeidsforholdet, arbeidstid, vern mot diskriminering og retten til et fullt forsvarlig arbeidsmiljø.</p>
-            </div>
-            <div class="card card--accent" style="margin-bottom:var(--space-sm);">
-              <h3><a href="hms.html#internkontroll" style="color:var(--color-primary);text-decoration:underline;text-underline-offset:2px;">Internkontrollforskriften</a></h3>
-              <p>Krav om systematisk HMS-arbeid i alle virksomheter. Bedriften skal dokumentere og følge opp risikoer.</p>
-            </div>
-            <div class="card card--accent" style="margin-bottom:var(--space-sm);">
-              <h3><a href="hms.html#gdpr" style="color:var(--color-primary);text-decoration:underline;text-underline-offset:2px;">GDPR / Personopplysningsloven</a></h3>
-              <p>Regler for behandling av personopplysninger – gjelder deg som ansatt og data vi håndterer.</p>
-            </div>
-            <div class="card card--accent">
-              <h3><a href="hms.html#varsling" style="color:var(--color-primary);text-decoration:underline;text-underline-offset:2px;">Varslingsplikten</a></h3>
-              <p>Du har rett og plikt til å varsle om kritikkverdige forhold. Bedriften skal ikke gjengjelde varsling.</p>
-            </div>
+        <!-- HMS QUICK ACCESS -->
+        <div class="panel" aria-labelledby="hms-panel-heading">
+          <div class="panel-header">
+            <h2 id="hms-panel-heading">HMS og lovverk</h2>
+            <a href="hms.html">Se alle →</a>
+          </div>
+          <div class="hms-grid">
+            <a href="hms.html#aml" class="hms-tile">
+              <div class="hms-title">Arbeidsmiljøloven</div>
+              <p>Dine rettigheter som ansatt</p>
+            </a>
+            <a href="hms.html#internkontroll" class="hms-tile">
+              <div class="hms-title">Internkontroll</div>
+              <p>Systematisk HMS-arbeid</p>
+            </a>
+            <a href="hms.html#gdpr" class="hms-tile">
+              <div class="hms-title">GDPR</div>
+              <p>Personvern og databehandling</p>
+            </a>
+            <a href="hms.html#varsling" class="hms-tile">
+              <div class="hms-title">Varslingsplikten</div>
+              <p>Rett og plikt til å varsle</p>
+            </a>
           </div>
         </div>
+
       </div>
-    </section>
 
-    <!-- DRIFTSSTATUS -->
-    <section class="section" style="background:var(--color-surface);border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);" aria-labelledby="status-heading">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="label">Systemer</span>
-          <h2 id="status-heading">Driftsstatus – CAROB AS</h2>
-          <p class="text-muted">Sanntidsoversikt over bedriftens IT-systemer.</p>
+      <!-- RIGHT SIDEBAR -->
+      <aside aria-label="Kontakt og nyttige lenker">
+
+        <!-- CONTACT IT -->
+        <div class="sidebar-panel">
+          <div class="sidebar-panel-header">Kontakt IT-avdelingen</div>
+          <ul class="contact-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4h12a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.4"/><path d="M1 5l7 4 7-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <div>
+                <span class="cl-label">E-post</span>
+                <a href="mailto:it@carob.no">it@carob.no</a>
+              </div>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 1h2.5l1 3-1.5 1a8 8 0 0 0 4 4l1-1.5 3 1V11a2 2 0 0 1-2 2A12 12 0 0 1 1 3a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+              <div>
+                <span class="cl-label">Telefon (hverdager 08–16)</span>
+                <a href="tel:+4712345678">+47 12 34 56 78</a>
+              </div>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 5H3a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1z" stroke="currentColor" stroke-width="1.4"/><path d="M11 5V4a3 3 0 0 0-6 0v1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <div>
+                <span class="cl-label">Teams-kanal</span>
+                <a href="#">IT-avdelingen (Teams)</a>
+              </div>
+            </li>
+          </ul>
+          <div class="panel-alert" role="status">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1.5L1.5 12h11L7 1.5z" stroke="#D97706" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 5.5v3M7 10v.5" stroke="#D97706" stroke-width="1.4" stroke-linecap="round"/></svg>
+            <span>Filserveren er midlertidig begrenset. IT jobber med saken.</span>
+          </div>
         </div>
 
-        <div class="table-wrap" style="margin-top:var(--space-lg);">
-          <table>
-            <caption class="sr-only">Driftsstatus for CAROB AS sine IT-systemer</caption>
-            <thead>
-              <tr>
-                <th scope="col">System</th>
-                <th scope="col">Status</th>
-                <th scope="col">Sist sjekket</th>
-                <th scope="col">Ansvarlig</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Microsoft 365 (Outlook, Teams)</td>
-                <td><span class="status-badge status-badge--ok" role="status">Operativ</span></td>
-                <td>I dag 08:00</td>
-                <td>IT-avdelingen</td>
-              </tr>
-              <tr>
-                <td>VPN (GlobalProtect)</td>
-                <td><span class="status-badge status-badge--ok" role="status">Operativ</span></td>
-                <td>I dag 08:00</td>
-                <td>IT-avdelingen</td>
-              </tr>
-              <tr>
-                <td>Filserver / SharePoint</td>
-                <td><span class="status-badge status-badge--warning" role="status">Begrenset</span></td>
-                <td>I dag 07:30</td>
-                <td>IT-avdelingen</td>
-              </tr>
-              <tr>
-                <td>ERP-system (Visma)</td>
-                <td><span class="status-badge status-badge--ok" role="status">Operativ</span></td>
-                <td>I dag 08:00</td>
-                <td>Økonomi / IT</td>
-              </tr>
-              <tr>
-                <td>HR-portal</td>
-                <td><span class="status-badge status-badge--ok" role="status">Operativ</span></td>
-                <td>I går 16:00</td>
-                <td>HR / IT</td>
-              </tr>
-            </tbody>
-          </table>
+        <!-- DRIFTSSTATUS -->
+        <div class="sidebar-panel" id="driftsstatus">
+          <div class="sidebar-panel-header">Driftsstatus</div>
+          <ul class="link-list">
+            <li>
+              <a href="rutiner.html">
+                <span>Microsoft 365 (Outlook, Teams)</span>
+                <span class="status-badge status-badge--ok" style="font-size:0.7rem;">Operativ</span>
+              </a>
+            </li>
+            <li>
+              <a href="rutiner.html">
+                <span>VPN (GlobalProtect)</span>
+                <span class="status-badge status-badge--ok" style="font-size:0.7rem;">Operativ</span>
+              </a>
+            </li>
+            <li>
+              <a href="rutiner.html">
+                <span>Filserver / SharePoint</span>
+                <span class="status-badge status-badge--warning" style="font-size:0.7rem;">Begrenset</span>
+              </a>
+            </li>
+            <li>
+              <a href="rutiner.html">
+                <span>Visma ERP</span>
+                <span class="status-badge status-badge--ok" style="font-size:0.7rem;">Operativ</span>
+              </a>
+            </li>
+            <li>
+              <a href="rutiner.html">
+                <span>HR-portal</span>
+                <span class="status-badge status-badge--ok" style="font-size:0.7rem;">Operativ</span>
+              </a>
+            </li>
+          </ul>
         </div>
 
-        <div class="alert alert--warning" style="margin-top:var(--space-md);" role="alert">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 2L1.5 15.5h15L9 2z" stroke="#92400E" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 7v4M9 13v.5" stroke="#92400E" stroke-width="1.5" stroke-linecap="round"/></svg>
-          <div><strong>Planlagt vedlikehold:</strong> Filserveren vil være utilgjengelig lørdag 19. april kl. 22:00–02:00. Lagre lokalt i mellomtiden.</div>
+        <!-- NYTTIGE LENKER -->
+        <div class="sidebar-panel">
+          <div class="sidebar-panel-header">Nyttige lenker</div>
+          <ul class="link-list">
+            <li>
+              <a href="rutiner.html#m365">
+                Microsoft 365 – logg inn
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2.5 6.5h8M7 3l3.5 3.5L7 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="rutiner.html#visma">
+                Visma – lønn og fravær
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2.5 6.5h8M7 3l3.5 3.5L7 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="rutiner.html#hr">
+                HR-portal – ferie og permisjon
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2.5 6.5h8M7 3l3.5 3.5L7 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="hms.html#varsling">
+                Meld avvik / nestenulykke
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2.5 6.5h8M7 3l3.5 3.5L7 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="it-support.html#kontakt">
+                Bestill nytt IT-utstyr
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2.5 6.5h8M7 3l3.5 3.5L7 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </li>
+          </ul>
         </div>
-      </div>
-    </section>
 
+      </aside>
+    </div>
   </main>
 
   <footer class="site-footer" role="contentinfo">
@@ -278,7 +749,7 @@
           <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect width="28" height="28" rx="6" fill="#2E7D6B"/><rect x="7" y="8" width="14" height="2.5" rx="1.25" fill="white"/><rect x="7" y="12.75" width="10" height="2.5" rx="1.25" fill="white"/><rect x="7" y="17.5" width="12" height="2.5" rx="1.25" fill="white"/></svg>
           CAROB AS
         </a>
-        <p>Intern ansattportal – IT-brukerstøtte og HMS-lovverk for ansatte i CAROB AS.</p>
+        <p>Intern ansattportal – kun for ansatte i CAROB AS.</p>
       </div>
       <div class="footer-col">
         <h4>Seksjoner</h4>
@@ -305,13 +776,33 @@
   </footer>
 
   <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
+
   <script>
+    // Mobile nav
     const toggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
     toggle.addEventListener('click', () => {
       const open = navLinks.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open);
     });
+
+    // Dynamic greeting and date
+    const greetingEl = document.getElementById('greeting');
+    const dateEl = document.getElementById('date-line');
+
+    const now = new Date();
+    const hour = now.getHours();
+
+    let greeting = 'God morgen 👋';
+    if (hour >= 12 && hour < 17) greeting = 'God ettermiddag 👋';
+    else if (hour >= 17) greeting = 'God kveld 👋';
+
+    greetingEl.textContent = greeting;
+
+    const days = ['søndag','mandag','tirsdag','onsdag','torsdag','fredag','lørdag'];
+    const months = ['januar','februar','mars','april','mai','juni','juli','august','september','oktober','november','desember'];
+    dateEl.textContent = `${days[now.getDay()]} ${now.getDate()}. ${months[now.getMonth()]} ${now.getFullYear()} – CAROB AS ansattportal`;
   </script>
+
 </body>
 </html>
