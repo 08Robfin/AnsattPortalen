@@ -49,4 +49,4 @@ Koden er vibecoded med AI-hjelp for å spare tid, slik at vi kan fokusere på de
 
 ---
 
-*Prosjektfrist: 19. mai 2025 – IKT Agder*
+*Prosjektfrist: 19. mai 2025*
