@@ -1,4 +1,4 @@
-# AnsattPortalen – CAROB AS
+# AnsattPortalen - CAROB AS
 
 ## Om prosjektet
 
@@ -6,9 +6,9 @@ Dette er et skoleprosjekt laget av **Carmen Maria Kleijnen** og **Robin Finnesta
 
 Prosjektet går ut på å designe og utvikle en intern ansattportal for den fiktive bedriften **CAROB AS**. Portalen fungerer som et sentralt knutepunkt for ansatte, med fokus på:
 
-- **IT-brukerstøtte** – steg-for-steg veiledning for vanlige IT-problemer (passord, VPN, printer, Teams, PC og mobil)
-- **HMS-lovverk** – informasjon om Arbeidsmiljøloven, internkontrollforskriften, GDPR og varslingsplikten
-- **IT-utstyr og systemer** – oversikt over PC, mobil, Microsoft 365, Visma og andre systemer ansatte bruker
+- **IT-brukerstøtte** - steg-for-steg veiledning for vanlige IT-problemer (passord, VPN, printer, Teams, PC og mobil)
+- **HMS-lovverk** - informasjon om Arbeidsmiljøloven, internkontrollforskriften, GDPR og varslingsplikten
+- **IT-utstyr og systemer** - oversikt over PC, mobil, Microsoft 365, Visma og andre systemer ansatte bruker
 
 Nettsiden hostes på egen server (Robin sin homelab / Proxmox) under eget domene.
 
@@ -18,9 +18,9 @@ Nettsiden hostes på egen server (Robin sin homelab / Proxmox) under eget domene
 
 Vi vurderes primært på:
 
-- **Faglig innhold** – kvaliteten og relevansen av informasjonen på portalen
-- **Drifting av webserver** – DNS, domene, reverse proxy og webserverkonfigurasjon
-- **Brukerstøtte** – hvordan vi har strukturert IT-hjelp og ressurser for sluttbrukere
+- **Faglig innhold** - kvaliteten og relevansen av informasjonen på portalen
+- **Drifting av webserver** - DNS, domene, reverse proxy og webserverkonfigurasjon
+- **Brukerstøtte** - hvordan vi har strukturert IT-hjelp og ressurser for sluttbrukere
 
 Koden er vibecoded med AI-hjelp for å spare tid, slik at vi kan fokusere på det vi faktisk skal vurderes på.
 
