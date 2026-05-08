@@ -1,0 +1,331 @@
+{
+  "site": {
+    "name": "CAROB AS",
+    "itEmail": "it@carob.no",
+    "itPhone": "+47 12 34 56 78",
+    "hrEmail": "hr@carob.no"
+  },
+
+  "announcement": {
+    "text": "Planlagt vedlikehold: Filserveren utilgjengelig lørdag 17. mai kl. 22:00-02:00.",
+    "linkText": "Se driftsstatus",
+    "linkHref": "#driftsstatus"
+  },
+
+  "systemStatus": [
+    { "name": "Mail-system",  "status": "ok" },
+    { "name": "Intranett",    "status": "ok" },
+    { "name": "VPN",          "status": "ok" },
+    { "name": "Filserver",    "status": "warn" },
+    { "name": "Timeplan",     "status": "ok" }
+  ],
+
+  "quickActions": [
+    { "icon": "clock",    "title": "Timeregistrering", "desc": "Registrer timer og fravær",  "link": "ikke-it.html" },
+    { "icon": "money",    "title": "Lønnslipp",        "desc": "Se lønnsslipper",             "link": "ikke-it.html" },
+    { "icon": "calendar", "title": "Søk om ferie",     "desc": "Ferie og permisjon",          "link": "ikke-it.html" },
+    { "icon": "lock",     "title": "Glemt passord",    "desc": "Tilbakestill konto selv",     "link": "it-support.html#passord" },
+    { "icon": "warning",  "title": "Meld avvik",       "desc": "HMS-varsling og avvik",       "link": "hms.html#varsling" },
+    { "icon": "printer",  "title": "Printer",          "desc": "Feil og installasjon",        "link": "it-support.html#printer" }
+  ],
+
+  "news": [
+    { "date": "08.05.2025", "title": "Sommerfest 20. juni", "text": "Mer informasjon sendes ut på mail." },
+    { "date": "02.05.2025", "title": "Ny rutine for ferieavvikling", "text": "Se HR-portalen for detaljer om den nye rutinen." },
+    { "date": "28.04.2025", "title": "Velkommen til nye kollegaer", "text": "Per Hansen (salg) og Lise Dahl (økonomi) starter denne uken." },
+    { "date": "14.04.2025", "title": "Oppdatert IT-policy", "text": "Les den oppdaterte policyen under Systemer." }
+  ],
+
+  "topIssues": [
+    { "title": "Glemt passord eller låst konto",       "tag": "Konto",   "link": "it-support.html#passord" },
+    { "title": "VPN kobler ikke til hjemmefra",        "tag": "Nettverk","link": "it-support.html#nettverk" },
+    { "title": "Printer skriver ikke ut",              "tag": "Printer", "link": "it-support.html#printer" },
+    { "title": "Mail synkroniserer ikke",              "tag": "Mail",    "link": "it-support.html#epost" },
+    { "title": "Treg datamaskin",                      "tag": "PC",      "link": "it-support.html#treg" }
+  ],
+
+  "hmsTiles": [
+    { "title": "Arbeidsmiljøloven", "desc": "Dine rettigheter som ansatt",  "link": "hms.html#aml" },
+    { "title": "Internkontroll",    "desc": "Systematisk HMS-arbeid",       "link": "hms.html#internkontroll" },
+    { "title": "GDPR",              "desc": "Personvern og databehandling", "link": "hms.html#gdpr" },
+    { "title": "Varsling",          "desc": "Rett og plikt til å varsle",   "link": "hms.html#varsling" }
+  ],
+
+  "usefulLinks": [
+    { "title": "Microsoft 365 - logg inn",    "link": "rutiner.html#m365" },
+    { "title": "Timeplan - registrer timer",  "link": "ikke-it.html" },
+    { "title": "Lønnssystem - lønnslipp",     "link": "ikke-it.html" },
+    { "title": "HR-portal - ferie og permisjon", "link": "ikke-it.html" },
+    { "title": "Meld avvik",                  "link": "hms.html#varsling" }
+  ],
+
+  "sla": [
+    { "type": "Tilbakestille passord",  "respons": "1 time",         "losning": "4 timer",       "prioritet": "Normal" },
+    { "type": "Låst brukerkonto",       "respons": "1 time",         "losning": "4 timer",       "prioritet": "Normal" },
+    { "type": "VPN-tilgang",            "respons": "2 timer",        "losning": "4 timer",       "prioritet": "Hoy" },
+    { "type": "Ny brukerkonto",         "respons": "4 timer",        "losning": "2 virkedager",  "prioritet": "Normal" },
+    { "type": "PC-problemer",           "respons": "4 timer",        "losning": "1 virkedag",    "prioritet": "Normal" },
+    { "type": "Printer / skriver",      "respons": "1 virkedag",     "losning": "2 virkedager",  "prioritet": "Lav" },
+    { "type": "Nytt IT-utstyr",         "respons": "1 virkedag",     "losning": "5 virkedager",  "prioritet": "Lav" },
+    { "type": "Kritisk systemfeil",     "respons": "30 min",         "losning": "2 timer",       "prioritet": "Kritisk" }
+  ],
+
+  "itSupport": {
+    "categories": [
+      {
+        "id": "passord",
+        "title": "Passord og innlogging",
+        "items": [
+          {
+            "question": "Jeg har glemt passordet mitt",
+            "answer": "Gå til innloggingssiden og klikk 'Glemt passord'. Følg instruksjonene som sendes til din private e-post. Kontakt IT hvis du ikke mottar e-posten innen 10 minutter."
+          },
+          {
+            "question": "Kontoen min er låst",
+            "answer": "Vent 15 minutter, kontoen låses opp automatisk. Har du glemt passordet, bruk selvbetjeningsportalen eller ring IT."
+          },
+          {
+            "question": "Sette opp to-faktor autentisering",
+            "answer": "Last ned Microsoft Authenticator på telefonen. Gå til aka.ms/mfasetup og følg stegene for å koble til jobkontoen din."
+          }
+        ]
+      },
+      {
+        "id": "nettverk",
+        "title": "Nettverk og VPN",
+        "items": [
+          {
+            "question": "Ingen internettforbindelse på kontoret",
+            "answer": "Sjekk at nettverkskabelen sitter fast, og start PC-en på nytt. Fungerer det fortsatt ikke, kontakt IT."
+          },
+          {
+            "question": "VPN kobler ikke til hjemmefra",
+            "answer": "Åpne VPN-programmet og trykk 'Koble til'. Er du allerede koblet til, koble fra og prøv igjen. Sjekk at internett fungerer uten VPN først."
+          },
+          {
+            "question": "Tregt Wi-Fi på kontoret",
+            "answer": "Prøv å koble til det trådede nettverket med kabel. Kontakt IT hvis problemet vedvarer."
+          }
+        ]
+      },
+      {
+        "id": "printer",
+        "title": "Printer",
+        "items": [
+          {
+            "question": "Kan ikke skrive ut",
+            "answer": "Sjekk at printeren er slått på og koblet til nettverket. Åpne utskriftskøen på PC-en og slett eventuelle feilede jobber, og prøv igjen."
+          },
+          {
+            "question": "Papirstopp",
+            "answer": "Slå av printeren. Åpne alle deksler forsiktig og fjern papiret. Slå på igjen."
+          },
+          {
+            "question": "Dårlig utskriftskvalitet",
+            "answer": "Kjør renseprogrammet fra printerens innstillinger. Kontakt IT hvis det ikke hjelper."
+          }
+        ]
+      },
+      {
+        "id": "epost",
+        "title": "Mail-system og Teams",
+        "items": [
+          {
+            "question": "Mail synkroniserer ikke",
+            "answer": "Lukk og åpne mail-programmet igjen. Sjekk at du er koblet til internett eller VPN. Fungerer det ikke, kontakt IT."
+          },
+          {
+            "question": "Teams krasjer eller starter ikke",
+            "answer": "Lukk Teams helt ved å høyreklikke ikonet i systemfeltet og velg 'Avslutt'. Start på nytt. Hjelper ikke det, start PC-en på nytt."
+          },
+          {
+            "question": "Mikrofon eller kamera fungerer ikke i Teams",
+            "answer": "Gå til Innstillinger i Teams og velg riktig mikrofon og kamera. Sjekk at ingen andre programmer bruker dem samtidig."
+          }
+        ]
+      },
+      {
+        "id": "treg",
+        "title": "Treg PC",
+        "items": [
+          {
+            "question": "PC-en er veldig treg",
+            "answer": "Start PC-en på nytt og lukk programmer du ikke bruker. Frigjør lagringsplass ved å slette filer du ikke trenger."
+          },
+          {
+            "question": "PC-en henger seg opp",
+            "answer": "Trykk Ctrl+Shift+Esc for å åpne oppgavebehandling. Avslutt programmer som bruker mye minne. Kontakt IT hvis det skjer ofte."
+          }
+        ]
+      },
+      {
+        "id": "kontakt",
+        "title": "Kontakt IT",
+        "items": [
+          {
+            "question": "Hvordan kontakter jeg IT?",
+            "answer": "Send e-post til it@carob.no, ring +47 12 34 56 78 (hverdager 08-16), eller skriv i Teams-kanalen 'IT-avdelingen'."
+          },
+          {
+            "question": "Bestille nytt utstyr eller programvare",
+            "answer": "Send en e-post til it@carob.no med hva du trenger og en kort begrunnelse. Leder må godkjenne bestillingen."
+          }
+        ]
+      }
+    ]
+  },
+
+  "systems": [],
+
+  "systemsInfo": {
+    "categories": [
+      {
+        "id": "pc",
+        "title": "PC og laptop",
+        "items": [
+          {
+            "question": "Hvordan setter jeg opp en ny PC?",
+            "answer": "IT klargjør PC-en din før første arbeidsdag. Du logger inn med jobbkontoen din, og resten settes opp automatisk. Ta kontakt med IT hvis noe mangler eller ikke fungerer som det skal."
+          },
+          {
+            "question": "Kan jeg installere programmer selv?",
+            "answer": "Nei, all programvare må godkjennes og installeres av IT. Dette er for å sikre at PC-en ikke får virus eller uønsket programvare. Send en e-post til it@carob.no med hva du trenger."
+          },
+          {
+            "question": "Hva gjør jeg hvis PC-en min blir stjålet eller går i stykker?",
+            "answer": "Meld fra til IT umiddelbart på it@carob.no eller ring +47 12 34 56 78. Vi sperrer enheten og hjelper deg med å komme i gang igjen så raskt som mulig."
+          }
+        ]
+      },
+      {
+        "id": "mobil",
+        "title": "Mobil",
+        "items": [
+          {
+            "question": "Får jeg jobbtelefon?",
+            "answer": "Jobbtelefon tildeles etter avtale med nærmeste leder. IT setter opp telefonen og kobler den til jobbkontoen din. Ta kontakt med IT hvis du mener du har behov for jobbtelefon."
+          },
+          {
+            "question": "Hva gjør jeg hvis telefonen blir borte?",
+            "answer": "Meld fra til IT umiddelbart så vi kan sperre enheten på avstand. Jo raskere vi får beskjed, jo bedre sjanse er det for å hindre at jobbrelatert informasjon kommer på avveie."
+          }
+        ]
+      },
+      {
+        "id": "m365",
+        "title": "Microsoft 365",
+        "items": [
+          {
+            "question": "Hva er inkludert i Microsoft 365?",
+            "answer": "Du får tilgang til e-post, Teams, Word, Excel, PowerPoint og OneDrive. Logg inn med jobbadressen din på office.com fra hvilken som helst enhet. Husk å bruke VPN hvis du er utenfor kontoret."
+          },
+          {
+            "question": "Kan jeg bruke Microsoft 365 privat?",
+            "answer": "Lisensen er kun til bruk i jobbsammenheng. Du kan logge inn fra hjemme-PC eller mobil, men ikke bruk den til private dokumenter eller filer. Hold jobbkontoen og private kontoer adskilt."
+          }
+        ]
+      },
+      {
+        "id": "vpn",
+        "title": "VPN",
+        "items": [
+          {
+            "question": "Hva er VPN og når trenger jeg det?",
+            "answer": "VPN er en sikker tunnel mellom PC-en din og jobbnettverket. Du trenger det når du jobber hjemmefra og skal bruke filserveren eller andre interne systemer. På kontoret er du allerede på jobbnettverket og trenger ikke VPN."
+          },
+          {
+            "question": "Hvordan laster jeg ned VPN?",
+            "answer": "Kontakt IT på it@carob.no så sender vi deg installasjonsfilen og en kort guide. Oppsettet tar bare noen minutter, og vi hjelper deg hvis du får problemer underveis."
+          }
+        ]
+      },
+      {
+        "id": "filserver",
+        "title": "Filserver",
+        "items": [
+          {
+            "question": "Hva brukes filserveren til?",
+            "answer": "Filserveren er der vi lagrer og deler filer internt i bedriften. Den er tilgjengelig som en vanlig mappe på PC-en din når du er på kontoret eller koblet til VPN. Ikke lagre personopplysninger der uten godkjenning fra IT."
+          },
+          {
+            "question": "Jeg finner ikke filserveren på PC-en min",
+            "answer": "Sjekk at du er koblet til VPN hvis du jobber hjemmefra. Er du på kontoret og fortsatt ikke finner den, kan IT koble til mappen for deg. Ta kontakt på it@carob.no eller stikk innom IT-avdelingen."
+          }
+        ]
+      }
+    ]
+  },
+
+  "hms": {
+    "sections": [
+      {
+        "id": "aml",
+        "title": "Arbeidsmiljøloven",
+        "items": [
+          {
+            "question": "Hva sier loven om arbeidstid?",
+            "answer": "Arbeidstiden skal ikke overstige 9 timer per dag og 40 timer per uke. Du har krav på minst 11 timers hvile mellom arbeidsdager. Overtid kan avtales, men ikke over 200 timer i året."
+          },
+          {
+            "question": "Hvilke rettigheter har jeg mot diskriminering?",
+            "answer": "Ingen ansatt skal diskrimineres på grunn av kjønn, alder, etnisitet, religion, funksjonsnedsettelse eller seksuell orientering. Diskriminering meldes til leder eller HR."
+          },
+          {
+            "question": "Hva gjelder ved oppsigelse?",
+            "answer": "Du har krav på skriftlig oppsigelse med saklig begrunnelse. Oppsigelsestiden er normalt 1-3 måneder. Kontakt HR for mer informasjon."
+          }
+        ]
+      },
+      {
+        "id": "internkontroll",
+        "title": "Internkontroll og HMS",
+        "items": [
+          {
+            "question": "Hva er HMS?",
+            "answer": "HMS (Helse, Miljø og Sikkerhet) handler om å skape et trygt og godt arbeidsmiljø. Bedriften plikter å ha et systematisk HMS-arbeid."
+          },
+          {
+            "question": "Hva er mitt ansvar som ansatt?",
+            "answer": "Du skal følge HMS-reglene, bruke verneutstyr der det kreves, og melde fra om farer eller avvik til nærmeste leder."
+          }
+        ]
+      },
+      {
+        "id": "gdpr",
+        "title": "Personvern (GDPR)",
+        "items": [
+          {
+            "question": "Hvilke rettigheter har jeg?",
+            "answer": "Du har rett til å se hvilke opplysninger vi har om deg, og be om at feil rettes. Ta kontakt med HR for innsyn."
+          },
+          {
+            "question": "Hva regnes som personopplysninger?",
+            "answer": "Navn, adresse, e-post, telefonnummer, personnummer og helseopplysninger er eksempler på personopplysninger som skal behandles forsvarlig."
+          },
+          {
+            "question": "Hva gjør jeg ved et databrudd?",
+            "answer": "Meld fra til IT umiddelbart på it@carob.no eller ring +47 12 34 56 78. Databrudd skal rapporteres til Datatilsynet innen 72 timer."
+          }
+        ]
+      },
+      {
+        "id": "varsling",
+        "title": "Varsling",
+        "items": [
+          {
+            "question": "Hva kan jeg varsle om?",
+            "answer": "Du kan varsle om brudd på lover og regler, fare for liv og helse, korrupsjon eller trakassering på arbeidsplassen."
+          },
+          {
+            "question": "Er jeg beskyttet mot gjengjeldelse?",
+            "answer": "Ja. Det er forbudt å straffe eller behandle deg dårligere fordi du har varslet. Anonym varsling er mulig."
+          },
+          {
+            "question": "Hvem varsler jeg til?",
+            "answer": "Varsle til nærmeste leder, HMS-ansvarlig eller HR. Kontakt Arbeidstilsynet hvis intern varsling ikke fører frem."
+          }
+        ]
+      }
+    ]
+  }
+}

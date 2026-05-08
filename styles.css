@@ -1,5 +1,5 @@
 /* ============================================
-   AnsattPortalen — Delt stilark
+   AnsattPortalen - Delt stilark
    WCAG 2.1 AA kompatibel
    ============================================ */
 
@@ -811,4 +811,82 @@ tbody td { padding: 0.75rem 1rem; color: var(--color-text); }
   .footer-inner     { grid-template-columns: 1fr; gap: var(--space-lg); }
   .shortcuts-grid   { grid-template-columns: 1fr 1fr; }
   h1 { font-size: 2rem; }
+}
+
+/* ============================================
+   INNHOLDSOPPSETT (indre sider med sidebar)
+   ============================================ */
+.content-layout {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md) var(--space-xl);
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.content-sidebar {
+  position: sticky;
+  top: calc(var(--nav-height) + 1rem);
+}
+
+.sidebar-toc {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.sidebar-toc-header {
+  padding: 0.75rem var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+  background: var(--color-bg);
+}
+
+.sidebar-toc ul { padding: 0.4rem 0; }
+
+.sidebar-toc li a {
+  display: block;
+  padding: 0.5rem var(--space-md);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  transition: color 0.12s, background 0.12s;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-toc li a:hover {
+  color: var(--color-primary);
+  background: var(--color-bg);
+  border-left-color: var(--color-accent);
+}
+
+.content-main { min-width: 0; }
+
+.content-section { margin-bottom: var(--space-lg); }
+
+.section-title {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0;
+  line-height: 1.4;
+  margin-bottom: var(--space-sm);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-border);
+}
+
+@media (max-width: 900px) {
+  .content-layout {
+    grid-template-columns: 1fr;
+  }
+  .content-sidebar {
+    position: static;
+  }
 }

@@ -3,89 +3,154 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="IT-brukerstøtte for CAROB AS - løs vanlige problemer selv med steg-for-steg veiledning." />
-  <title>IT-brukerstøtte - CAROB AS</title>
+  <meta name="description" content="IT støtte for CAROB AS - løs vanlige problemer selv." />
+  <title>IT støtte - CAROB AS</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* --- Slim page header --- */
+    .announcement-bar {
+      background: var(--color-accent); color: #fff;
+      font-size: 0.82rem; font-weight: 500;
+      padding: 0.45rem var(--space-md); text-align: center;
+    }
+    .announcement-bar a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+
     .page-header {
       background: var(--color-primary);
       border-bottom: 3px solid var(--color-accent);
       padding: var(--space-md) 0;
     }
-    .page-header-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 var(--space-md);
-    }
+    .page-header-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-md); }
     .page-header .breadcrumb { margin-bottom: 0.5rem; }
-    .page-header-row {
-      display: flex;
-      align-items: center;
-      gap: var(--space-md);
-      flex-wrap: wrap;
-    }
+    .page-header-row { display: flex; align-items: center; gap: var(--space-md); flex-wrap: wrap; }
     .page-header-icon {
-      width: 42px; height: 42px;
-      background: rgba(255,255,255,0.1);
-      border-radius: var(--radius);
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; flex-shrink: 0;
+      width: 42px; height: 42px; background: rgba(255,255,255,0.1);
+      border-radius: var(--radius); display: flex; align-items: center;
+      justify-content: center; color: #fff; flex-shrink: 0;
     }
-    .page-header h1 {
-      color: #fff;
-      font-size: clamp(1.25rem, 2.5vw, 1.6rem);
-      margin-bottom: 0.15rem;
-    }
-    .page-header p {
-      color: rgba(255,255,255,0.65);
-      font-size: 0.85rem;
-      max-width: none;
-    }
+    .page-header h1 { color: #fff; font-size: clamp(1.25rem, 2.5vw, 1.6rem); margin-bottom: 0.15rem; }
+    .page-header p { color: rgba(255,255,255,0.65); font-size: 0.85rem; max-width: none; }
 
-    /* --- Feedback widget --- */
+    /* SLA */
+    .sla-section {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: var(--space-lg);
+    }
+    .sla-section-header {
+      padding: 0.85rem var(--space-md);
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.95rem; font-weight: 700;
+      color: var(--color-primary); font-family: var(--font-body);
+    }
+    .sla-table {
+      width: 100%; border-collapse: collapse; font-size: 0.85rem;
+    }
+    .sla-table th {
+      text-align: left; padding: 0.65rem var(--space-md);
+      background: var(--color-bg);
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.07em; color: var(--color-muted);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .sla-table td {
+      padding: 0.65rem var(--space-md);
+      border-bottom: 1px solid var(--color-border);
+      color: var(--color-text);
+    }
+    .sla-table tr:last-child td { border-bottom: none; }
+    .sla-table tr:hover td { background: var(--color-bg); }
+    .sla-badge {
+      display: inline-block; font-size: 0.7rem; font-weight: 600;
+      padding: 0.15rem 0.6rem; border-radius: 99px;
+    }
+    .sla-badge--kritisk { background: #FEE2E2; color: #991B1B; }
+    .sla-badge--hoy     { background: #FEF3C7; color: #92400E; }
+    .sla-badge--normal  { background: var(--color-accent-bg); color: var(--color-accent); }
+    .sla-badge--lav     { background: #F1F5F9; color: #475569; }
+
+    /* Feedback widget */
     .feedback-bar {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
+      display: flex; align-items: center; gap: var(--space-sm);
       padding: 0.75rem var(--space-md);
       background: var(--color-bg);
       border: 1px solid var(--color-border);
       border-radius: var(--radius);
-      margin-top: var(--space-lg);
-      flex-wrap: wrap;
+      margin-top: var(--space-lg); flex-wrap: wrap;
     }
-    .feedback-bar p {
-      font-size: 0.85rem;
-      color: var(--color-muted);
-      max-width: none;
-      flex: 1;
-    }
+    .feedback-bar p { font-size: 0.85rem; color: var(--color-muted); max-width: none; flex: 1; }
     .feedback-btns { display: flex; gap: 0.5rem; flex-shrink: 0; }
     .feedback-btn {
       display: inline-flex; align-items: center; gap: 0.4rem;
-      padding: 0.4rem 0.9rem;
-      font-size: 0.82rem; font-weight: 600;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--color-border);
-      background: var(--color-surface);
-      color: var(--color-primary);
-      cursor: pointer;
-      transition: background 0.12s, border-color 0.12s;
-      min-height: 36px;
+      padding: 0.4rem 0.9rem; font-size: 0.82rem; font-weight: 600;
+      border-radius: var(--radius-sm); border: 1px solid var(--color-border);
+      background: var(--color-surface); color: var(--color-primary);
+      cursor: pointer; transition: background 0.12s, border-color 0.12s; min-height: 36px;
     }
     .feedback-btn:hover { background: var(--color-bg); border-color: var(--color-primary); }
     .feedback-btn--yes:hover { background: #DCFCE7; border-color: #16A34A; color: #166534; }
     .feedback-btn--no:hover  { background: #FEE2E2; border-color: #DC2626; color: #991B1B; }
-    .feedback-result {
-      font-size: 0.85rem; color: var(--color-accent); font-weight: 600;
-      display: none;
-    }
+    .feedback-result { font-size: 0.85rem; color: var(--color-accent); font-weight: 600; display: none; }
     .feedback-result.show { display: block; }
+
+    /* Tokolonne-layout */
+    .content-layout {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: var(--space-lg) var(--space-md) var(--space-xl);
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: var(--space-lg);
+      align-items: start;
+    }
+    .content-sidebar { position: sticky; top: calc(var(--nav-height) + 1rem); }
+    .sidebar-toc {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .sidebar-toc-header {
+      padding: 0.65rem var(--space-md);
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--color-muted); background: var(--color-bg);
+    }
+    .sidebar-toc ul { padding: 0.3rem 0; }
+    .sidebar-toc li a {
+      display: block; padding: 0.45rem var(--space-md);
+      font-size: 0.83rem; color: var(--color-muted);
+      border-left: 3px solid transparent;
+      transition: color 0.12s, background 0.12s;
+    }
+    .sidebar-toc li a:hover { color: var(--color-primary); background: var(--color-bg); border-left-color: var(--color-accent); }
+    .content-main { min-width: 0; }
+    .content-section { margin-bottom: var(--space-lg); }
+    .section-title {
+      font-family: var(--font-body) !important;
+      font-size: 1rem !important;
+      font-weight: 700; letter-spacing: 0; line-height: 1.4;
+      color: var(--color-primary);
+      margin-bottom: var(--space-sm);
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--color-border);
+    }
+    @media (max-width: 900px) {
+      .content-layout { grid-template-columns: 1fr; }
+      .content-sidebar { position: static; }
+    }
+
+    @media (max-width: 620px) {
+      .sla-table th:nth-child(2),
+      .sla-table td:nth-child(2) { display: none; }
+    }
+
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   </style>
 </head>
-<body>
+<body data-page="it-support">
 
   <a href="#main" class="skip-link">Hopp til innhold</a>
 
@@ -94,13 +159,15 @@
       <a href="index.html" class="nav-logo" aria-label="CAROB AS - til forsiden">
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
           <rect width="28" height="28" rx="6" fill="#2E7D6B"/>
-          <rect x="7" y="8" width="14" height="2.5" rx="1.25" fill="white"/><rect x="7" y="12.75" width="10" height="2.5" rx="1.25" fill="white"/><rect x="7" y="17.5" width="12" height="2.5" rx="1.25" fill="white"/>
+          <rect x="7" y="8" width="14" height="2.5" rx="1.25" fill="white"/>
+          <rect x="7" y="12.75" width="10" height="2.5" rx="1.25" fill="white"/>
+          <rect x="7" y="17.5" width="12" height="2.5" rx="1.25" fill="white"/>
         </svg>
         CAROB AS
       </a>
       <ul class="nav-links" role="list">
         <li><a href="index.html">Hjem</a></li>
-        <li><a href="it-support.html" aria-current="page">IT-støtte</a></li>
+        <li><a href="it-support.html" aria-current="page">IT støtte</a></li>
         <li><a href="hms.html">HMS</a></li>
         <li><a href="rutiner.html">Systemer</a></li>
       </ul>
@@ -117,472 +184,76 @@
   <header class="page-header" role="banner">
     <div class="page-header-inner">
       <nav aria-label="Brødsmule" class="breadcrumb">
-        <a href="index.html">Hjem</a>
-        <span aria-hidden="true">›</span>
-        <span aria-current="page">IT-brukerstøtte</span>
+        <a href="index.html" style="color:rgba(255,255,255,0.6);font-size:0.82rem;">Hjem</a>
+        <span style="color:rgba(255,255,255,0.4);margin:0 0.5rem;">/</span>
+        <span style="color:#fff;font-size:0.82rem;">IT støtte</span>
       </nav>
       <div class="page-header-row">
         <div class="page-header-icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="4" width="18" height="12" rx="2" stroke="white" stroke-width="1.6"/><path d="M8 19h6M11 16v3" stroke="white" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="3" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 19h8M11 16v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
         <div>
-          <h1>IT-brukerstøtte</h1>
-          <p>Steg-for-steg løsninger på de vanligste problemene. Prøv dette før du kontakter IT.</p>
+          <h1>IT støtte</h1>
+          <p>Løs vanlige problemer selv, eller ta kontakt med IT-avdelingen.</p>
         </div>
       </div>
     </div>
   </header>
 
-  <main id="main">
-    <div class="container section">
-      <div class="page-layout">
-
-        <aside class="sidebar" aria-label="Innholdsfortegnelse">
-          <nav class="sidebar-nav">
-            <h4>Problemkategorier</h4>
-            <ul>
-              <li><a href="#passord" class="active">Passord og innlogging</a></li>
-              <li><a href="#nettverk">Nettverk og VPN</a></li>
-              <li><a href="#printer">Printer</a></li>
-              <li><a href="#epost">E-post og Teams</a></li>
-              <li><a href="#treg">Treg PC</a></li>
-              <li><a href="#kontakt">Kontakt IT</a></li>
-            </ul>
-          </nav>
-        </aside>
-
-        <div class="main-content">
-
-          <!-- PASSORD -->
-          <section id="passord" aria-labelledby="passord-heading">
-            <span class="label">Problem 1</span>
-            <h2 id="passord-heading">Passord og innlogging</h2>
-            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Klarer du ikke logge inn? Følg disse stegene.</p>
-
-            <div class="accordion" role="list">
-              <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="true" aria-controls="pw-1">
-                  Jeg har glemt passordet mitt
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div id="pw-1" class="accordion-body open" role="region">
-                  <p><strong>Windows-passord:</strong></p>
-                  <ul>
-                    <li>Gå til påloggingsskjermen og klikk <strong>«Glemt passord»</strong></li>
-                    <li>Skriv inn brukernavn: <code style="background:var(--color-bg);padding:1px 6px;border-radius:3px;">fornavn.etternavn@carob.no</code></li>
-                    <li>Du mottar en tilbakestillingslenke på din private e-post (registrert hos HR)</li>
-                    <li>Nytt passord må oppfylle kravene: min. 12 tegn, stor/liten bokstav, tall og spesialtegn</li>
-                  </ul>
-                  <p style="margin-top:0.75rem;"><strong>Fungerer ikke dette?</strong> Kontakt IT direkte - se <a href="#kontakt" style="color:var(--color-accent);">Kontakt IT</a> nederst.</p>
-                </div>
-              </div>
-              <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="pw-2">
-                  Kontoen min er låst
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div id="pw-2" class="accordion-body" role="region">
-                  <p>Kontoen låses automatisk etter <strong>5 mislykkede innloggingsforsøk</strong>. Den låses opp automatisk etter 30 minutter, eller:</p>
-                  <ul>
-                    <li>Ring IT på <a href="tel:+4712345678" style="color:var(--color-accent);">+47 12 34 56 78</a> for øyeblikkelig opplåsing</li>
-                    <li>Send e-post til <a href="mailto:it@carob.no" style="color:var(--color-accent);">it@carob.no</a> med navn og avdeling</li>
-                  </ul>
-                  <div class="alert alert--info" style="margin-top:0.75rem;" role="note">
-                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7.5" stroke="#2E7D6B" stroke-width="1.4"/><path d="M9 8v5M9 6v.5" stroke="#2E7D6B" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    <div>Får du gjentatte låsinger uten å ha tastet feil? Det kan bety at passordet er lagret feil i en app. Sjekk Outlook og Teams.</div>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="pw-3">
-                  Sette opp tofaktorautentisering (2FA)
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div id="pw-3" class="accordion-body" role="region">
-                  <p>2FA er påkrevd for alle ansatte i CAROB AS. Slik setter du det opp:</p>
-                  <ul>
-                    <li>Last ned <strong>Microsoft Authenticator</strong> på mobilen</li>
-                    <li>Logg inn på <a href="https://aka.ms/mfasetup" style="color:var(--color-accent);" target="_blank" rel="noopener">aka.ms/mfasetup</a> med jobbkontoen din</li>
-                    <li>Velg «Legg til metode» → «Autentiseringsapp»</li>
-                    <li>Skann QR-koden med appen</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="feedback-bar" role="region" aria-label="Tilbakemelding på løsning">
-              <p>Løste denne veiledningen problemet ditt?</p>
-              <div class="feedback-btns">
-                <button class="feedback-btn feedback-btn--yes" onclick="sendFeedback(this,'passord','yes')">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3.5 3.5L12 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  Ja, løst
-                </button>
-                <button class="feedback-btn feedback-btn--no" onclick="sendFeedback(this,'passord','no')">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-                  Nei, kontakt IT
-                </button>
-              </div>
-              <span class="feedback-result" aria-live="polite"></span>
-            </div>
-          </section>
-
-          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
-
-          <!-- NETTVERK -->
-          <section id="nettverk" aria-labelledby="nettverk-heading">
-            <span class="label">Problem 2</span>
-            <h2 id="nettverk-heading">Nettverk og VPN</h2>
-            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Ingen internett eller kan ikke koble til bedriftsnettverket?</p>
-
-            <div class="accordion" role="list">
-              <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="net-1">
-                  Ingen internettforbindelse på kontoret
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div id="net-1" class="accordion-body" role="region">
-                  <p>Gjør dette i rekkefølge:</p>
-                  <ul>
-                    <li><strong>Steg 1:</strong> Sjekk at nettverkskabelen er koblet til (gul/grønn lampe lyser på porten)</li>
-                    <li><strong>Steg 2:</strong> Høyreklikk nettverksikonet nede til høyre → «Feilsøk problemer»</li>
-                    <li><strong>Steg 3:</strong> Start PC-en på nytt</li>
-                    <li><strong>Steg 4:</strong> Prøv med en annen nettverkskabel (hentes hos IT)</li>
-                    <li><strong>Steg 5:</strong> Fremdeles ingen forbindelse? Ring IT</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="net-2">
-                  VPN kobler ikke til hjemmefra
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div id="net-2" class="accordion-body" role="region">
-                  <p>CAROB AS bruker <strong>GlobalProtect VPN</strong>. Slik feilsøker du:</p>
-                  <ul>
-                    <li>Åpne GlobalProtect og klikk «Koble til»</li>
-                    <li>Gateway-adresse: <code style="background:var(--color-bg);padding:1px 6px;border-radius:3px;">vpn.carob.no</code></li>
-                    <li>Logg inn med ditt vanlige brukernavn og passord + 2FA</li>
-                    <li>Prøver du å koble til fra utlandet? Sjekk at landet ikke er blokkert - kontakt IT</li>
-                    <li>Prøv å deinstallere og reinstallere GlobalProtect (installer fra <a href="rutiner.html#programvare" style="color:var(--color-accent);">programvareportalen</a>)</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="net-3">
-                  Wi-Fi er tregt eller ustabilt
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div id="net-3" class="accordion-body" role="region">
-                  <ul>
-                    <li>Koble til nettverket <strong>CAROB-Intern</strong> (ikke gjeste-nettverket)</li>
-                    <li>Glem og koble til på nytt: Innstillinger → Nettverk → Administrer kjente nettverk → «Glem» → koble til igjen</li>
-                    <li>Bruk nettverkskabel om mulig - det er alltid mer stabilt</li>
-                    <li>Sitter du i et hjørne eller langt fra aksesspunkt? Meld fra til IT om dårlig dekning</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="feedback-bar" role="region" aria-label="Tilbakemelding på løsning">
-              <p>Løste denne veiledningen problemet ditt?</p>
-              <div class="feedback-btns">
-                <button class="feedback-btn feedback-btn--yes" onclick="sendFeedback(this,'nettverk','yes')">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3.5 3.5L12 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  Ja, løst
-                </button>
-                <button class="feedback-btn feedback-btn--no" onclick="sendFeedback(this,'nettverk','no')">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-                  Nei, kontakt IT
-                </button>
-              </div>
-              <span class="feedback-result" aria-live="polite"></span>
-            </div>
-          </section>
-
-          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
-
-          <!-- PRINTER -->
-          <section id="printer" aria-labelledby="printer-heading">
-            <span class="label">Problem 3</span>
-            <h2 id="printer-heading">Printer</h2>
-            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Printeren skriver ikke ut, eller det er feil med utskriften?</p>
-
-            <div class="accordion" role="list">
-              <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="pr-1">
-                  Printeren skriver ikke ut i det hele tatt
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div id="pr-1" class="accordion-body" role="region">
-                  <ul>
-                    <li><strong>Sjekk printerkøen:</strong> Start → Innstillinger → Bluetooth og enheter → Printere → Åpne utskriftskø. Kanseller alle ventende jobber.</li>
-                    <li><strong>Restart printerspooleren:</strong> Søk «Tjenester» → Finn «Print Spooler» → Høyreklikk → «Start på nytt»</li>
-                    <li><strong>Sjekk papir og blekk/toner:</strong> Er det papir i skuffen? Lyser det rødt på printeren?</li>
-                    <li><strong>Restart printeren:</strong> Skru av, vent 30 sekunder, skru på igjen</li>
-                    <li><strong>Reinstaller driveren:</strong> Fjern printeren og legg til på nytt via Innstillinger → Printere</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="pr-2">
-                  Papirstopp i printeren
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div id="pr-2" class="accordion-body" role="region">
-                  <ul>
-                    <li>Slå av printeren før du åpner dekselet</li>
-                    <li>Åpne alle deksler og finn papiret, trekk det ut i retningen papiret beveger seg (fremover)</li>
-                    <li>Sjekk at det ikke er igjen noen papirbiter, de minste bitene kan gi nye stopp</li>
-                    <li>Lukk alle deksler, skru på printeren og prøv igjen</li>
-                    <li>Unngå å legge for mye papir i skuffen, maks nivå er markert</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="pr-3">
-                  Utskriften er stripete eller fargene er gale
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div id="pr-3" class="accordion-body" role="region">
-                  <ul>
-                    <li>Kjør <strong>skriverens rengjøringsprogram</strong> - finns i printermenyen på skjermen på selve printeren</li>
-                    <li>Sjekk blekk-/tonernivå - lavt nivå gir stripete utskrift</li>
-                    <li>Skift toner/blekkpatron hvis den er tom - ny patron hentes hos IT-rommet (rom 302)</li>
-                    <li>Fremdeles feil? Meld fra til IT med printerens navn (står på en lapp på printeren)</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="feedback-bar" role="region" aria-label="Tilbakemelding på løsning">
-              <p>Løste denne veiledningen problemet ditt?</p>
-              <div class="feedback-btns">
-                <button class="feedback-btn feedback-btn--yes" onclick="sendFeedback(this,'printer','yes')">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3.5 3.5L12 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  Ja, løst
-                </button>
-                <button class="feedback-btn feedback-btn--no" onclick="sendFeedback(this,'printer','no')">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-                  Nei, kontakt IT
-                </button>
-              </div>
-              <span class="feedback-result" aria-live="polite"></span>
-            </div>
-          </section>
-
-          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
-
-          <!-- E-POST OG TEAMS -->
-          <section id="epost" aria-labelledby="epost-heading">
-            <span class="label">Problem 4</span>
-            <h2 id="epost-heading">E-post og Teams</h2>
-            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Outlook eller Teams fungerer ikke som forventet?</p>
-
-            <div class="accordion" role="list">
-              <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="ep-1">
-                  Outlook synkroniserer ikke / ny e-post dukker ikke opp
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div id="ep-1" class="accordion-body" role="region">
-                  <ul>
-                    <li>Sjekk nede til venstre i Outlook, står det «Frakoblet»? Klikk «Send/Motta» → «Arbeid tilkoblet»</li>
-                    <li>Manuell synkronisering: trykk <kbd style="background:var(--color-bg);padding:1px 6px;border-radius:3px;border:1px solid var(--color-border);">F9</kbd> eller klikk «Send/Motta alle mapper»</li>
-                    <li>Start Outlook på nytt</li>
-                    <li>Start PC-en på nytt</li>
-                    <li>Sjekk at du er koblet til VPN hvis du jobber hjemmefra</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="ep-2">
-                  Teams krasjer eller starter ikke
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div id="ep-2" class="accordion-body" role="region">
-                  <ul>
-                    <li>Lukk Teams helt: høyreklikk Teams-ikonet i systemstatusfeltet → «Avslutt»</li>
-                    <li>Tøm hurtigbuffer: åpne Filutforsker, gå til <code style="background:var(--color-bg);padding:1px 6px;border-radius:3px;">%appdata%\Microsoft\Teams</code> og slett innholdet i mappen <strong>Cache</strong></li>
-                    <li>Start Teams igjen</li>
-                    <li>Fungerer ikke det? Bruk Teams i nettleseren: <a href="https://teams.microsoft.com" style="color:var(--color-accent);" target="_blank" rel="noopener">teams.microsoft.com</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="accordion-item" role="listitem">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="ep-3">
-                  Mikrofon eller kamera fungerer ikke i Teams
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div id="ep-3" class="accordion-body" role="region">
-                  <ul>
-                    <li>Sjekk at Windows har gitt Teams tillatelse: Innstillinger → Personvern → Mikrofon/Kamera → slå på for Teams</li>
-                    <li>I Teams: klikk «...» → Innstillinger → Enheter - velg riktig mikrofon og kamera</li>
-                    <li>Koble ut og inn igjen USB-headset eller kamera</li>
-                    <li>Prøv å starte Teams på nytt</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="feedback-bar" role="region" aria-label="Tilbakemelding på løsning">
-              <p>Løste denne veiledningen problemet ditt?</p>
-              <div class="feedback-btns">
-                <button class="feedback-btn feedback-btn--yes" onclick="sendFeedback(this,'epost','yes')">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3.5 3.5L12 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  Ja, løst
-                </button>
-                <button class="feedback-btn feedback-btn--no" onclick="sendFeedback(this,'epost','no')">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-                  Nei, kontakt IT
-                </button>
-              </div>
-              <span class="feedback-result" aria-live="polite"></span>
-            </div>
-          </section>
-
-          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
-
-          <!-- TREG PC -->
-          <section id="treg" aria-labelledby="treg-heading">
-            <span class="label">Problem 5</span>
-            <h2 id="treg-heading">Treg datamaskin</h2>
-            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">PC-en er blitt mye tregere enn den pleide? Prøv disse tiltakene.</p>
-
-            <div class="info-list" role="list">
-              <li role="listitem">
-                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">1</div>
-                <div>
-                  <strong>Start PC-en på nytt</strong>
-                  <p>Gjøres dette sjeldnere enn ukentlig? En omstart rydder minnet og installerer ventende oppdateringer.</p>
-                </div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">2</div>
-                <div>
-                  <strong>Sjekk hva som bruker ressurser</strong>
-                  <p>Trykk <kbd style="background:var(--color-bg);padding:1px 6px;border-radius:3px;border:1px solid var(--color-border);">Ctrl+Shift+Esc</kbd> → Oppgavebehandling → Sorter på CPU/minne. Ser du noe uvanlig? Ta skjermbilde og send til IT.</p>
-                </div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">3</div>
-                <div>
-                  <strong>Frigjør lagringsplass</strong>
-                  <p>Åpne Utforsker → Denne PC-en. Er C-disken under 10 % ledig? Tøm papirkurven og flytt store filer til SharePoint/filserveren.</p>
-                </div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">4</div>
-                <div>
-                  <strong>Reduser antall oppstartsprogrammer</strong>
-                  <p>Oppgavebehandling → fanen «Oppstart» → Deaktiver programmer du ikke trenger med en gang PC-en starter.</p>
-                </div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">5</div>
-                <div>
-                  <strong>Installer Windows-oppdateringer</strong>
-                  <p>Innstillinger → Windows Update → «Se etter oppdateringer». Oppdateringer inneholder ofte ytelsesforbedringer.</p>
-                </div>
-              </li>
-              <li role="listitem">
-                <div class="icon" aria-hidden="true" style="font-size:0.8rem;font-weight:700;color:var(--color-accent);">6</div>
-                <div>
-                  <strong>Fremdeles treg? Kontakt IT</strong>
-                  <p>PC-en kan ha for lite RAM eller en skadet harddisk. IT-avdelingen kan kjøre diagnostikk.</p>
-                </div>
-              </li>
-            </div>
-
-            <div class="feedback-bar" role="region" aria-label="Tilbakemelding på løsning">
-              <p>Løste denne veiledningen problemet ditt?</p>
-              <div class="feedback-btns">
-                <button class="feedback-btn feedback-btn--yes" onclick="sendFeedback(this,'treg','yes')">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3.5 3.5L12 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  Ja, løst
-                </button>
-                <button class="feedback-btn feedback-btn--no" onclick="sendFeedback(this,'treg','no')">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-                  Nei, kontakt IT
-                </button>
-              </div>
-              <span class="feedback-result" aria-live="polite"></span>
-            </div>
-          </section>
-
-          <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-xl) 0;" />
-
-          <!-- KONTAKT IT -->
-          <section id="kontakt" aria-labelledby="kontakt-heading">
-            <span class="label">Trenger du mer hjelp?</span>
-            <h2 id="kontakt-heading">Kontakt IT-avdelingen</h2>
-            <p style="margin-top:0.5rem;margin-bottom:1.5rem;">Løste ikke veiledningen problemet? Vi hjelper deg.</p>
-
-            <div class="content-split" style="gap:var(--space-lg);">
-              <div class="contact-box">
-                <h3>IT-avdelingen - CAROB AS</h3>
-                <div class="contact-row">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4h12a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.4"/><path d="M1 5l7 4.5L15 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-                  <span>E-post: <a href="mailto:it@carob.no">it@carob.no</a></span>
-                </div>
-                <div class="contact-row">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 3h2l1 3-1.5 1.5a9 9 0 0 0 3 3L9 9l3 1v2c0 1-1 2-2 2C5 14 2 9 2 5c0-1 1-2 1-2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
-                  <span>Telefon: <a href="tel:+4712345678">+47 12 34 56 78</a></span>
-                </div>
-                <div class="contact-row">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.4"/><path d="M8 4v4.5l2.5 2.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-                  <span>Åpningstider: Man-fre 08:00-16:00</span>
-                </div>
-                <div class="contact-row">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2C5.2 2 3 4.2 3 7c0 3.5 5 9 5 9s5-5.5 5-9c0-2.8-2.2-5-5-5z" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="7" r="1.5" stroke="currentColor" stroke-width="1.4"/></svg>
-                  <span>Kontor: 3. etasje, rom 302</span>
-                </div>
-              </div>
-
-              <div>
-                <div class="alert alert--warning" role="note">
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 2L1.5 15.5h15L9 2z" stroke="#92400E" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 7v4M9 13v.5" stroke="#92400E" stroke-width="1.5" stroke-linecap="round"/></svg>
-                  <div>Akutt problem utenfor åpningstid? Ring vakttelefonen: <a href="tel:+4798765432" style="color:#92400E;font-weight:700;">+47 98 76 54 32</a></div>
-                </div>
-
-                <div class="card" style="margin-top:var(--space-sm);">
-                  <h3>Ha klart når du ringer/skriver:</h3>
-                  <ul style="padding-left:1.2rem;list-style:disc;margin-top:0.5rem;font-size:0.9rem;color:var(--color-muted);">
-                    <li>Fullt navn og avdeling</li>
-                    <li>Hvilken PC/enhet det gjelder (serienummer på bunnen)</li>
-                    <li>Nøyaktig feilmelding (ta skjermbilde)</li>
-                    <li>Hva du gjorde da feilen oppsto</li>
-                    <li>Hva du allerede har prøvd</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-
+  <div class="content-layout">
+    <aside class="content-sidebar" aria-label="Innholdsfortegnelse">
+      <div class="sidebar-toc">
+        <div class="sidebar-toc-header">Innhold</div>
+        <ul id="cms-sidebar-nav"></ul>
+        <div style="padding: 0.75rem var(--space-md); border-top: 1px solid var(--color-border);">
+          <p style="font-size:0.8rem; color:var(--color-muted); margin-bottom:0.5rem;">Trenger du hjelp?</p>
+          <a href="mailto:it@carob.no" style="font-size:0.82rem; color:var(--color-accent); font-weight:600; text-decoration:underline;">it@carob.no</a><br>
+          <a href="tel:+4712345678" style="font-size:0.82rem; color:var(--color-muted);">+47 12 34 56 78</a>
         </div>
       </div>
-    </div>
-  </main>
+    </aside>
+
+    <main id="main" class="content-main">
+
+      <div class="sla-section" aria-labelledby="sla-heading">
+        <div class="sla-section-header" id="sla-heading">Svartider (SLA)</div>
+        <div id="cms-sla-table"></div>
+      </div>
+
+      <div id="cms-accordion"></div>
+
+      <div class="feedback-bar" role="region" aria-label="Tilbakemelding">
+        <p>Fant du det du lette etter?</p>
+        <div class="feedback-btns">
+          <button class="feedback-btn feedback-btn--yes" onclick="showFeedback(this)">Ja</button>
+          <button class="feedback-btn feedback-btn--no" onclick="showFeedback(this)">Nei</button>
+        </div>
+        <span class="feedback-result" id="feedback-result"></span>
+      </div>
+
+    </main>
+  </div>
 
   <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo" style="color:#fff;" aria-label="CAROB AS forsiden">
+        <a href="index.html" class="nav-logo" style="color:#fff;">
           <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect width="28" height="28" rx="6" fill="#2E7D6B"/><rect x="7" y="8" width="14" height="2.5" rx="1.25" fill="white"/><rect x="7" y="12.75" width="10" height="2.5" rx="1.25" fill="white"/><rect x="7" y="17.5" width="12" height="2.5" rx="1.25" fill="white"/></svg>
           CAROB AS
         </a>
-        <p>Intern ansattportal for CAROB AS.</p>
+        <p>Intern ansattportal - kun for ansatte i CAROB AS.</p>
       </div>
       <div class="footer-col">
         <h4>Seksjoner</h4>
         <ul>
           <li><a href="index.html">Hjem</a></li>
-          <li><a href="it-support.html">IT-støtte</a></li>
+          <li><a href="it-support.html">IT støtte</a></li>
           <li><a href="hms.html">HMS</a></li>
           <li><a href="rutiner.html">Systemer</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Kontakt IT</h4>
+        <h4>Kontakt</h4>
         <ul>
           <li><a href="mailto:it@carob.no">it@carob.no</a></li>
           <li><a href="tel:+4712345678">+47 12 34 56 78</a></li>
@@ -590,65 +261,22 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 CAROB AS. Kun for intern bruk.</span>
+      <span>&copy; 2025 CAROB AS. Kun for intern bruk.</span>
       <span>Laget av Carmen Maria Kleijnen &amp; Robin Finnestad</span>
     </div>
   </footer>
 
-  <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
   <script>
-    // Nav toggle
-    const toggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open);
-    });
-
-    // Accordion
-    document.querySelectorAll('.accordion-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        document.querySelectorAll('.accordion-btn').forEach(b => {
-          b.setAttribute('aria-expanded', 'false');
-          document.getElementById(b.getAttribute('aria-controls')).classList.remove('open');
-        });
-        if (!expanded) {
-          btn.setAttribute('aria-expanded', 'true');
-          document.getElementById(btn.getAttribute('aria-controls')).classList.add('open');
-        }
-      });
-    });
-
-    // Scroll spy
-    const sections = document.querySelectorAll('section[id]');
-    const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          sidebarLinks.forEach(a => a.classList.remove('active'));
-          const link = document.querySelector(`.sidebar-nav a[href="#${entry.target.id}"]`);
-          if (link) link.classList.add('active');
-        }
-      });
-    }, { rootMargin: '-30% 0px -60% 0px' });
-    sections.forEach(s => observer.observe(s));
-
-    // Feedback
-    function sendFeedback(btn, section, type) {
-      const bar = btn.closest('.feedback-bar');
-      const btns = bar.querySelector('.feedback-btns');
-      const result = bar.querySelector('.feedback-result');
-      btns.style.display = 'none';
+    function showFeedback(btn) {
+      const result = document.getElementById('feedback-result');
+      result.textContent = btn.classList.contains('feedback-btn--yes')
+        ? 'Takk for tilbakemeldingen!'
+        : 'Takk! Kontakt IT for videre hjelp.';
       result.classList.add('show');
-      if (type === 'yes') {
-        result.style.color = '#166534';
-        result.textContent = '✓ Bra! Glad vi kunne hjelpe.';
-      } else {
-        result.style.color = 'var(--color-primary)';
-        result.innerHTML = 'Send en melding til <a href="mailto:it@carob.no" style="color:var(--color-accent);">it@carob.no</a> eller ring <a href="tel:+4712345678" style="color:var(--color-accent);">+47 12 34 56 78</a>.';
-      }
+      btn.closest('.feedback-btns').style.display = 'none';
     }
   </script>
+  <script src="loader.js"></script>
+
 </body>
 </html>

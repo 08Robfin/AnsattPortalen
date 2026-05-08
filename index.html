@@ -3,15 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="CAROB AS - Ansattportal. Finn IT-brukerstøtte, HMS-lovverk og systemhjelp." />
+  <meta name="description" content="CAROB AS - Ansattportal. Din inngang til systemer, IT-hjelp, HMS og nyheter." />
   <title>CAROB AS - Ansattportal</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* =============================================
-       ANSATTPORTAL - DASHBOARD OVERRIDES
-       ============================================= */
-
-    /* Top announcement bar */
     .announcement-bar {
       background: var(--color-accent);
       color: #fff;
@@ -23,13 +18,11 @@
     }
     .announcement-bar a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
 
-    /* ---- PORTAL HEADER (replaces big hero) ---- */
     .portal-header {
       background: var(--color-primary);
       padding: var(--space-lg) 0 var(--space-md);
       border-bottom: 3px solid var(--color-accent);
     }
-
     .portal-header-inner {
       max-width: var(--max-width);
       margin: 0 auto;
@@ -40,65 +33,39 @@
       gap: var(--space-md);
       flex-wrap: wrap;
     }
-
     .portal-welcome h1 {
       color: #fff;
       font-size: clamp(1.4rem, 3vw, 1.9rem);
       font-weight: 600;
       margin-bottom: 0.25rem;
     }
-
     .portal-welcome .date-line {
       color: rgba(255,255,255,0.6);
       font-size: 0.85rem;
       font-family: var(--font-body);
       font-weight: 400;
-      letter-spacing: 0;
     }
-
-    .portal-meta {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-    }
-
+    .portal-meta { display: flex; align-items: center; gap: var(--space-sm); }
     .portal-avatar {
-      width: 48px;
-      height: 48px;
+      width: 48px; height: 48px;
       background: rgba(255,255,255,0.12);
       border: 2px solid rgba(255,255,255,0.25);
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       color: #fff;
       font-family: var(--font-display);
       font-weight: 600;
       font-size: 1.1rem;
     }
+    .portal-user-info { text-align: right; }
+    .portal-user-info .name { color: #fff; font-size: 0.92rem; font-weight: 600; }
+    .portal-user-info .dept { color: rgba(255,255,255,0.55); font-size: 0.78rem; }
 
-    .portal-user-info {
-      text-align: right;
-    }
-
-    .portal-user-info .name {
-      color: #fff;
-      font-size: 0.92rem;
-      font-weight: 600;
-    }
-
-    .portal-user-info .dept {
-      color: rgba(255,255,255,0.55);
-      font-size: 0.78rem;
-    }
-
-    /* ---- STATUS STRIP ---- */
     .status-strip {
       background: var(--color-surface);
       border-bottom: 1px solid var(--color-border);
       padding: 0.6rem 0;
     }
-
     .status-strip-inner {
       max-width: var(--max-width);
       margin: 0 auto;
@@ -108,7 +75,6 @@
       gap: var(--space-lg);
       flex-wrap: wrap;
     }
-
     .status-item {
       display: flex;
       align-items: center;
@@ -116,33 +82,16 @@
       font-size: 0.82rem;
       color: var(--color-muted);
     }
-
-    .status-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    .status-dot--ok      { background: #16A34A; }
-    .status-dot--warn    { background: #D97706; }
-    .status-dot--error   { background: #DC2626; }
-
-    .status-item strong {
-      color: var(--color-text);
-      font-weight: 600;
-    }
-
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .status-dot--ok   { background: #16A34A; }
+    .status-dot--warn { background: #D97706; }
+    .status-dot--error{ background: #DC2626; }
+    .status-item strong { color: var(--color-text); font-weight: 600; }
     .status-strip-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: var(--color-muted);
-      margin-right: 0.25rem;
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.07em; color: var(--color-muted); margin-right: 0.25rem;
     }
 
-    /* ---- MAIN DASHBOARD GRID ---- */
     .dashboard {
       max-width: var(--max-width);
       margin: 0 auto;
@@ -153,69 +102,41 @@
       align-items: start;
     }
 
-    /* ---- QUICK ACTIONS ---- */
     .section-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--color-muted);
-      margin-bottom: 0.75rem;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.09em;
+      text-transform: uppercase; color: var(--color-muted); margin-bottom: 0.75rem;
     }
 
     .quick-actions {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 0.75rem;
       margin-bottom: var(--space-lg);
     }
-
     .qa-card {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: var(--radius);
-      padding: var(--space-sm) var(--space-sm);
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.6rem;
+      padding: var(--space-sm);
+      display: flex; flex-direction: column; align-items: flex-start; gap: 0.6rem;
       text-decoration: none;
       transition: border-color 0.15s, box-shadow 0.15s, transform 0.12s;
     }
-
     .qa-card:hover {
       border-color: var(--color-accent);
       box-shadow: 0 2px 12px rgba(46,125,107,0.1);
       transform: translateY(-2px);
     }
-
     .qa-icon {
-      width: 36px;
-      height: 36px;
+      width: 36px; height: 36px;
       background: var(--color-accent-bg);
       border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-accent);
-      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--color-accent); flex-shrink: 0;
     }
+    .qa-card span { font-size: 0.82rem; font-weight: 600; color: var(--color-primary); line-height: 1.3; }
+    .qa-card p { font-size: 0.75rem; color: var(--color-muted); max-width: none; line-height: 1.35; }
 
-    .qa-card span {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--color-primary);
-      line-height: 1.3;
-    }
-
-    .qa-card p {
-      font-size: 0.75rem;
-      color: var(--color-muted);
-      max-width: none;
-      line-height: 1.35;
-    }
-
-    /* ---- TOP PROBLEMS PANEL ---- */
     .panel {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
@@ -223,233 +144,125 @@
       overflow: hidden;
       margin-bottom: var(--space-md);
     }
-
     .panel-header {
       padding: 0.85rem var(--space-md);
       border-bottom: 1px solid var(--color-border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: flex; align-items: center; justify-content: space-between;
     }
-
     .panel-header h2 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--color-primary);
-      font-family: var(--font-body);
-      letter-spacing: 0;
+      font-size: 0.95rem; font-weight: 700; color: var(--color-primary);
+      font-family: var(--font-body); letter-spacing: 0;
     }
+    .panel-header a { font-size: 0.78rem; color: var(--color-accent); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
 
-    .panel-header a {
-      font-size: 0.78rem;
-      color: var(--color-accent);
-      font-weight: 600;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    .problem-list {
-      list-style: none;
-    }
-
-    .problem-item {
+    /* News */
+    .news-item {
       display: flex;
-      align-items: center;
-      gap: 0.85rem;
+      gap: 0.75rem;
+      padding: 0.85rem var(--space-md);
+      border-bottom: 1px solid var(--color-border);
+      align-items: flex-start;
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-date {
+      font-size: 0.72rem; color: var(--color-muted); white-space: nowrap;
+      padding-top: 0.15rem; min-width: 72px;
+    }
+    .news-title { font-size: 0.88rem; font-weight: 600; color: var(--color-primary); display: block; margin-bottom: 0.1rem; }
+    .news-item p { font-size: 0.78rem; color: var(--color-muted); max-width: none; }
+
+    /* Top problems */
+    .problem-list { list-style: none; }
+    .problem-item {
+      display: flex; align-items: center; gap: 0.85rem;
       padding: 0.8rem var(--space-md);
       border-bottom: 1px solid var(--color-border);
       transition: background 0.12s;
     }
-
     .problem-item:last-child { border-bottom: none; }
     .problem-item:hover { background: var(--color-bg); }
-
     .problem-num {
-      width: 24px;
-      height: 24px;
-      background: var(--color-bg);
-      border: 1px solid var(--color-border);
+      width: 24px; height: 24px;
+      background: var(--color-bg); border: 1px solid var(--color-border);
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: var(--color-muted);
-      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 700; color: var(--color-muted); flex-shrink: 0;
     }
-
-    .problem-item a {
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--color-primary);
-      text-decoration: none;
-      flex: 1;
-    }
-
+    .problem-item a { font-size: 0.88rem; font-weight: 600; color: var(--color-primary); text-decoration: none; flex: 1; }
     .problem-item a:hover { color: var(--color-accent); }
-
     .problem-item .tag {
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 0.15rem 0.55rem;
-      border-radius: 99px;
-      background: var(--color-accent-bg);
-      color: var(--color-accent);
-      white-space: nowrap;
+      font-size: 0.7rem; font-weight: 600;
+      padding: 0.15rem 0.55rem; border-radius: 99px;
+      background: var(--color-accent-bg); color: var(--color-accent); white-space: nowrap;
     }
 
-    /* ---- HMS QUICK BOX ---- */
+    /* HMS tiles */
     .hms-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.6rem;
-      padding: var(--space-sm);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; padding: var(--space-sm);
     }
-
     .hms-tile {
-      background: var(--color-bg);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-sm);
-      padding: 0.75rem;
-      text-decoration: none;
+      background: var(--color-bg); border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm); padding: 0.75rem; text-decoration: none;
       transition: border-color 0.15s, background 0.15s;
     }
+    .hms-tile:hover { border-color: var(--color-accent); background: var(--color-accent-bg); }
+    .hms-tile .hms-title { font-size: 0.82rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.2rem; }
+    .hms-tile p { font-size: 0.73rem; color: var(--color-muted); max-width: none; line-height: 1.35; }
 
-    .hms-tile:hover {
-      border-color: var(--color-accent);
-      background: var(--color-accent-bg);
-    }
-
-    .hms-tile .hms-title {
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--color-primary);
-      margin-bottom: 0.2rem;
-    }
-
-    .hms-tile p {
-      font-size: 0.73rem;
-      color: var(--color-muted);
-      max-width: none;
-      line-height: 1.35;
-    }
-
-    /* ---- RIGHT SIDEBAR ---- */
+    /* Sidebar */
     .sidebar-panel {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      margin-bottom: var(--space-md);
+      background: var(--color-surface); border: 1px solid var(--color-border);
+      border-radius: var(--radius); overflow: hidden; margin-bottom: var(--space-md);
     }
-
     .sidebar-panel-header {
       padding: 0.75rem var(--space-sm) 0.75rem var(--space-md);
       border-bottom: 1px solid var(--color-border);
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--color-primary);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+      font-size: 0.82rem; font-weight: 700; color: var(--color-primary);
+      text-transform: uppercase; letter-spacing: 0.06em;
     }
-
-    /* Contact IT */
     .contact-list { list-style: none; padding: 0.5rem 0; }
-
     .contact-list li {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.6rem var(--space-md);
-      font-size: 0.85rem;
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.6rem var(--space-md); font-size: 0.85rem;
       border-bottom: 1px solid var(--color-border);
     }
-
     .contact-list li:last-child { border-bottom: none; }
-
     .contact-list svg { color: var(--color-accent); flex-shrink: 0; }
-
-    .contact-list a {
-      color: var(--color-accent);
-      font-weight: 600;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    .contact-list .cl-label {
-      display: block;
-      font-size: 0.72rem;
-      color: var(--color-muted);
-      margin-bottom: 0.1rem;
-    }
-
-    /* Useful links */
+    .contact-list a { color: var(--color-accent); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+    .contact-list .cl-label { display: block; font-size: 0.72rem; color: var(--color-muted); margin-bottom: 0.1rem; }
     .link-list { list-style: none; }
-
     .link-list li a {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.65rem var(--space-md);
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--color-primary);
-      border-bottom: 1px solid var(--color-border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.65rem var(--space-md); font-size: 0.85rem; font-weight: 500;
+      color: var(--color-primary); border-bottom: 1px solid var(--color-border);
       transition: background 0.12s, color 0.12s;
     }
-
     .link-list li:last-child a { border-bottom: none; }
     .link-list li a:hover { background: var(--color-bg); color: var(--color-accent); }
-
     .link-list li a svg { color: var(--color-muted); flex-shrink: 0; }
-
-    /* Alert inside panel */
     .panel-alert {
-      display: flex;
-      gap: 0.6rem;
-      align-items: flex-start;
+      display: flex; gap: 0.6rem; align-items: flex-start;
       padding: 0.75rem var(--space-md);
-      background: #FEF9EC;
-      border-top: 1px solid #F2D97A;
-      font-size: 0.8rem;
-      color: #5C4000;
+      background: #FEF9EC; border-top: 1px solid #F2D97A;
+      font-size: 0.8rem; color: #5C4000;
     }
-
     .panel-alert svg { flex-shrink: 0; margin-top: 1px; }
 
-    /* ---- MOBILE ---- */
     @media (max-width: 900px) {
-      .dashboard {
-        grid-template-columns: 1fr;
-      }
-      .quick-actions {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .dashboard { grid-template-columns: 1fr; }
+      .quick-actions { grid-template-columns: repeat(3, 1fr); }
     }
-
     @media (max-width: 500px) {
-      .quick-actions {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .hms-grid {
-        grid-template-columns: 1fr;
-      }
+      .quick-actions { grid-template-columns: repeat(2, 1fr); }
+      .hms-grid { grid-template-columns: 1fr; }
       .portal-meta { display: none; }
     }
   </style>
 </head>
-<body>
+<body data-page="home">
 
   <a href="#main" class="skip-link">Hopp til innhold</a>
 
-  <!-- ANNOUNCEMENT BAR -->
-  <div class="announcement-bar" role="alert">
-    ⚠ Planlagt vedlikehold: Filserveren utilgjengelig lørdag 19. april kl. 22:00-02:00. 
-    <a href="#driftsstatus">Se driftsstatus</a>
-  </div>
-
-  <!-- NAV -->
   <nav class="site-nav" aria-label="Hovednavigasjon">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo" aria-label="CAROB AS - til forsiden">
@@ -463,7 +276,7 @@
       </a>
       <ul class="nav-links" role="list">
         <li><a href="index.html" aria-current="page">Hjem</a></li>
-        <li><a href="it-support.html">IT-støtte</a></li>
+        <li><a href="it-support.html">IT støtte</a></li>
         <li><a href="hms.html">HMS</a></li>
         <li><a href="rutiner.html">Systemer</a></li>
       </ul>
@@ -477,164 +290,58 @@
     </div>
   </nav>
 
-  <!-- PORTAL HEADER -->
   <header class="portal-header" role="banner">
     <div class="portal-header-inner">
       <div class="portal-welcome">
-        <h1 id="greeting">God morgen 👋</h1>
-        <span class="date-line" id="date-line">Laster dato…</span>
+        <h1 id="greeting">Hei!</h1>
+        <span class="date-line" id="date-line">Laster dato...</span>
       </div>
       <div class="portal-meta">
         <div class="portal-user-info">
-          <div class="name">Ansatt — CAROB AS</div>
-          <div class="dept">IT / Administrasjon</div>
+          <div class="name">Ansatt - CAROB AS</div>
+          <div class="dept">Ansattportal</div>
         </div>
         <div class="portal-avatar" aria-hidden="true">CA</div>
       </div>
     </div>
   </header>
 
-  <!-- STATUS STRIP -->
-  <div class="status-strip" aria-label="Systemstatus">
-    <div class="status-strip-inner">
-      <span class="status-strip-label">Status:</span>
-      <div class="status-item">
-        <span class="status-dot status-dot--ok"></span>
-        <strong>Microsoft 365</strong> Operativ
-      </div>
-      <div class="status-item">
-        <span class="status-dot status-dot--ok"></span>
-        <strong>VPN</strong> Operativ
-      </div>
-      <div class="status-item">
-        <span class="status-dot status-dot--warn"></span>
-        <strong>Filserver</strong> Begrenset
-      </div>
-      <div class="status-item">
-        <span class="status-dot status-dot--ok"></span>
-        <strong>Visma ERP</strong> Operativ
-      </div>
-      <div class="status-item">
-        <span class="status-dot status-dot--ok"></span>
-        <strong>HR-portal</strong> Operativ
-      </div>
-    </div>
-  </div>
 
-  <!-- MAIN DASHBOARD -->
-  <main id="main">
+<main id="main">
     <div class="dashboard">
 
-      <!-- LEFT / MAIN COLUMN -->
       <div>
-
-        <!-- QUICK ACTIONS -->
         <p class="section-label">Hurtigtilgang</p>
-        <div class="quick-actions" role="list">
+        <div class="quick-actions" role="list" id="cms-quick-actions"></div>
 
-          <a href="it-support.html#passord" class="qa-card" role="listitem">
-            <div class="qa-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="4" y="8" width="10" height="8" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M6 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </div>
-            <span>Glemt passord</span>
-            <p>Tilbakestill konto selv</p>
-          </a>
-
-          <a href="it-support.html#nettverk" class="qa-card" role="listitem">
-            <div class="qa-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 9a3.5 3.5 0 0 1 7 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="12.5" r="1" fill="currentColor"/></svg>
-            </div>
-            <span>VPN / Nettverk</span>
-            <p>Feilsøking og kobling</p>
-          </a>
-
-          <a href="it-support.html#printer" class="qa-card" role="listitem">
-            <div class="qa-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="6" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M5 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2" stroke="currentColor" stroke-width="1.5"/><rect x="5" y="10" width="8" height="1.5" rx="0.75" fill="currentColor"/></svg>
-            </div>
-            <span>Printer</span>
-            <p>Installasjon og feil</p>
-          </a>
-
-          <a href="hms.html#varsling" class="qa-card" role="listitem">
-            <div class="qa-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L2 14.5h14L9 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 8v3M9 13v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </div>
-            <span>Meld avvik</span>
-            <p>HMS-varsling og avvik</p>
-          </a>
-
+        <div class="panel" aria-labelledby="news-heading">
+          <div class="panel-header">
+            <h2 id="news-heading">Siste nytt</h2>
+          </div>
+          <div id="cms-news"></div>
         </div>
 
-        <!-- TOP IT PROBLEMS -->
         <div class="panel" aria-labelledby="problems-heading">
           <div class="panel-header">
             <h2 id="problems-heading">Vanligste IT-problemer</h2>
-            <a href="it-support.html">Se alle →</a>
+            <a href="it-support.html">Se alle</a>
           </div>
-          <ul class="problem-list">
-            <li class="problem-item">
-              <span class="problem-num">1</span>
-              <a href="it-support.html#passord">Glemt passord eller låst brukerkonto</a>
-              <span class="tag">Konto</span>
-            </li>
-            <li class="problem-item">
-              <span class="problem-num">2</span>
-              <a href="it-support.html#nettverk">VPN kobler ikke til hjemmefra</a>
-              <span class="tag">Nettverk</span>
-            </li>
-            <li class="problem-item">
-              <span class="problem-num">3</span>
-              <a href="it-support.html#printer">Printer skriver ikke ut</a>
-              <span class="tag">Printer</span>
-            </li>
-            <li class="problem-item">
-              <span class="problem-num">4</span>
-              <a href="it-support.html#teams">Teams-møte starter ikke</a>
-              <span class="tag">Teams</span>
-            </li>
-            <li class="problem-item">
-              <span class="problem-num">5</span>
-              <a href="it-support.html#treg">Treg datamaskin / PC henger</a>
-              <span class="tag">Maskinvare</span>
-            </li>
-          </ul>
+          <ul class="problem-list" id="cms-top-issues"></ul>
         </div>
 
-        <!-- HMS QUICK ACCESS -->
         <div class="panel" aria-labelledby="hms-panel-heading">
           <div class="panel-header">
             <h2 id="hms-panel-heading">HMS og lovverk</h2>
-            <a href="hms.html">Se alle →</a>
+            <a href="hms.html">Se alle</a>
           </div>
-          <div class="hms-grid">
-            <a href="hms.html#aml" class="hms-tile">
-              <div class="hms-title">Arbeidsmiljøloven</div>
-              <p>Dine rettigheter som ansatt</p>
-            </a>
-            <a href="hms.html#internkontroll" class="hms-tile">
-              <div class="hms-title">Internkontroll</div>
-              <p>Systematisk HMS-arbeid</p>
-            </a>
-            <a href="hms.html#gdpr" class="hms-tile">
-              <div class="hms-title">GDPR</div>
-              <p>Personvern og databehandling</p>
-            </a>
-            <a href="hms.html#varsling" class="hms-tile">
-              <div class="hms-title">Varslingsplikten</div>
-              <p>Rett og plikt til å varsle</p>
-            </a>
-          </div>
+          <div class="hms-grid" id="cms-hms-tiles"></div>
         </div>
-
       </div>
 
-      <!-- RIGHT SIDEBAR -->
       <aside aria-label="Kontakt og nyttige lenker">
 
-        <!-- CONTACT IT -->
         <div class="sidebar-panel">
-          <div class="sidebar-panel-header">Kontakt IT-avdelingen</div>
+          <div class="sidebar-panel-header">Kontakt IT</div>
           <ul class="contact-list">
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4h12a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.4"/><path d="M1 5l7 4 7-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
@@ -658,84 +365,20 @@
               </div>
             </li>
           </ul>
-          <div class="panel-alert" role="status">
+          <div class="panel-alert" role="status" id="cms-sidebar-alert" hidden>
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1.5L1.5 12h11L7 1.5z" stroke="#D97706" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 5.5v3M7 10v.5" stroke="#D97706" stroke-width="1.4" stroke-linecap="round"/></svg>
-            <span>Filserveren er midlertidig begrenset. IT jobber med saken.</span>
+            <span></span>
           </div>
         </div>
 
-        <!-- DRIFTSSTATUS -->
         <div class="sidebar-panel" id="driftsstatus">
           <div class="sidebar-panel-header">Driftsstatus</div>
-          <ul class="link-list">
-            <li>
-              <a href="rutiner.html">
-                <span>Microsoft 365 (Outlook, Teams)</span>
-                <span class="status-badge status-badge--ok" style="font-size:0.7rem;">Operativ</span>
-              </a>
-            </li>
-            <li>
-              <a href="rutiner.html">
-                <span>VPN (GlobalProtect)</span>
-                <span class="status-badge status-badge--ok" style="font-size:0.7rem;">Operativ</span>
-              </a>
-            </li>
-            <li>
-              <a href="rutiner.html">
-                <span>Filserver / SharePoint</span>
-                <span class="status-badge status-badge--warning" style="font-size:0.7rem;">Begrenset</span>
-              </a>
-            </li>
-            <li>
-              <a href="rutiner.html">
-                <span>Visma ERP</span>
-                <span class="status-badge status-badge--ok" style="font-size:0.7rem;">Operativ</span>
-              </a>
-            </li>
-            <li>
-              <a href="rutiner.html">
-                <span>HR-portal</span>
-                <span class="status-badge status-badge--ok" style="font-size:0.7rem;">Operativ</span>
-              </a>
-            </li>
-          </ul>
+          <ul class="link-list" id="cms-driftsstatus"></ul>
         </div>
 
-        <!-- NYTTIGE LENKER -->
         <div class="sidebar-panel">
           <div class="sidebar-panel-header">Nyttige lenker</div>
-          <ul class="link-list">
-            <li>
-              <a href="rutiner.html#m365">
-                Microsoft 365 - logg inn
-                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2.5 6.5h8M7 3l3.5 3.5L7 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </li>
-            <li>
-              <a href="rutiner.html#visma">
-                Visma - lønn og fravær
-                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2.5 6.5h8M7 3l3.5 3.5L7 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </li>
-            <li>
-              <a href="rutiner.html#hr">
-                HR-portal - ferie og permisjon
-                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2.5 6.5h8M7 3l3.5 3.5L7 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </li>
-            <li>
-              <a href="hms.html#varsling">
-                Meld avvik / nestenulykke
-                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2.5 6.5h8M7 3l3.5 3.5L7 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </li>
-            <li>
-              <a href="it-support.html#kontakt">
-                Bestill nytt IT-utstyr
-                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2.5 6.5h8M7 3l3.5 3.5L7 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </li>
-          </ul>
+          <ul class="link-list" id="cms-useful-links"></ul>
         </div>
 
       </aside>
@@ -755,22 +398,22 @@
         <h4>Seksjoner</h4>
         <ul>
           <li><a href="index.html">Hjem</a></li>
-          <li><a href="it-support.html">IT-støtte</a></li>
+          <li><a href="it-support.html">IT støtte</a></li>
           <li><a href="hms.html">HMS</a></li>
           <li><a href="rutiner.html">Systemer</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Kontakt IT</h4>
+        <h4>Kontakt</h4>
         <ul>
           <li><a href="mailto:it@carob.no">it@carob.no</a></li>
           <li><a href="tel:+4712345678">+47 12 34 56 78</a></li>
-          <li><a href="hms.html#varsling">Meld avvik</a></li>
+          <li><a href="mailto:hr@carob.no">hr@carob.no</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 CAROB AS. Kun for intern bruk.</span>
+      <span>&copy; 2025 CAROB AS. Kun for intern bruk.</span>
       <span>Laget av Carmen Maria Kleijnen &amp; Robin Finnestad</span>
     </div>
   </footer>
@@ -778,31 +421,19 @@
   <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
 
   <script>
-    // Mobile nav
-    const toggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open);
-    });
-
-    // Dynamic greeting and date
     const greetingEl = document.getElementById('greeting');
     const dateEl = document.getElementById('date-line');
-
     const now = new Date();
     const hour = now.getHours();
-
-    let greeting = 'God morgen 👋';
-    if (hour >= 12 && hour < 17) greeting = 'God ettermiddag 👋';
-    else if (hour >= 17) greeting = 'God kveld 👋';
-
-    greetingEl.textContent = greeting;
-
-    const days = ['søndag','mandag','tirsdag','onsdag','torsdag','fredag','lørdag'];
+    let greeting = 'God morgen';
+    if (hour >= 12 && hour < 17) greeting = 'God ettermiddag';
+    else if (hour >= 17) greeting = 'God kveld';
+    greetingEl.textContent = greeting + ' 👋';
+    const days = ['sondag','mandag','tirsdag','onsdag','torsdag','fredag','lordag'];
     const months = ['januar','februar','mars','april','mai','juni','juli','august','september','oktober','november','desember'];
-    dateEl.textContent = `${days[now.getDay()]} ${now.getDate()}. ${months[now.getMonth()]} ${now.getFullYear()} - CAROB AS ansattportal`;
+    dateEl.textContent = `${days[now.getDay()]} ${now.getDate()}. ${months[now.getMonth()]} ${now.getFullYear()}`;
   </script>
+  <script src="loader.js"></script>
 
 </body>
 </html>
